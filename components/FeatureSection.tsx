@@ -28,7 +28,7 @@ export default function FeatureSection() {
           </p>
         </div>
 
-        <div className="no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 pr-[18vw] md:grid md:grid-cols-2 md:gap-4 md:overflow-visible md:pr-0 lg:grid-cols-4">
+        <div className="no-scrollbar -mx-4 flex snap-x snap-proximity gap-3 overflow-x-auto px-4 pb-2 pr-[32vw] md:mx-0 md:grid md:grid-cols-2 md:gap-4 md:overflow-visible md:px-0 md:pr-0 lg:grid-cols-4">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             const points = feature.points.slice(0, isDesktop ? 2 : 1);
@@ -43,7 +43,7 @@ export default function FeatureSection() {
                   duration: isDesktop ? 0.45 : 0.22,
                   delay: isDesktop ? index * 0.06 : 0,
                 }}
-                className="glass-card group relative w-[76vw] shrink-0 snap-start overflow-hidden rounded-[1.5rem] p-4 transition duration-300 sm:w-[46vw] md:w-auto md:min-w-0 md:rounded-[1.8rem] md:p-5 md:hover:-translate-y-1 md:hover:border-yellow-300/25"
+                className="glass-card group relative w-[68vw] shrink-0 snap-start overflow-hidden rounded-[1.5rem] p-4 transition duration-300 sm:w-[42vw] md:w-auto md:min-w-0 md:rounded-[1.8rem] md:p-5 md:hover:-translate-y-1 md:hover:border-yellow-300/25"
               >
                 <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-yellow-300/10 blur-2xl transition md:group-hover:bg-yellow-300/20" />
 
