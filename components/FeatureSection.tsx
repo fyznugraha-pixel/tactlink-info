@@ -28,7 +28,7 @@ export default function FeatureSection() {
           </p>
         </div>
 
-        <div className="no-scrollbar flex snap-x gap-3 overflow-x-auto pb-2 md:grid md:grid-cols-2 md:gap-4 md:overflow-visible lg:grid-cols-4">
+        <div className="no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 pr-[18vw] md:grid md:grid-cols-2 md:gap-4 md:overflow-visible md:pr-0 lg:grid-cols-4">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             const points = feature.points.slice(0, isDesktop ? 2 : 1);
@@ -36,14 +36,14 @@ export default function FeatureSection() {
             return (
               <motion.div
                 key={feature.title}
-                initial={{ opacity: 0, y: 18 }}
+                initial={{ opacity: 0, y: isDesktop ? 18 : 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{
-                  duration: isDesktop ? 0.45 : 0.24,
+                  duration: isDesktop ? 0.45 : 0.22,
                   delay: isDesktop ? index * 0.06 : 0,
                 }}
-                className="glass-card group relative min-w-[82%] snap-start overflow-hidden rounded-[1.5rem] p-4 transition duration-300 md:min-w-0 md:rounded-[1.8rem] md:p-5 md:hover:-translate-y-1 md:hover:border-yellow-300/25 sm:min-w-[48%]"
+                className="glass-card group relative w-[76vw] shrink-0 snap-start overflow-hidden rounded-[1.5rem] p-4 transition duration-300 sm:w-[46vw] md:w-auto md:min-w-0 md:rounded-[1.8rem] md:p-5 md:hover:-translate-y-1 md:hover:border-yellow-300/25"
               >
                 <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-yellow-300/10 blur-2xl transition md:group-hover:bg-yellow-300/20" />
 
@@ -69,7 +69,8 @@ export default function FeatureSection() {
                         <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-yellow-300/12 text-yellow-200">
                           <Check size={13} />
                         </span>
-                        {point}
+
+                        <span className="line-clamp-1">{point}</span>
                       </div>
                     ))}
                   </div>

@@ -13,7 +13,7 @@ const PixelBlast = dynamic(() => import("@/components/PixelBlast"), {
 });
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 26 },
+  hidden: { opacity: 0, y: 22 },
   show: { opacity: 1, y: 0 },
 };
 
@@ -23,7 +23,7 @@ export default function HeroSection() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden px-4 pb-8 pt-24 sm:pt-28 md:min-h-screen md:pb-14 md:pt-32"
+      className="relative min-h-[100svh] overflow-hidden px-4 pb-10 pt-24 sm:pt-28 md:min-h-screen md:pb-14 md:pt-32"
     >
       <div className="absolute inset-0 z-0 overflow-hidden">
         {isDesktop ? (
@@ -49,29 +49,29 @@ export default function HeroSection() {
             />
           </div>
         ) : (
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,rgba(250,204,21,0.18),transparent_34%),radial-gradient(circle_at_15%_30%,rgba(34,211,238,0.14),transparent_34%),radial-gradient(circle_at_85%_70%,rgba(139,92,246,0.10),transparent_36%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_8%,rgba(250,204,21,0.18),transparent_32%),radial-gradient(circle_at_10%_32%,rgba(34,211,238,0.13),transparent_34%),radial-gradient(circle_at_90%_74%,rgba(139,92,246,0.10),transparent_34%)]" />
         )}
 
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(34,211,238,0.14),transparent_35%),radial-gradient(circle_at_15%_30%,rgba(250,204,21,0.13),transparent_30%),radial-gradient(circle_at_85%_70%,rgba(139,92,246,0.12),transparent_30%)]" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-950/68 via-slate-950/42 to-slate-950/92" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-slate-950/78 via-slate-950/35 to-slate-950/55" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/50 to-slate-950" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-slate-950/65 via-transparent to-slate-950/45" />
       </div>
 
-      <div className="bg-grid pointer-events-none absolute inset-0 z-[1] opacity-[0.06] md:opacity-[0.1]" />
-      <div className="pointer-events-none absolute left-1/2 top-14 z-[1] h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-400/12 blur-3xl md:h-[34rem] md:w-[34rem]" />
-      <div className="pointer-events-none absolute -right-24 bottom-16 z-[1] h-72 w-72 rounded-full bg-violet-500/12 blur-3xl" />
-      <div className="pointer-events-none absolute -left-20 top-1/2 z-[1] h-64 w-64 rounded-full bg-yellow-300/10 blur-3xl" />
+      <div className="bg-grid pointer-events-none absolute inset-0 z-[1] opacity-[0.055] md:opacity-[0.1]" />
 
-      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1.05fr_0.95fr]">
+      <div className="pointer-events-none absolute left-1/2 top-20 z-[1] h-64 w-64 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl md:h-[34rem] md:w-[34rem]" />
+      <div className="pointer-events-none absolute -right-28 bottom-24 z-[1] h-64 w-64 rounded-full bg-violet-500/10 blur-3xl md:h-72 md:w-72" />
+      <div className="pointer-events-none absolute -left-24 top-1/2 z-[1] h-56 w-56 rounded-full bg-yellow-300/10 blur-3xl md:h-64 md:w-64" />
+
+      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-6rem)] max-w-6xl flex-col justify-center gap-8 md:grid md:min-h-0 md:grid-cols-[1.05fr_0.95fr] md:items-center md:gap-10">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-center md:text-left"
+          transition={{ duration: 0.65, ease: "easeOut" }}
+          className="mx-auto w-full max-w-[38rem] text-center md:mx-0 md:max-w-none md:text-left"
         >
-          <div className="mx-auto mb-4 inline-flex max-w-full items-center gap-2 rounded-full border border-yellow-300/20 bg-yellow-300/10 px-3 py-2 text-[11px] font-black text-yellow-100 shadow-lg shadow-yellow-950/10 backdrop-blur-xl sm:text-sm md:mx-0 md:px-4">
-            <Sparkles size={15} />
+          <div className="mx-auto mb-4 inline-flex max-w-full items-center gap-2 rounded-full border border-yellow-300/20 bg-yellow-300/10 px-3 py-2 text-[10px] font-black text-yellow-100 shadow-lg shadow-yellow-950/10 backdrop-blur-xl sm:text-sm md:mx-0 md:px-4">
+            <Sparkles size={14} />
             <span className="truncate">{brand.tagline}</span>
           </div>
 
@@ -79,14 +79,14 @@ export default function HeroSection() {
             text={brand.headline}
             disabled={false}
             speed={3.5}
-            className="text-gradient block text-4xl font-black leading-[0.98] tracking-tight sm:text-5xl md:text-7xl"
+            className="text-gradient mx-auto block max-w-[22rem] whitespace-normal break-words text-[2.65rem] font-black leading-[0.98] tracking-tight sm:max-w-[34rem] sm:text-5xl md:mx-0 md:max-w-none md:text-7xl"
           />
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base md:mx-0 md:text-lg md:leading-8">
+          <p className="mx-auto mt-5 max-w-[21rem] text-sm leading-7 text-slate-300 sm:max-w-2xl sm:text-base md:mx-0 md:text-lg md:leading-8">
             {brand.description}
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">
+          <div className="mx-auto mt-7 flex max-w-[22rem] flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center md:mx-0 md:justify-start">
             <a
               href="#download"
               className="hero-glow-button inline-flex items-center justify-center gap-2 rounded-full px-6 py-4 text-sm font-black text-slate-950 transition duration-300 hover:-translate-y-0.5"
@@ -105,12 +105,12 @@ export default function HeroSection() {
             </a>
           </div>
 
-          <div className="no-scrollbar mt-6 flex gap-3 overflow-x-auto pb-1 sm:grid sm:grid-cols-3 sm:overflow-visible">
+          <div className="mx-auto mt-6 grid max-w-[22rem] grid-cols-1 gap-2 sm:max-w-none sm:grid-cols-3 md:mx-0">
             {["Go paperless", "Exchange faster", "Grow communities"].map(
               (item) => (
                 <div
                   key={item}
-                  className="flex min-w-max items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-3 text-sm font-semibold text-slate-300 backdrop-blur-xl sm:min-w-0 sm:justify-start"
+                  className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-3 text-sm font-semibold text-slate-300 backdrop-blur-xl sm:justify-start"
                 >
                   <CheckCircle2 className="shrink-0 text-yellow-300" size={17} />
                   {item}
