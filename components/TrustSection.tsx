@@ -166,25 +166,21 @@ export default function TrustSection() {
   return (
     <section className="px-4 py-8 md:py-16">
       <div className="mx-auto max-w-6xl">
-        {isDesktop ? (
-          <BorderGlow
-            edgeSensitivity={30}
-            glowColor="52 95 62"
-            backgroundColor="rgba(2, 6, 23, 0.9)"
-            borderRadius={32}
-            glowRadius={36}
-            glowIntensity={1.05}
-            coneSpread={24}
-            animated
-            loopGlow
-            colors={["#fde047", "#22d3ee", "#60a5fa"]}
-            fillOpacity={0.16}
-          >
-            {content}
-          </BorderGlow>
-        ) : (
-          content
-        )}
+        <BorderGlow
+          edgeSensitivity={isDesktop ? 30 : 42}
+          glowColor="52 95 62"
+          backgroundColor="rgba(2, 6, 23, 0.9)"
+          borderRadius={isDesktop ? 32 : 26}
+          glowRadius={isDesktop ? 36 : 22}
+          glowIntensity={isDesktop ? 1.05 : 0.58}
+          coneSpread={isDesktop ? 24 : 20}
+          animated
+          loopGlow
+          colors={["#fde047", "#22d3ee", "#60a5fa"]}
+          fillOpacity={isDesktop ? 0.16 : 0.08}
+        >
+          {content}
+        </BorderGlow>
       </div>
     </section>
   );
