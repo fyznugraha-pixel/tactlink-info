@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import { benefits, brand } from "@/lib/content";
-import ShinyText from "@/components/ShinyText";
+import GradientText from "@/components/GradientText";
 import useIsDesktop from "@/hooks/useIsDesktop";
 
 const PixelBlast = dynamic(() => import("@/components/PixelBlast"), {
@@ -75,12 +75,14 @@ export default function HeroSection() {
             <span className="truncate">{brand.tagline}</span>
           </div>
 
-          <ShinyText
-            text={brand.headline}
-            disabled={false}
-            speed={3.5}
-            className="text-gradient mx-auto block max-w-[22rem] whitespace-normal break-words text-[2.65rem] font-black leading-[0.98] tracking-tight sm:max-w-[34rem] sm:text-5xl md:mx-0 md:max-w-none md:text-7xl"
-          />
+          <GradientText
+            colors={["#5227FF","#f2f1f4","#EAB308","#f2f1f4"]}
+            animationSpeed={8}
+            showBorder={false}
+            className="mx-auto block max-w-[22rem] whitespace-normal break-words text-[2.75rem] font-extrabold leading-[0.95] tracking-[-0.045em] sm:max-w-[34rem] sm:text-5xl md:mx-0 md:max-w-none md:text-7xl"
+          >
+            {brand.headline}
+          </GradientText>
 
           <p className="mx-auto mt-5 max-w-[21rem] text-sm leading-7 text-slate-300 sm:max-w-2xl sm:text-base md:mx-0 md:text-lg md:leading-8">
             {brand.description}
