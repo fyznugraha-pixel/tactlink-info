@@ -1,12 +1,16 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import { benefits, brand } from "@/lib/content";
-import PixelBlast from "@/components/PixelBlast";
-import ShinyText from './ShinyText';
+import ShinyText from "@/components/ShinyText";
+import useIsDesktop from "@/hooks/useIsDesktop";
 
+const PixelBlast = dynamic(() => import("@/components/PixelBlast"), {
+  ssr: false,
+});
 
 const fadeUp = {
   hidden: { opacity: 0, y: 26 },
@@ -14,52 +18,50 @@ const fadeUp = {
 };
 
 export default function HeroSection() {
+  const isDesktop = useIsDesktop();
+
   return (
     <section
       id="top"
       className="relative overflow-hidden px-4 pb-8 pt-24 sm:pt-28 md:min-h-screen md:pb-14 md:pt-32"
     >
-      {/* PixelBlast Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.34] sm:opacity-[0.42] md:opacity-[0.5]">
-          <PixelBlast
-            variant="square"
-            pixelSize={4}
-            color="#EAB308"
-            patternScale={2}
-            patternDensity={1}
-            pixelSizeJitter={0}
-            enableRipples
-            rippleSpeed={0.4}
-            rippleThickness={0.12}
-            rippleIntensityScale={1.5}
-            liquid={false}
-            liquidStrength={0.12}
-            liquidRadius={1.2}
-            liquidWobbleSpeed={5}
-            speed={0.5}
-            edgeFade={0.25}
-            transparent
-          />
-        </div>
+        {isDesktop ? (
+          <div className="absolute inset-0 opacity-[0.5]">
+            <PixelBlast
+              variant="square"
+              pixelSize={4}
+              color="#EAB308"
+              patternScale={2}
+              patternDensity={1}
+              pixelSizeJitter={0}
+              enableRipples
+              rippleSpeed={0.4}
+              rippleThickness={0.12}
+              rippleIntensityScale={1.5}
+              liquid={false}
+              liquidStrength={0.12}
+              liquidRadius={1.2}
+              liquidWobbleSpeed={5}
+              speed={0.5}
+              edgeFade={0.25}
+              transparent
+            />
+          </div>
+        ) : (
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,rgba(250,204,21,0.18),transparent_34%),radial-gradient(circle_at_15%_30%,rgba(34,211,238,0.14),transparent_34%),radial-gradient(circle_at_85%_70%,rgba(139,92,246,0.10),transparent_36%)]" />
+        )}
 
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(34,211,238,0.14),transparent_35%),radial-gradient(circle_at_15%_30%,rgba(250,204,21,0.13),transparent_30%),radial-gradient(circle_at_85%_70%,rgba(139,92,246,0.12),transparent_30%)]" />
-
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-950/68 via-slate-950/42 to-slate-950/92" />
-
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-slate-950/78 via-slate-950/35 to-slate-950/55" />
       </div>
 
-      {/* Subtle Grid + Glow */}
-      <div className="bg-grid pointer-events-none absolute inset-0 z-[1] opacity-[0.07] md:opacity-[0.1]" />
-
+      <div className="bg-grid pointer-events-none absolute inset-0 z-[1] opacity-[0.06] md:opacity-[0.1]" />
       <div className="pointer-events-none absolute left-1/2 top-14 z-[1] h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-400/12 blur-3xl md:h-[34rem] md:w-[34rem]" />
-
       <div className="pointer-events-none absolute -right-24 bottom-16 z-[1] h-72 w-72 rounded-full bg-violet-500/12 blur-3xl" />
-
       <div className="pointer-events-none absolute -left-20 top-1/2 z-[1] h-64 w-64 rounded-full bg-yellow-300/10 blur-3xl" />
 
-      {/* Hero Main Content */}
       <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1.05fr_0.95fr]">
         <motion.div
           variants={fadeUp}
@@ -104,29 +106,28 @@ export default function HeroSection() {
           </div>
 
           <div className="no-scrollbar mt-6 flex gap-3 overflow-x-auto pb-1 sm:grid sm:grid-cols-3 sm:overflow-visible">
-            {["Go paperless", "Exchange faster", "Grow communities"].map((item) => (
-              <div
-                key={item}
-                className="flex min-w-max items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-3 text-sm font-semibold text-slate-300 backdrop-blur-xl sm:min-w-0 sm:justify-start"
-              >
-                <CheckCircle2 className="shrink-0 text-yellow-300" size={17} />
-                {item}
-              </div>
-            ))}
+            {["Go paperless", "Exchange faster", "Grow communities"].map(
+              (item) => (
+                <div
+                  key={item}
+                  className="flex min-w-max items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-3 text-sm font-semibold text-slate-300 backdrop-blur-xl sm:min-w-0 sm:justify-start"
+                >
+                  <CheckCircle2 className="shrink-0 text-yellow-300" size={17} />
+                  {item}
+                </div>
+              )
+            )}
           </div>
         </motion.div>
 
-        {/* Desktop Mockup */}
         <motion.div
           initial={{ opacity: 0, scale: 0.94, y: 18 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.12, ease: "easeOut" }}
           className="relative mx-auto hidden w-full max-w-[32rem] items-center justify-center md:flex"
         >
-          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[24rem] w-[24rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-300/10 blur-3xl md:h-[30rem] md:w-[30rem]" />
-
-          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[22rem] w-[22rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/16 blur-3xl md:h-[28rem] md:w-[28rem]" />
-
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-300/10 blur-3xl" />
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/16 blur-3xl" />
           <div className="pointer-events-none absolute bottom-5 right-8 h-40 w-40 rounded-full bg-violet-500/20 blur-3xl" />
 
           <div className="float-animation relative w-full">
@@ -181,7 +182,6 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Desktop Benefits */}
       <div className="relative z-10 mx-auto mt-8 hidden max-w-6xl md:block">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {benefits.slice(0, 4).map((item, index) => {

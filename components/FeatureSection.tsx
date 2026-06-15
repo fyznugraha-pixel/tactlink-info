@@ -3,14 +3,17 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { features } from "@/lib/content";
+import useIsDesktop from "@/hooks/useIsDesktop";
 
 export default function FeatureSection() {
+  const isDesktop = useIsDesktop();
+
   return (
     <section id="features" className="relative px-4 py-10 md:py-20">
       <div className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
 
       <div className="mx-auto max-w-6xl">
-        <div className="mb-6 max-w-3xl md:mb-10">
+        <div className="mb-6 max-w-3xl text-center md:mb-10 md:text-left">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-yellow-200 md:text-sm">
             What TactLink Offers
           </p>
@@ -28,19 +31,23 @@ export default function FeatureSection() {
         <div className="no-scrollbar flex snap-x gap-3 overflow-x-auto pb-2 md:grid md:grid-cols-2 md:gap-4 md:overflow-visible lg:grid-cols-4">
           {features.map((feature, index) => {
             const Icon = feature.icon;
+            const points = feature.points.slice(0, isDesktop ? 2 : 1);
 
             return (
               <motion.div
                 key={feature.title}
-                initial={{ opacity: 0, y: 22 }}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.45, delay: index * 0.06 }}
-                className="glass-card group relative min-w-[78%] snap-start overflow-hidden rounded-[1.5rem] p-4 transition duration-300 hover:-translate-y-1 hover:border-yellow-300/25 sm:min-w-[48%] md:min-w-0 md:rounded-[1.8rem] md:p-5"
+                transition={{
+                  duration: isDesktop ? 0.45 : 0.24,
+                  delay: isDesktop ? index * 0.06 : 0,
+                }}
+                className="glass-card group relative min-w-[82%] snap-start overflow-hidden rounded-[1.5rem] p-4 transition duration-300 md:min-w-0 md:rounded-[1.8rem] md:p-5 md:hover:-translate-y-1 md:hover:border-yellow-300/25 sm:min-w-[48%]"
               >
-                <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-yellow-300/10 blur-2xl transition group-hover:bg-yellow-300/20" />
+                <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-yellow-300/10 blur-2xl transition md:group-hover:bg-yellow-300/20" />
 
-                <div className="relative mb-5 grid h-11 w-11 place-items-center rounded-2xl bg-yellow-300/12 text-yellow-200 ring-1 ring-yellow-200/20 transition group-hover:scale-105 group-hover:bg-yellow-300/18 md:mb-8 md:h-12 md:w-12">
+                <div className="relative mb-5 grid h-11 w-11 place-items-center rounded-2xl bg-yellow-300/12 text-yellow-200 ring-1 ring-yellow-200/20 transition md:mb-8 md:h-12 md:w-12 md:group-hover:scale-105 md:group-hover:bg-yellow-300/18">
                   <Icon size={23} />
                 </div>
 
@@ -54,7 +61,7 @@ export default function FeatureSection() {
                   </p>
 
                   <div className="mt-4 grid gap-2 md:mt-5">
-                    {feature.points.slice(0, 2).map((point) => (
+                    {points.map((point) => (
                       <div
                         key={point}
                         className="flex items-center gap-2 text-xs font-semibold text-slate-300"

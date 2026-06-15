@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import { audiences } from "@/lib/content";
 import SpotlightCard from "@/components/SpotlightCard";
+import useIsDesktop from "@/hooks/useIsDesktop";
 
 export default function AudienceSection() {
+  const isDesktop = useIsDesktop();
+
   return (
     <section id="audience" className="relative px-4 py-10 md:py-20">
       <div className="pointer-events-none absolute -right-28 top-20 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
@@ -30,31 +33,46 @@ export default function AudienceSection() {
           {audiences.map((audience, index) => {
             const Icon = audience.icon;
 
+            const content = (
+              <>
+                <div className="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-2xl bg-yellow-300/12 text-yellow-200 ring-1 ring-yellow-200/20 transition md:mb-5 md:h-14 md:w-14 md:group-hover:scale-105 md:group-hover:bg-yellow-300/18">
+                  <Icon size={24} />
+                </div>
+
+                <h3 className="text-base font-black text-white md:text-lg">
+                  {audience.title}
+                </h3>
+
+                <p className="mt-2 line-clamp-3 text-xs leading-5 text-slate-400 md:mt-3 md:text-sm md:leading-6">
+                  {audience.description}
+                </p>
+              </>
+            );
+
             return (
               <motion.div
                 key={audience.title}
-                initial={{ opacity: 0, y: 18 }}
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.45, delay: index * 0.05 }}
+                transition={{
+                  duration: isDesktop ? 0.45 : 0.24,
+                  delay: isDesktop ? index * 0.05 : 0,
+                }}
                 className="min-w-[72%] snap-start sm:min-w-[46%] md:min-w-0"
               >
-                <SpotlightCard
-                  spotlightColor="rgba(234, 179, 8, 0.24)"
-                  className="group h-full rounded-[1.5rem] border border-white/10 bg-white/[0.055] p-4 text-center backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-yellow-300/25 hover:bg-white/[0.08] md:rounded-[1.7rem] md:p-5"
-                >
-                  <div className="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-2xl bg-yellow-300/12 text-yellow-200 ring-1 ring-yellow-200/20 transition group-hover:scale-105 group-hover:bg-yellow-300/18 md:mb-5 md:h-14 md:w-14">
-                    <Icon size={24} />
+                {isDesktop ? (
+                  <SpotlightCard
+                    spotlightColor="rgba(234, 179, 8, 0.24)"
+                    className="group h-full rounded-[1.7rem] border border-white/10 bg-white/[0.055] p-5 text-center backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-yellow-300/25 hover:bg-white/[0.08]"
+                  >
+                    {content}
+                  </SpotlightCard>
+                ) : (
+                  <div className="h-full rounded-[1.5rem] border border-white/10 bg-white/[0.055] p-4 text-center backdrop-blur-xl">
+                    {content}
                   </div>
-
-                  <h3 className="text-base font-black text-white md:text-lg">
-                    {audience.title}
-                  </h3>
-
-                  <p className="mt-2 line-clamp-3 text-xs leading-5 text-slate-400 md:mt-3 md:text-sm md:leading-6">
-                    {audience.description}
-                  </p>
-                </SpotlightCard>
+                )}
               </motion.div>
             );
           })}
