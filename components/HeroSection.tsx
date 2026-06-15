@@ -77,7 +77,7 @@ export default function HeroSection() {
 
           <GradientText
             colors={["#5227FF","#f2f1f4","#EAB308","#f2f1f4"]}
-            animationSpeed={8}
+            animationSpeed={5}
             showBorder={false}
             className="mx-auto block max-w-[22rem] whitespace-normal break-words text-[2.75rem] font-extrabold leading-[0.95] tracking-[-0.045em] sm:max-w-[34rem] sm:text-5xl md:mx-0 md:max-w-none md:text-7xl"
           >
