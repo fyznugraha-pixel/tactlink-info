@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { appDownloadLinks, primaryLinks, secondaryLinks } from "@/lib/content";
 import BorderGlow from "@/components/BorderGlow";
+import useIsDesktop from "@/hooks/useIsDesktop";
 
 export default function QuickLinks() {
+  const isDesktop = useIsDesktop();
+
   return (
     <section id="links" className="relative px-4 py-10 md:py-20">
       <div className="pointer-events-none absolute inset-x-0 top-16 mx-auto h-72 max-w-4xl rounded-full bg-yellow-300/10 blur-3xl" />
@@ -32,27 +35,27 @@ export default function QuickLinks() {
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.45 }}
-          className="mb-4 md:mb-5"
+          transition={{ duration: isDesktop ? 0.45 : 0.24 }}
+          className="mb-4 scroll-mt-28 md:mb-5"
         >
           <BorderGlow
             edgeSensitivity={28}
             glowColor="52 95 62"
             backgroundColor="rgba(2, 6, 23, 0.86)"
             borderRadius={28}
-            glowRadius={34}
-            glowIntensity={1.15}
+            glowRadius={isDesktop ? 34 : 22}
+            glowIntensity={isDesktop ? 1.15 : 0.65}
             coneSpread={24}
-            animated
+            animated={isDesktop}
             colors={["#fde047", "#22d3ee", "#60a5fa"]}
-            fillOpacity={0.22}
+            fillOpacity={isDesktop ? 0.22 : 0.08}
           >
             <div className="relative overflow-hidden rounded-[1.6rem] bg-gradient-to-br from-yellow-300/15 via-cyan-300/10 to-white/5 p-4 shadow-2xl shadow-cyan-950/20 backdrop-blur-2xl md:rounded-[2rem] md:p-6">
               <div className="pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full bg-yellow-300/15 blur-3xl" />
               <div className="pointer-events-none absolute -bottom-20 left-0 h-56 w-56 rounded-full bg-cyan-300/10 blur-3xl" />
 
               <div className="relative grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
-                <div className="relative">
+                <div className="relative text-center md:text-left">
                   <p className="text-xs font-black uppercase tracking-[0.22em] text-yellow-200 md:text-sm">
                     Download TactLink App
                   </p>
@@ -61,15 +64,16 @@ export default function QuickLinks() {
                     Start building smarter connections today.
                   </h3>
 
-                  <p className="mt-2 hidden max-w-2xl text-sm leading-6 text-slate-300 sm:block">
+                  <p className="mx-auto mt-2 hidden max-w-2xl text-sm leading-6 text-slate-300 sm:block md:mx-0">
                     Create your digital profile, share your smart directory, and connect faster
                     through the official TactLink app.
                   </p>
                 </div>
 
-                <div className="relative grid grid-cols-2 gap-3 md:min-w-[360px]">
+                <div className="relative grid grid-cols-1 gap-3 sm:grid-cols-2 md:min-w-[360px]">
                   {appDownloadLinks.map((item) => {
                     const Icon = item.icon;
+                    const isAppStore = item.label.toLowerCase().includes("app");
 
                     return (
                       <a
@@ -77,18 +81,22 @@ export default function QuickLinks() {
                         href={item.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="group inline-flex items-center justify-between gap-2 rounded-2xl border border-white/10 bg-slate-950/60 px-3 py-3 text-left transition hover:-translate-y-0.5 hover:border-yellow-300/30 hover:bg-slate-950/80 md:px-4 md:py-4"
+                        className="group inline-flex items-center justify-between gap-2 rounded-2xl border border-white/10 bg-slate-950/60 px-3 py-3 text-left transition active:scale-[0.99] hover:border-yellow-300/30 hover:bg-slate-950/80 md:px-4 md:py-4 md:hover:-translate-y-0.5"
                       >
-                        <span className="flex min-w-0 items-center gap-2 md:gap-3">
-                          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white text-slate-950 ring-1 ring-white/20 md:h-11 md:w-11">
-                            <Icon size={22} />
+                        <span className="flex min-w-0 items-center gap-3">
+                          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-yellow-300 text-slate-950 shadow-[0_0_24px_rgba(250,204,21,0.18)] ring-1 ring-yellow-100/40 transition duration-300 group-hover:bg-yellow-200 group-hover:shadow-[0_0_32px_rgba(250,204,21,0.26)] md:h-11 md:w-11">
+                            <Icon
+                              size={isAppStore ? 20 : 22}
+                              className={isAppStore ? "translate-y-[-1px]" : ""}
+                            />
                           </span>
 
                           <span className="min-w-0">
-                            <span className="hidden text-xs font-semibold text-slate-400 sm:block">
+                            <span className="block text-xs font-semibold text-slate-400">
                               {item.subLabel}
                             </span>
-                            <span className="block truncate text-xs font-black text-white sm:text-sm">
+
+                            <span className="block truncate text-sm font-black text-white">
                               {item.label}
                             </span>
                           </span>
@@ -120,8 +128,11 @@ export default function QuickLinks() {
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.45, delay: index * 0.05 }}
-                className="quick-link group relative rounded-[1.4rem] border border-white/10 bg-white/[0.06] p-4 transition duration-300 hover:-translate-y-1 hover:border-yellow-300/25 hover:bg-white/[0.09] md:rounded-[1.8rem] md:p-5"
+                transition={{
+                  duration: isDesktop ? 0.45 : 0.24,
+                  delay: isDesktop ? index * 0.05 : 0,
+                }}
+                className="quick-link group relative rounded-[1.4rem] border border-white/10 bg-white/[0.06] p-4 transition duration-300 active:scale-[0.99] hover:border-yellow-300/25 hover:bg-white/[0.09] md:rounded-[1.8rem] md:p-5 md:hover:-translate-y-1"
               >
                 <div className="absolute right-4 top-4 rounded-full border border-yellow-300/15 bg-yellow-300/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.16em] text-yellow-100 md:text-[10px]">
                   {item.badge ?? "Link"}
