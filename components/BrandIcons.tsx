@@ -60,7 +60,7 @@ export function FacebookIcon({ size = 22, className = "" }: BrandIconProps) {
   );
 }
 
-export function GooglePlayIcon({ size = 22, className = "" }: BrandIconProps) {
+export function GooglePlayIcon({ size = 23, className = "" }: BrandIconProps) {
   return (
     <svg
       width={size}
@@ -94,24 +94,24 @@ export function GooglePlayIcon({ size = 22, className = "" }: BrandIconProps) {
   );
 }
 
-export function AppleIcon({ size = 22, className = "" }: BrandIconProps) {
+export function AppleIcon({ size = 23, className = "" }: BrandIconProps) {
   return (
     <svg
       width={size}
       height={size}
-      viewBox="0 0 24 24"
+      viewBox="0 0 384 512"
       className={className}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
+      style={{
+        display: "block",
+        transform: "translateY(-1px)",
+      }}
     >
       <path
-        d="M15.3 3.3C14.6 4.15 13.45 4.82 12.35 4.74C12.2 3.67 12.73 2.56 13.38 1.83C14.08 1.02 15.25 0.42 16.25 0.4C16.35 1.55 15.9 2.48 15.3 3.3Z"
         fill="currentColor"
-      />
-      <path
-        d="M19.25 12.78C19.23 9.95 21.55 8.58 21.65 8.52C20.35 6.66 18.35 6.4 17.64 6.37C15.95 6.2 14.32 7.37 13.46 7.37C12.58 7.37 11.26 6.39 9.83 6.42C7.98 6.45 6.26 7.49 5.31 9.12C3.34 12.43 4.81 17.31 6.7 20.01C7.65 21.33 8.76 22.8 10.22 22.75C11.64 22.69 12.17 21.87 13.88 21.87C15.58 21.87 16.08 22.75 17.57 22.71C19.1 22.69 20.06 21.39 20.98 20.05C22.08 18.53 22.52 17.04 22.54 16.96C22.5 16.95 19.28 15.75 19.25 12.78Z"
-        fill="currentColor"
+        d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.2-39.3.6-75.5 22.8-95.7 58.1-40.8 70.8-10.4 175.5 29.3 233 19.5 28.2 42.7 59.8 73.1 58.7 29.3-1.2 40.4-19 75.8-19 35.3 0 45.3 19 76.4 18.4 31.5-.6 51.5-28.7 70.8-57 22.4-32.7 31.6-64.4 32-66.1-.7-.3-61.5-23.6-62.1-98.2zM260.8 101.6c16.2-19.6 27.1-46.9 24.1-74-23.3.9-51.5 15.5-68.3 35.1-15.1 17.4-28.3 45.2-24.7 71.9 26 2 52.6-13.2 68.9-33z"
       />
     </svg>
   );
