@@ -72,13 +72,14 @@ export default function LocationSuggester() {
   return (
     <AnimatePresence>
       {show && suggestedLang && (
-        <motion.div
-          key="location-suggester"
-          initial={{ opacity: 0, y: 50, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 50, scale: 0.95, pointerEvents: "none" }}
-          className="fixed bottom-6 right-6 z-50 max-w-sm rounded-2xl border border-slate-700 bg-slate-900/95 p-4 shadow-2xl shadow-slate-950/50 backdrop-blur-xl"
-        >
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+          <motion.div
+            key="location-suggester"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="pointer-events-auto w-full max-w-sm rounded-2xl border border-slate-700 bg-slate-900/95 p-4 shadow-2xl shadow-slate-950/50 backdrop-blur-xl"
+          >
           <button 
             onClick={() => setShow(false)}
             className="absolute right-3 top-3 text-slate-400 hover:text-white"
@@ -112,7 +113,8 @@ export default function LocationSuggester() {
               </div>
             </div>
           </div>
-        </motion.div>
+          </motion.div>
+        </div>
       )}
     </AnimatePresence>
   );
