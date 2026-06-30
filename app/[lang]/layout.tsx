@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { LanguageProvider, Language } from "@/context/LanguageContext";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -23,14 +24,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ lang: string }>;
 }>) {
+  const { lang } = await params;
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
-      <body>{children}</body>
+    <html lang={lang} className={cn("font-sans", geist.variable)}>
+      <body suppressHydrationWarning>
+        <LanguageProvider lang={lang as Language}>
+          {children}
+        </LanguageProvider>
+      </body>
     </html>
   );
 }

@@ -1,12 +1,14 @@
 "use client";
 
 import { ArrowUpRight, Mail } from "lucide-react";
-import { appDownloadLinks } from "@/lib/content";
+import { useLanguage } from "@/context/LanguageContext";
 import BorderGlow from "@/components/BorderGlow";
 import useIsDesktop from "@/hooks/useIsDesktop";
 
 export default function FinalCTA() {
   const isDesktop = useIsDesktop();
+  const { dict } = useLanguage();
+  const { appDownloadLinks, ui } = dict;
 
   return (
     <section className="relative px-4 py-10 md:py-20">
@@ -33,16 +35,15 @@ export default function FinalCTA() {
 
           <div className="relative">
             <p className="text-xs font-black uppercase tracking-[0.25em] text-yellow-100 md:text-sm">
-              Ready to Connect Smarter?
+              {ui.readyToStart}
             </p>
 
             <h2 className="mx-auto mt-3 max-w-3xl text-3xl font-black tracking-tight text-white md:mt-4 md:text-6xl">
-              Turn every meeting into a meaningful network.
+              {ui.ctaTitle}
             </h2>
 
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-cyan-50/80 sm:text-base">
-              Download TactLink, create your digital identity, and help your
-              community grow beyond static contact lists.
+              {ui.readyDesc}
             </p>
 
             <div className="mx-auto mt-7 grid max-w-xl gap-3 sm:grid-cols-2 md:mt-8">
@@ -92,7 +93,7 @@ export default function FinalCTA() {
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-4 text-sm font-black text-white transition active:scale-[0.99] hover:border-yellow-300/25 hover:bg-white/15 hover:text-yellow-100"
               >
                 <Mail size={18} />
-                Email TactLink
+                {ui.emailTactlink}
               </a>
 
               <a
@@ -101,7 +102,7 @@ export default function FinalCTA() {
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-yellow-300/25 bg-yellow-300/10 px-6 py-4 text-sm font-black text-yellow-100 transition active:scale-[0.99] hover:bg-yellow-300 hover:text-slate-950"
               >
-                Become a Partner
+                {ui.becomePartner}
                 <ArrowUpRight size={18} />
               </a>
             </div>

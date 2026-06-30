@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import { features } from "@/lib/content";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function FeatureSection() {
+  const { dict } = useLanguage();
+  const { features, ui } = dict;
   return (
     <section id="features" className="relative px-4 py-10 md:py-20">
       <div className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
@@ -12,16 +14,15 @@ export default function FeatureSection() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-6 max-w-3xl text-center md:mb-10 md:text-left">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-yellow-200 md:text-sm">
-            What TactLink Offers
+            {ui.coreFeatures}
           </p>
 
           <h2 className="mt-3 text-2xl font-black tracking-tight text-white md:text-5xl">
-            Built for people who network, manage communities, and run events.
+            {ui.featuresTitle}
           </h2>
 
           <p className="mt-4 hidden max-w-2xl leading-7 text-slate-300 sm:block">
-            From personal digital identity to association-scale networking,
-            TactLink makes connections easier to create, manage, and grow.
+            {ui.featuresDesc}
           </p>
         </div>
 

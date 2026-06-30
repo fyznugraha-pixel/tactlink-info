@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
-import { brand, contact, secondaryLinks, socialLinks } from "@/lib/content";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
+  const { dict } = useLanguage();
+  const { brand, contact, secondaryLinks, socialLinks, ui } = dict;
   const ContactIcon = contact.icon;
 
   return (
@@ -29,8 +33,7 @@ export default function Footer() {
           </div>
 
           <p className="mt-4 max-w-md text-sm leading-6 text-slate-400">
-            Reimagine networking with Smart Directory. Transform professional
-            networking, go paperless, foster collaboration, and grow your community.
+            {ui.footerDesc}
           </p>
         </div>
 
@@ -74,8 +77,8 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto mt-8 flex max-w-6xl flex-col gap-2 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-        <p>© {new Date().getFullYear()} TactLink. All rights reserved.</p>
-        <p>Built for smarter, paperless networking.</p>
+        <p>© {new Date().getFullYear()} TactLink. {ui.allRightsReserved}</p>
+        <p>{ui.footerSlogan}</p>
       </div>
     </footer>
   );

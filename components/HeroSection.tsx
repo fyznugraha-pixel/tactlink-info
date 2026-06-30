@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
-import { benefits, brand } from "@/lib/content";
+import { useLanguage } from "@/context/LanguageContext";
 import GradientText from "@/components/GradientText";
 import useIsDesktop from "@/hooks/useIsDesktop";
 
@@ -19,6 +19,8 @@ const fadeUp = {
 
 export default function HeroSection() {
   const isDesktop = useIsDesktop();
+  const { dict } = useLanguage();
+  const { brand, benefits, ui } = dict;
 
   return (
     <section
@@ -93,7 +95,7 @@ export default function HeroSection() {
               href="#download"
               className="hero-glow-button inline-flex items-center justify-center gap-2 rounded-full px-6 py-4 text-sm font-black text-slate-950 transition duration-300 hover:-translate-y-0.5"
             >
-              Download App
+              {ui.downloadApp}
               <ArrowRight size={18} />
             </a>
 
@@ -103,12 +105,12 @@ export default function HeroSection() {
               rel="noreferrer"
               className="button-secondary inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/8 px-6 py-4 text-sm font-black text-white transition hover:bg-white/12"
             >
-              Become a Partner
+              {dict.primaryLinks[1].label}
             </a>
           </div>
 
           <div className="mx-auto mt-6 grid max-w-[22rem] grid-cols-1 gap-2 sm:max-w-none sm:grid-cols-3 md:mx-0">
-            {["Go paperless", "Exchange faster", "Grow communities"].map(
+            {dict.ui.heroChecklist.map(
               (item) => (
                 <div
                   key={item}
@@ -151,11 +153,7 @@ export default function HeroSection() {
 
               <div className="absolute bottom-4 left-4 right-4 z-30 rounded-[1.2rem] border border-white/10 bg-slate-950/72 p-3 shadow-2xl shadow-cyan-950/20 backdrop-blur-2xl">
                 <div className="grid grid-cols-3 gap-2 text-center">
-                  {[
-                    ["QR", "Instant share"],
-                    ["Profile", "Digital identity"],
-                    ["Contacts", "Smart save"],
-                  ].map(([title, desc]) => (
+                  {dict.ui.heroFeatures.map(({ title, desc }) => (
                     <div
                       key={title}
                       className="rounded-2xl border border-white/10 bg-white/[0.055] px-2 py-2.5"

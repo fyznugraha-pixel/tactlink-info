@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { stats } from "@/lib/content";
+import { useLanguage } from "@/context/LanguageContext";
 import BorderGlow from "@/components/BorderGlow";
 import SpotlightCard from "@/components/SpotlightCard";
 import useIsDesktop from "@/hooks/useIsDesktop";
@@ -93,6 +93,8 @@ function CountUpStat({
 
 export default function TrustSection() {
   const isDesktop = useIsDesktop();
+  const { dict } = useLanguage();
+  const { stats } = dict;
 
   const content = (
     <div className="relative overflow-hidden rounded-[1.6rem] border border-white/10 bg-white/[0.055] p-4 shadow-2xl shadow-cyan-950/20 backdrop-blur-2xl md:rounded-[2rem] md:p-8">
@@ -102,16 +104,15 @@ export default function TrustSection() {
       <div className="relative grid gap-6 md:grid-cols-[0.9fr_1.1fr] md:items-center md:gap-8">
         <div className="relative text-center md:text-left">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-yellow-200 md:text-sm">
-            Global Movement
+            {dict.ui.trustBadge}
           </p>
 
           <h2 className="mt-3 text-2xl font-black text-white md:text-4xl">
-            Designed for modern, paperless networking.
+            {dict.ui.trustTitle}
           </h2>
 
           <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-slate-300 md:mx-0 md:text-base">
-            From professional communities to cross-border events, TactLink helps
-            organizations turn static lists into active digital networks.
+            {dict.ui.trustDesc}
           </p>
         </div>
 

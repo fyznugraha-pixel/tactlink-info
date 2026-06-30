@@ -2,12 +2,14 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { appDownloadLinks, primaryLinks, secondaryLinks } from "@/lib/content";
+import { useLanguage } from "@/context/LanguageContext";
 import BorderGlow from "@/components/BorderGlow";
 import useIsDesktop from "@/hooks/useIsDesktop";
 
 export default function QuickLinks() {
   const isDesktop = useIsDesktop();
+  const { dict } = useLanguage();
+  const { appDownloadLinks, primaryLinks, secondaryLinks, ui } = dict;
 
   return (
     <section id="links" className="relative px-4 py-10 md:py-20">
@@ -17,16 +19,15 @@ export default function QuickLinks() {
       <div className="relative mx-auto max-w-6xl">
         <div className="mb-6 text-center md:mb-10">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-yellow-200 md:text-sm">
-            Quick Access
+            {ui.quickLinks}
           </p>
 
           <h2 className="mx-auto mt-3 max-w-3xl text-2xl font-black tracking-tight text-white md:text-5xl">
-            Everything TactLink, one tap away.
+            {ui.quickLinksTitle}
           </h2>
 
           <p className="mx-auto mt-3 hidden max-w-2xl leading-7 text-slate-300 sm:block">
-            A premium social gateway for downloads, partnerships, product information,
-            and official TactLink channels.
+            {ui.quickLinksDesc}
           </p>
         </div>
 
@@ -57,16 +58,15 @@ export default function QuickLinks() {
               <div className="relative grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
                 <div className="relative text-center md:text-left">
                   <p className="text-xs font-black uppercase tracking-[0.22em] text-yellow-200 md:text-sm">
-                    Download TactLink App
+                    {ui.downloadAppTitle}
                   </p>
 
                   <h3 className="mt-2 text-xl font-black text-white md:text-3xl">
-                    Start building smarter connections today.
+                    {ui.downloadAppHeadline}
                   </h3>
 
                   <p className="mx-auto mt-2 hidden max-w-2xl text-sm leading-6 text-slate-300 sm:block md:mx-0">
-                    Create your digital profile, share your smart directory, and connect faster
-                    through the official TactLink app.
+                    {ui.downloadAppDesc}
                   </p>
                 </div>
 
@@ -156,7 +156,7 @@ export default function QuickLinks() {
 
                 <div className="mt-4 hidden items-center justify-between border-t border-white/10 pt-4 md:flex">
                   <span className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
-                    Open Link
+                    {ui.openLink}
                   </span>
 
                   <span className="grid h-9 w-9 place-items-center rounded-full bg-white text-slate-950 transition duration-300 group-hover:bg-yellow-300">

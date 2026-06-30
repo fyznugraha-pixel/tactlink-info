@@ -1,12 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { audiences } from "@/lib/content";
+import { useLanguage } from "@/context/LanguageContext";
 import SpotlightCard from "@/components/SpotlightCard";
 import useIsDesktop from "@/hooks/useIsDesktop";
 
 export default function AudienceSection() {
   const isDesktop = useIsDesktop();
+  const { dict } = useLanguage();
+  const { audiences, ui } = dict;
 
   return (
     <section id="audience" className="relative px-4 py-10 md:py-20">
@@ -16,16 +18,15 @@ export default function AudienceSection() {
       <div className="relative mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-yellow-200 md:text-sm">
-            For Who
+            {ui.whoUses}
           </p>
 
           <h2 className="mt-3 text-2xl font-black tracking-tight text-white md:text-5xl">
-            One platform for every connection-driven ecosystem.
+            {ui.audienceTitle}
           </h2>
 
           <p className="mx-auto mt-4 hidden max-w-2xl leading-7 text-slate-300 sm:block">
-            TactLink is built for people and organizations that need faster
-            connection, cleaner contact management, and stronger community engagement.
+            {ui.audienceDesc}
           </p>
         </div>
 

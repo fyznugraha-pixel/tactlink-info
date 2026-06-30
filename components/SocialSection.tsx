@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { socialLinks } from "@/lib/content";
+import { useLanguage } from "@/context/LanguageContext";
 import useIsDesktop from "@/hooks/useIsDesktop";
 
 const MagicBento = dynamic(() => import("@/components/MagicBento"), {
@@ -12,6 +12,8 @@ const MagicBento = dynamic(() => import("@/components/MagicBento"), {
 
 export default function SocialSection() {
   const isDesktop = useIsDesktop();
+  const { dict } = useLanguage();
+  const { socialLinks, ui } = dict;
 
   return (
     <section id="socials" className="relative px-4 py-10 md:py-20">
@@ -23,17 +25,16 @@ export default function SocialSection() {
         <div className="mb-6 flex flex-col gap-3 text-center md:mb-10 md:flex-row md:items-end md:justify-between md:text-left">
           <div className="max-w-3xl">
             <p className="text-xs font-black uppercase tracking-[0.25em] text-yellow-200 md:text-sm">
-              Official Social Channels
+              {ui.connectRegion}
             </p>
 
             <h2 className="mt-3 text-2xl font-black tracking-tight text-white md:text-5xl">
-              Follow TactLink across global communities.
+              {ui.socialTitle}
             </h2>
           </div>
 
           <p className="hidden max-w-md leading-7 text-slate-300 sm:block md:text-right">
-            Stay updated with product stories, events, community highlights,
-            and regional TactLink activities.
+            {ui.socialDesc}
           </p>
         </div>
 

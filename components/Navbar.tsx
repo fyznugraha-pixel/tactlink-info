@@ -4,11 +4,15 @@ import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Menu, Sparkles, X } from "lucide-react";
-import { navItems } from "@/lib/content";
 import BorderGlow from "@/components/BorderGlow";
 import useIsDesktop from "@/hooks/useIsDesktop";
+import { useLanguage } from "@/context/LanguageContext";
+import LanguageSwitcher from "./LanguageSwitcher";
+import LocationSuggester from "./LocationSuggester";
 
 export default function Navbar() {
+  const { dict } = useLanguage();
+  const navItems = dict.navItems;
   const isDesktop = useIsDesktop();
   const lastScrollYRef = useRef(0);
 
@@ -68,7 +72,7 @@ export default function Navbar() {
 
   const navbarContent = (
     <nav
-      className={`relative overflow-hidden border transition-all duration-300 ${
+      className={`relative border transition-all duration-300 ${
         isDesktop
           ? "rounded-full"
           : isOpen
@@ -80,8 +84,10 @@ export default function Navbar() {
           : "border-white/10 bg-slate-950/68 shadow-xl shadow-cyan-950/20 backdrop-blur-2xl"
       }`}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(250,204,21,0.12),transparent_32%),radial-gradient(circle_at_80%_10%,rgba(34,211,238,0.10),transparent_34%)]" />
-      <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-yellow-200/45 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(250,204,21,0.12),transparent_32%),radial-gradient(circle_at_80%_10%,rgba(34,211,238,0.10),transparent_34%)]" />
+        <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-yellow-200/45 to-transparent" />
+      </div>
 
       <div className="relative flex items-center justify-between px-3 py-2.5 md:px-5 md:py-3">
         <a
@@ -116,7 +122,7 @@ export default function Navbar() {
             </span>
 
             <span className="mt-1 hidden text-xs font-medium text-slate-400 sm:block">
-              Smart Directory
+              {dict.ui.smartDirectory}
             </span>
           </span>
         </a>
@@ -155,6 +161,8 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
+          <LanguageSwitcher />
+
           <a
             href="#download"
             className="group relative hidden overflow-hidden rounded-full border border-yellow-300/25 bg-yellow-300 px-4 py-2.5 text-sm font-black text-slate-950 shadow-[0_0_28px_rgba(250,204,21,0.18)] transition duration-300 hover:-translate-y-0.5 hover:bg-yellow-200 hover:shadow-[0_0_38px_rgba(250,204,21,0.28)] md:inline-flex"
@@ -162,7 +170,7 @@ export default function Navbar() {
             <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/45 to-transparent transition duration-700 group-hover:translate-x-full" />
 
             <span className="relative flex items-center gap-2">
-              Start
+              {dict.ui.start}
               <ArrowUpRight
                 size={16}
                 className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -195,6 +203,7 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            key="mobile-menu"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -244,7 +253,7 @@ export default function Navbar() {
                 }}
                 className="mt-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-yellow-300 px-4 py-3 text-sm font-black text-slate-950 shadow-[0_0_24px_rgba(250,204,21,0.16)] transition active:scale-[0.99]"
               >
-                Download App
+                {dict.ui.downloadApp}
                 <ArrowUpRight size={16} />
               </a>
             </div>
@@ -255,10 +264,12 @@ export default function Navbar() {
   );
 
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.header
-          initial={{ y: -90, opacity: 0, scale: 0.98 }}
+    <>
+      <AnimatePresence>
+        {isVisible && (
+          <motion.header
+            key="navbar"
+            initial={{ y: -90, opacity: 0, scale: 0.98 }}
           animate={{ y: 0, opacity: 1, scale: 1 }}
           exit={{ y: -90, opacity: 0, scale: 0.98 }}
           transition={{ duration: 0.28, ease: "easeOut" }}
@@ -279,7 +290,7 @@ export default function Navbar() {
                 animated={isScrolled}
                 colors={["#fde047", "#22d3ee", "#60a5fa"]}
                 fillOpacity={0.11}
-                className="overflow-hidden rounded-full"
+                className="rounded-full"
               >
                 {navbarContent}
               </BorderGlow>
@@ -289,6 +300,8 @@ export default function Navbar() {
           </div>
         </motion.header>
       )}
-    </AnimatePresence>
+      </AnimatePresence>
+      <LocationSuggester />
+    </>
   );
 }
