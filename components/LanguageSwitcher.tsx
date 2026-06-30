@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 const languages: { code: Language; label: string }[] = [
   { code: "en", label: "English" },
   { code: "id", label: "Bahasa Indonesia" },
-  { code: "ms", label: "Bahasa Melayu" },
+
   { code: "vi", label: "Tiếng Việt" },
   { code: "bn", label: "বাংলা" },
   { code: "tl", label: "Filipino" },

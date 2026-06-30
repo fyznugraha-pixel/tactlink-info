@@ -8,7 +8,7 @@ import { Globe2, X } from "lucide-react";
 
 const countryToLang: Record<string, Language> = {
   ID: "id", // Indonesia
-  MY: "ms", // Malaysia
+
   VN: "vi", // Vietnam
   BD: "bn", // Bangladesh
   PH: "tl", // Philippines
@@ -17,7 +17,7 @@ const countryToLang: Record<string, Language> = {
 const langNames: Record<Language, string> = {
   en: "English",
   id: "Bahasa Indonesia",
-  ms: "Bahasa Melayu",
+
   vi: "Tiếng Việt",
   bn: "বাংলা (Bengali)",
   tl: "Filipino",
