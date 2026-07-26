@@ -15,7 +15,7 @@ export default function AudienceSection() {
       <div className="pointer-events-none absolute -right-28 top-20 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
       <div className="pointer-events-none absolute -left-28 bottom-10 hidden h-72 w-72 rounded-full bg-yellow-300/10 blur-3xl md:block" />
 
-      <div className="relative mx-auto max-w-6xl">
+      <div className="relative mx-auto max-w-[1400px]">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-yellow-200 md:text-sm">
             {ui.whoUses}
@@ -30,7 +30,7 @@ export default function AudienceSection() {
           </p>
         </div>
 
-        <div className="no-scrollbar mt-7 flex snap-x gap-3 overflow-x-auto pb-2 md:mt-10 md:grid md:grid-cols-2 md:gap-4 md:overflow-visible lg:grid-cols-4">
+        <div className="no-scrollbar mt-7 flex snap-x gap-3 overflow-x-auto overflow-y-hidden pb-2 md:mt-10 md:grid md:grid-cols-2 md:gap-4 md:overflow-visible lg:grid-cols-4">
           {audiences.map((audience, index) => {
             const Icon = audience.icon;
 

@@ -11,7 +11,7 @@ export default function FeatureSection() {
     <section id="features" className="relative px-4 py-10 md:py-20">
       <div className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
 
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-[1400px]">
         <div className="mb-6 max-w-3xl text-center md:mb-10 md:text-left">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-yellow-200 md:text-sm">
             {ui.coreFeatures}

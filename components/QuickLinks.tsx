@@ -16,7 +16,7 @@ export default function QuickLinks() {
       <div className="pointer-events-none absolute inset-x-0 top-16 mx-auto h-72 max-w-4xl rounded-full bg-yellow-300/10 blur-3xl" />
       <div className="pointer-events-none absolute bottom-10 right-0 hidden h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl md:block" />
 
-      <div className="relative mx-auto max-w-6xl">
+      <div className="relative mx-auto max-w-[1400px]">
         <div className="mb-6 text-center md:mb-10">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-yellow-200 md:text-sm">
             {ui.quickLinks}

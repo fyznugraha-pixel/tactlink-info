@@ -558,6 +558,16 @@ export default function PixelBlast({
     const resizeObserver = new ResizeObserver(setSize);
     resizeObserver.observe(container);
 
+    const intersectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          visibilityRef.current.visible = entry.isIntersecting;
+        });
+      },
+      { rootMargin: "100px" } // give a little margin so it starts rendering just before entering
+    );
+    intersectionObserver.observe(container);
+
     let composer: EffectComposer | undefined;
     let touch: TouchTexture | undefined;
     let liquidEffect: Effect | undefined;
@@ -752,6 +762,7 @@ export default function PixelBlast({
       cancelAnimationFrame(raf);
 
       resizeObserver.disconnect();
+      intersectionObserver.disconnect();
 
       geometry.dispose();
       material.dispose();

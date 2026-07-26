@@ -10,7 +10,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-white/10 px-4 py-10">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto flex max-w-[1400px] flex-col gap-8 md:flex-row md:items-center md:justify-between">
         <div>
           <div className="flex items-center gap-3">
             <span className="relative grid h-11 w-11 place-items-center overflow-hidden rounded-full border border-yellow-300/25 bg-slate-900">
@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-8 flex max-w-6xl flex-col gap-2 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto mt-8 flex max-w-[1400px] flex-col gap-2 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
         <p>© {new Date().getFullYear()} TactLink. {ui.allRightsReserved}</p>
         <p>{ui.footerSlogan}</p>
       </div>

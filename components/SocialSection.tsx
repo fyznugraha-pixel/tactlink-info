@@ -21,7 +21,7 @@ export default function SocialSection() {
       <div className="pointer-events-none absolute -right-24 bottom-10 hidden h-72 w-72 rounded-full bg-yellow-300/10 blur-3xl md:block" />
       <div className="pointer-events-none absolute -left-24 top-1/2 hidden h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl md:block" />
 
-      <div className="relative mx-auto max-w-6xl">
+      <div className="relative mx-auto max-w-[1400px]">
         <div className="mb-6 flex flex-col gap-3 text-center md:mb-10 md:flex-row md:items-end md:justify-between md:text-left">
           <div className="max-w-3xl">
             <p className="text-xs font-black uppercase tracking-[0.25em] text-yellow-200 md:text-sm">

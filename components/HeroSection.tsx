@@ -64,7 +64,7 @@ export default function HeroSection() {
       <div className="pointer-events-none absolute -right-28 bottom-24 z-[1] h-64 w-64 rounded-full bg-violet-500/10 blur-3xl md:h-72 md:w-72" />
       <div className="pointer-events-none absolute -left-24 top-1/2 z-[1] h-56 w-56 rounded-full bg-yellow-300/10 blur-3xl md:h-64 md:w-64" />
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-6rem)] max-w-6xl flex-col justify-center gap-8 md:grid md:min-h-0 md:grid-cols-[1.05fr_0.95fr] md:items-center md:gap-10">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-6rem)] max-w-[1400px] flex-col justify-center gap-8 md:grid md:min-h-0 md:grid-cols-[1.05fr_0.95fr] md:items-center md:gap-10">
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -182,7 +182,7 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      <div className="relative z-10 mx-auto mt-8 hidden max-w-6xl md:block">
+      <div className="relative z-10 mx-auto mt-8 hidden max-w-[1400px] md:block">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {benefits.slice(0, 4).map((item, index) => {
             const Icon = item.icon;

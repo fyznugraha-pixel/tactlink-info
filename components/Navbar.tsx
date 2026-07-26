@@ -28,8 +28,9 @@ export default function Navbar() {
 
   useEffect(() => {
     lastScrollYRef.current = window.scrollY;
+    let ticking = false;
 
-    const handleScroll = () => {
+    const updateScroll = () => {
       const currentScrollY = window.scrollY;
       const scrollingUp = currentScrollY < lastScrollYRef.current;
 
@@ -42,26 +43,42 @@ export default function Navbar() {
         setIsOpen(false);
       }
 
-      for (const href of sectionHrefs) {
-        const section = document.querySelector(href);
-        if (!section) continue;
-
-        const rect = section.getBoundingClientRect();
-
-        if (rect.top <= 150 && rect.bottom >= 150) {
-          setActiveHref(href);
-          break;
-        }
-      }
-
       lastScrollYRef.current = currentScrollY;
+      ticking = false;
     };
 
-    handleScroll();
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScroll);
+        ticking = true;
+      }
+    };
+
+    updateScroll();
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveHref(`#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: "-150px 0px -50% 0px" }
+    );
+
+    sectionHrefs.forEach((href) => {
+      const element = document.querySelector(href);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
   }, [sectionHrefs]);
 
   useEffect(() => {
@@ -72,12 +89,8 @@ export default function Navbar() {
 
   const navbarContent = (
     <nav
-      className={`relative border transition-all duration-300 ${
-        isDesktop
-          ? "rounded-full"
-          : isOpen
-          ? "rounded-[1.5rem]"
-          : "rounded-full"
+      className={`relative border transition-colors duration-300 ${
+        isDesktop ? "rounded-full" : "rounded-[1.5rem]"
       } ${
         isScrolled
           ? "border-yellow-300/15 bg-slate-950/82 shadow-2xl shadow-cyan-950/30 backdrop-blur-2xl"
@@ -135,7 +148,14 @@ export default function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                onClick={() => setActiveHref(item.href)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveHref(item.href);
+                  const target = document.querySelector(item.href);
+                  if (target) {
+                    target.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
                 className={`relative rounded-full px-4 py-2 text-sm font-bold transition duration-300 ${
                   isActive
                     ? "text-slate-950"
@@ -208,54 +228,66 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
-            className="relative border-t border-white/10 px-3 pb-3 pt-2 md:hidden"
+            className="relative overflow-hidden md:hidden"
           >
-            <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-yellow-200/35 to-transparent" />
+            <div className="border-t border-white/10 px-3 pb-3 pt-2">
+              <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-yellow-200/35 to-transparent" />
 
-            <div className="grid gap-1.5">
-              {navItems.map((item) => {
-                const isActive = activeHref === item.href;
+              <div className="grid gap-1.5">
+                {navItems.map((item) => {
+                  const isActive = activeHref === item.href;
 
-                return (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => {
-                      setIsOpen(false);
-                      setActiveHref(item.href);
-                    }}
-                    className={`relative flex items-center justify-between overflow-hidden rounded-2xl px-4 py-3 text-sm font-bold transition active:scale-[0.99] ${
-                      isActive
-                        ? "bg-yellow-300 text-slate-950"
-                        : "bg-white/[0.035] text-slate-200"
-                    }`}
-                  >
-                    {isActive && (
-                      <span className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,255,255,0.32),transparent_38%)]" />
-                    )}
+                  return (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setIsOpen(false);
+                        setActiveHref(item.href);
+                        const target = document.querySelector(item.href);
+                        if (target) {
+                          target.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }}
+                      className={`relative flex items-center justify-between overflow-hidden rounded-2xl px-4 py-3 text-sm font-bold transition active:scale-[0.99] ${
+                        isActive
+                          ? "bg-yellow-300 text-slate-950"
+                          : "bg-white/[0.035] text-slate-200"
+                      }`}
+                    >
+                      {isActive && (
+                        <span className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,255,255,0.32),transparent_38%)]" />
+                      )}
 
-                    <span className="relative">{item.label}</span>
+                      <span className="relative">{item.label}</span>
 
-                    {isActive ? (
-                      <span className="relative h-1.5 w-1.5 rounded-full bg-slate-950" />
-                    ) : (
-                      <ArrowUpRight size={14} className="text-slate-500" />
-                    )}
-                  </a>
-                );
-              })}
+                      {isActive ? (
+                        <span className="relative h-1.5 w-1.5 rounded-full bg-slate-950" />
+                      ) : (
+                        <ArrowUpRight size={14} className="text-slate-500" />
+                      )}
+                    </a>
+                  );
+                })}
 
-              <a
-                href="#download"
-                onClick={() => {
-                  setIsOpen(false);
-                  setActiveHref("#download");
-                }}
-                className="mt-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-yellow-300 px-4 py-3 text-sm font-black text-slate-950 shadow-[0_0_24px_rgba(250,204,21,0.16)] transition active:scale-[0.99]"
-              >
-                {dict.ui.downloadApp}
-                <ArrowUpRight size={16} />
-              </a>
+                <a
+                  href="#download"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsOpen(false);
+                    setActiveHref("#download");
+                    const target = document.querySelector("#download");
+                    if (target) {
+                      target.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                  className="mt-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-yellow-300 px-4 py-3 text-sm font-black text-slate-950 shadow-[0_0_24px_rgba(250,204,21,0.16)] transition active:scale-[0.99]"
+                >
+                  {dict.ui.downloadApp}
+                  <ArrowUpRight size={16} />
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
@@ -265,42 +297,40 @@ export default function Navbar() {
 
   return (
     <>
-      <AnimatePresence>
-        {isVisible && (
-          <motion.header
-            key="navbar"
-            initial={{ y: -90, opacity: 0, scale: 0.98 }}
-          animate={{ y: 0, opacity: 1, scale: 1 }}
-          exit={{ y: -90, opacity: 0, scale: 0.98 }}
-          transition={{ duration: 0.28, ease: "easeOut" }}
-          className="fixed inset-x-0 top-0 z-50 px-3 py-3 sm:px-4"
-        >
-          <div className="mx-auto max-w-6xl">
-            {isDesktop ? (
-              <BorderGlow
-                edgeSensitivity={26}
-                glowColor="52 95 62"
-                backgroundColor={
-                  isScrolled ? "rgba(2, 6, 23, 0.86)" : "rgba(2, 6, 23, 0.68)"
-                }
-                borderRadius={999}
-                glowRadius={26}
-                glowIntensity={0.82}
-                coneSpread={22}
-                animated={isScrolled}
-                colors={["#fde047", "#22d3ee", "#60a5fa"]}
-                fillOpacity={0.11}
-                className="rounded-full"
-              >
-                {navbarContent}
-              </BorderGlow>
-            ) : (
-              navbarContent
-            )}
-          </div>
-        </motion.header>
-      )}
-      </AnimatePresence>
+      <motion.header
+        initial={false}
+        animate={{ 
+          y: isVisible ? 0 : -90, 
+          opacity: isVisible ? 1 : 0, 
+          scale: isVisible ? 1 : 0.98 
+        }}
+        transition={{ duration: 0.28, ease: "easeOut" }}
+        className={`fixed inset-x-0 top-0 z-50 px-3 py-3 sm:px-4 ${isVisible ? 'pointer-events-auto' : 'pointer-events-none'}`}
+      >
+        <div className="mx-auto max-w-[1400px]">
+          {isDesktop ? (
+            <BorderGlow
+              edgeSensitivity={26}
+              glowColor="52 95 62"
+              backgroundColor={
+                isScrolled ? "rgba(2, 6, 23, 0.86)" : "rgba(2, 6, 23, 0.68)"
+              }
+              borderRadius={999}
+              glowRadius={26}
+              glowIntensity={0.82}
+              coneSpread={22}
+              animated={false}
+              colors={["#fde047", "#22d3ee", "#60a5fa"]}
+              fillOpacity={0.11}
+              className="rounded-full"
+            >
+              {navbarContent}
+            </BorderGlow>
+          ) : (
+            navbarContent
+          )}
+        </div>
+      </motion.header>
       <LocationSuggester />
     </>
   );

@@ -12,7 +12,7 @@ export default function FinalCTA() {
 
   return (
     <section className="relative px-4 py-10 md:py-20">
-      <div className="pointer-events-none absolute inset-x-0 top-10 mx-auto h-72 max-w-5xl rounded-full bg-yellow-300/10 blur-3xl" />
+      <div className="pointer-events-none absolute inset-x-0 top-10 mx-auto h-72 max-w-[1400px] rounded-full bg-yellow-300/10 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 right-10 hidden h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl md:block" />
 
       <BorderGlow
@@ -26,7 +26,7 @@ export default function FinalCTA() {
         animated={isDesktop}
         colors={["#fde047", "#22d3ee", "#60a5fa"]}
         fillOpacity={isDesktop ? 0.18 : 0.08}
-        className="relative mx-auto max-w-5xl"
+        className="relative mx-auto max-w-[1400px]"
       >
         <div className="relative overflow-hidden rounded-[1.8rem] bg-gradient-to-br from-yellow-300/16 via-cyan-400/12 to-violet-600/20 p-5 text-center shadow-2xl shadow-cyan-950/30 md:rounded-[2.2rem] md:p-12">
           <div className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-yellow-300/20 blur-3xl" />

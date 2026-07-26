@@ -17,11 +17,6 @@ export const metadata: Metadata = {
       "Connect smarter, go paperless, and grow your professional community with TactLink.",
     type: "website",
   },
-    icons: {
-    icon: "/logo/icon.png",
-    shortcut: "/logo/icon.png",
-    apple: "/logo/icon.png",
-  },
 };
 
 export default async function RootLayout({
