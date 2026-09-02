@@ -47,32 +47,60 @@ const en: HelpData = {
   ],
   content: {
     general: [
-      {
-        question: "What is TactLink?",
-        answer: "TactLink is a digital networking and contact management platform designed to help individuals, professionals, associations, and communities build meaningful connections. TactLink enables users to create and share digital namecards, manage contacts, discover and connect with members, and participate in interactive networking experiences."
-      },
-      {
-        question: "How TactLink works?",
-        answer: "TactLink digitizes traditional networking by bringing digital namecards, contact management, member directories, and event networking into one platform. Users can create their digital identity, share it instantly through a QR code or link, collect and organize connections, and communicate with their network through the platform."
-      },
-      {
-        question: "What features does TactLink offer?",
-        answer: "TactLink offers a range of features that support digital networking, including digital business cards, event management, association management, a smart networking directory, connections, and chat."
-      },
-      {
-        question: "How does TactLink support the SDGs?",
-        answer: [
-          "SDG 12: Reducing the use of paper business cards and printing waste.",
-          "SDG 13: Reducing carbon footprints through digital networking.",
-          "SDG 15: Supporting the conservation of natural resources and forests.",
-          "SDG 17: Strengthening collaboration and partnerships through a digital networking platform."
-        ]
-      },
-      {
-        question: "Can I scan a physical business card with TactLink?",
-        answer: "TactLink allows you to scan physical business cards using OCR (Optical Character Recognition). The information from the scanned card can be digitized and saved to your Smart Directory."
-      }
-    ],
+          {
+              question: "What is TactLink?",
+              answer: "TactLink is a digital networking and contact management platform designed to help individuals, professionals, associations, and communities build meaningful connections. TactLink enables users to create and share digital namecards, manage contacts, discover and connect with members, and participate in interactive networking experiences."
+          },
+          {
+              question: "How TactLink works?",
+              answer: "TactLink digitizes traditional networking by bringing digital namecards, contact management, member directories, and event networking into one platform. Users can create their digital identity, share it instantly through a QR code or link, collect and organize connections, and communicate with their network through the platform. For associations and communities, TactLink provides a centralized digital environment where members can discover, connect, and collaborate. Organizations can also use TactLink to manage events, facilitate networking, and improve member engagement."
+          },
+          {
+              question: "What features does TactLink offer?",
+              answer: "TactLink offers a range of features that support digital networking, including digital business cards, event management, association management, a smart networking directory, connections, and chat. These features help users build, manage, and interact with their professional networks on a single platform."
+          },
+          {
+              question: "What is a Digital Business Card?",
+              answer: "Digital Business Card is a digital version of a traditional business card that allows users to share their professional information electronically. With TactLink, users can create and customize their digital business card and share it with others without the need for a physical card."
+          },
+          {
+              question: "How can TactLink support networking and events?",
+              answer: "TactLink helps make networking more efficient by connecting participants, members, and professionals through digital networking tools. For events, TactLink can support event management and networking activities, allowing participants to connect and engage with others before, during, or after an event."
+          },
+          {
+              question: "Who can use TactLink?",
+              answer: "TactLink can be used by individuals, professionals, organizations, associations, communities, and event organizers. It can support different networking needs, from building professional connections to managing member and event engagement."
+          },
+          {
+              question: "Why should I use TactLink?",
+              answer: "TactLink makes networking easier, more efficient, and more sustainable by helping users connect, share their digital business cards, and build professional relationships in one platform."
+          },
+          {
+              question: "What is digital networking?",
+              answer: "Digital networking is the process of building and maintaining professional connections through digital platforms. It allows people to connect, share information, and stay in touch without relying solely on traditional face-to-face networking."
+          },
+          {
+              question: "What makes TactLink different from traditional networking?",
+              answer: "TactLink combines networking, digital business cards, events, and community connections in one platform. It provides a more convenient and sustainable way to connect compared to relying on physical business cards and traditional networking methods."
+          },
+          {
+              question: "How does TactLink support the Sustainable Development Goals (SDGs)?",
+              answer: [
+                  "SDG 12 – Responsible Consumption and Production: Reducing the use of paper business cards and printing waste.",
+                  "SDG 13 – Climate Action: Reducing carbon footprints through digital networking.",
+                  "SDG 15 – Life on Land: Supporting the conservation of natural resources and forests.",
+                  "SDG 17 – Partnerships for the Goals: Strengthening collaboration and partnerships among individuals, organizations, and communities through a digital networking platform."
+              ]
+          },
+          {
+              question: "Can I scan a physical business card with TactLink?",
+              answer: "TactLink allows you to scan physical business cards using OCR (Optical Character Recognition). The information from the scanned card can be digitized and saved to your Smart Directory, making it easier to manage and stay connected with your contacts."
+          },
+          {
+              question: "Can I connect with someone by scanning their QR code?",
+              answer: "TactLink allows users to scan a QR code to quickly access and save another user’s digital business card, making it easier to connect and exchange professional information."
+          }
+      ],
     attendee: [
       {
         question: "How to create a TactLink account?",
@@ -156,32 +184,60 @@ const id: HelpData = {
   ],
   content: {
     general: [
-      {
-        question: "Apa itu TactLink?",
-        answer: "TactLink adalah platform jejaring digital dan manajemen kontak yang dirancang untuk membantu individu, profesional, asosiasi, dan komunitas membangun koneksi yang bermakna. TactLink memungkinkan pengguna membuat dan berbagi kartu nama digital, mengelola kontak, serta berpartisipasi dalam pengalaman jejaring interaktif."
-      },
-      {
-        question: "Bagaimana cara kerja TactLink?",
-        answer: "TactLink mendigitalkan jejaring tradisional dengan menyatukan kartu nama digital, manajemen kontak, direktori anggota, dan jejaring acara ke dalam satu platform. Pengguna dapat berbagi identitas digital mereka secara instan melalui kode QR atau tautan."
-      },
-      {
-        question: "Fitur apa saja yang ditawarkan TactLink?",
-        answer: "TactLink menawarkan berbagai fitur jejaring digital, termasuk kartu nama digital, manajemen acara, manajemen asosiasi, direktori cerdas, koneksi, dan obrolan (chat)."
-      },
-      {
-        question: "Bagaimana TactLink mendukung SDGs?",
-        answer: [
-          "SDG 12: Mengurangi penggunaan kartu nama kertas dan limbah cetak.",
-          "SDG 13: Mengurangi jejak karbon melalui jejaring digital.",
-          "SDG 15: Mendukung konservasi sumber daya alam dan hutan.",
-          "SDG 17: Memperkuat kolaborasi dan kemitraan melalui platform digital."
-        ]
-      },
-      {
-        question: "Bisakah saya memindai kartu nama fisik dengan TactLink?",
-        answer: "TactLink memungkinkan Anda memindai kartu nama fisik menggunakan OCR (Optical Character Recognition). Informasi dari kartu tersebut akan didigitalkan dan disimpan ke Direktori Cerdas Anda."
-      }
-    ],
+          {
+              question: "Apa itu TactLink?",
+              answer: "TactLink adalah platform jejaring digital dan manajemen kontak yang dirancang untuk membantu individu, profesional, asosiasi, dan komunitas membangun koneksi yang bermakna. TactLink memungkinkan pengguna membuat dan berbagi kartu nama digital, mengelola kontak, menemukan dan terhubung dengan anggota, serta berpartisipasi dalam pengalaman jejaring interaktif."
+          },
+          {
+              question: "Bagaimana cara kerja TactLink?",
+              answer: "TactLink mendigitalkan jejaring tradisional dengan membawa kartu nama digital, manajemen kontak, direktori anggota, dan jejaring acara ke dalam satu platform. Pengguna dapat membuat identitas digital mereka, membagikannya secara instan melalui kode QR atau tautan, mengumpulkan dan mengatur koneksi, serta berkomunikasi dengan jaringan mereka melalui platform. Untuk asosiasi dan komunitas, TactLink menyediakan lingkungan digital terpusat di mana anggota dapat menemukan, terhubung, dan berkolaborasi. Organisasi juga dapat menggunakan TactLink untuk mengelola acara, memfasilitasi jejaring, dan meningkatkan keterlibatan anggota."
+          },
+          {
+              question: "Fitur apa saja yang ditawarkan TactLink?",
+              answer: "TactLink menawarkan berbagai fitur yang mendukung jejaring digital, termasuk kartu nama digital, manajemen acara, manajemen asosiasi, direktori jejaring pintar, koneksi, dan obrolan. Fitur-fitur ini membantu pengguna membangun, mengelola, dan berinteraksi dengan jaringan profesional mereka di satu platform."
+          },
+          {
+              question: "Apa itu Kartu Nama Digital?",
+              answer: "Kartu Nama Digital adalah versi digital dari kartu nama tradisional yang memungkinkan pengguna membagikan informasi profesional mereka secara elektronik. Dengan TactLink, pengguna dapat membuat dan menyesuaikan kartu nama digital mereka serta membagikannya dengan orang lain tanpa perlu kartu fisik."
+          },
+          {
+              question: "Bagaimana TactLink dapat mendukung jejaring dan acara?",
+              answer: "TactLink membantu membuat jejaring lebih efisien dengan menghubungkan peserta, anggota, dan profesional melalui alat jejaring digital. Untuk acara, TactLink dapat mendukung manajemen acara dan aktivitas jejaring, memungkinkan peserta untuk terhubung dan terlibat dengan orang lain sebelum, selama, atau setelah acara."
+          },
+          {
+              question: "Siapa yang dapat menggunakan TactLink?",
+              answer: "TactLink dapat digunakan oleh individu, profesional, organisasi, asosiasi, komunitas, dan penyelenggara acara. Platform ini dapat mendukung berbagai kebutuhan jejaring, dari membangun koneksi profesional hingga mengelola keterlibatan anggota dan acara."
+          },
+          {
+              question: "Mengapa saya harus menggunakan TactLink?",
+              answer: "TactLink membuat jejaring menjadi lebih mudah, lebih efisien, dan lebih berkelanjutan dengan membantu pengguna terhubung, membagikan kartu nama digital mereka, dan membangun hubungan profesional di satu platform."
+          },
+          {
+              question: "Apa itu jejaring digital?",
+              answer: "Jejaring digital adalah proses membangun dan memelihara koneksi profesional melalui platform digital. Ini memungkinkan orang untuk terhubung, berbagi informasi, dan tetap berhubungan tanpa hanya mengandalkan jejaring tatap muka tradisional."
+          },
+          {
+              question: "Apa yang membedakan TactLink dari jejaring tradisional?",
+              answer: "TactLink menggabungkan jejaring, kartu nama digital, acara, dan koneksi komunitas dalam satu platform. Platform ini memberikan cara yang lebih nyaman dan berkelanjutan untuk terhubung dibandingkan dengan mengandalkan kartu nama fisik dan metode jejaring tradisional."
+          },
+          {
+              question: "Bagaimana TactLink mendukung Tujuan Pembangunan Berkelanjutan (SDGs)?",
+              answer: [
+                  "SDG 12 – Konsumsi dan Produksi yang Bertanggung Jawab: Mengurangi penggunaan kartu nama kertas dan limbah pencetakan.",
+                  "SDG 13 – Penanganan Perubahan Iklim: Mengurangi jejak karbon melalui jejaring digital.",
+                  "SDG 15 – Ekosistem Daratan: Mendukung pelestarian sumber daya alam dan hutan.",
+                  "SDG 17 – Kemitraan untuk Mencapai Tujuan: Memperkuat kolaborasi dan kemitraan antar individu, organisasi, dan komunitas melalui platform jejaring digital."
+              ]
+          },
+          {
+              question: "Bisakah saya memindai kartu nama fisik dengan TactLink?",
+              answer: "TactLink memungkinkan Anda memindai kartu nama fisik menggunakan OCR (Pengenalan Karakter Optik). Informasi dari kartu yang dipindai dapat didigitalkan dan disimpan ke Smart Directory Anda, membuatnya lebih mudah untuk mengelola dan tetap terhubung dengan kontak Anda."
+          },
+          {
+              question: "Dapatkah saya terhubung dengan seseorang dengan memindai kode QR mereka?",
+              answer: "TactLink memungkinkan pengguna memindai kode QR untuk dengan cepat mengakses dan menyimpan kartu nama digital pengguna lain, membuatnya lebih mudah untuk terhubung dan bertukar informasi profesional."
+          }
+      ],
     attendee: [
       {
         question: "Bagaimana cara membuat akun TactLink?",
