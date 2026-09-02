@@ -177,14 +177,12 @@ export default function HelpCenterPage() {
                         </div>
                       </button>
 
-                      <AnimatePresence>
-                        {isExpanded && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                          >
+                      <motion.div
+                        initial={false}
+                        animate={{ height: isExpanded ? "auto" : 0, opacity: isExpanded ? 1 : 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
                             <div className="border-t border-white/5 px-5 pb-6 pt-4 text-slate-300 md:px-6">
                               {Array.isArray(item.answer) ? (
                                 <ul className="space-y-6">
@@ -231,8 +229,6 @@ export default function HelpCenterPage() {
                               )}
                             </div>
                           </motion.div>
-                        )}
-                      </AnimatePresence>
                     </div>
                   );
                 })
