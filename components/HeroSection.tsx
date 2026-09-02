@@ -1,6 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
@@ -8,9 +8,6 @@ import { useLanguage } from "@/context/LanguageContext";
 import GradientText from "@/components/GradientText";
 import useIsDesktop from "@/hooks/useIsDesktop";
 
-const PixelBlast = dynamic(() => import("@/components/PixelBlast"), {
-  ssr: false,
-});
 
 const fadeUp = {
   hidden: { opacity: 0, y: 22 },
@@ -28,31 +25,7 @@ export default function HeroSection() {
       className="relative min-h-[100svh] overflow-hidden px-4 pb-10 pt-24 sm:pt-28 md:min-h-screen md:pb-14 md:pt-32"
     >
       <div className="absolute inset-0 z-0 overflow-hidden">
-        {isDesktop ? (
-          <div className="absolute inset-0 opacity-[0.5]">
-            <PixelBlast
-              variant="square"
-              pixelSize={4}
-              color="#EAB308"
-              patternScale={2}
-              patternDensity={1}
-              pixelSizeJitter={0}
-              enableRipples
-              rippleSpeed={0.4}
-              rippleThickness={0.12}
-              rippleIntensityScale={1.5}
-              liquid={false}
-              liquidStrength={0.12}
-              liquidRadius={1.2}
-              liquidWobbleSpeed={5}
-              speed={0.5}
-              edgeFade={0.25}
-              transparent
-            />
-          </div>
-        ) : (
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_8%,rgba(250,204,21,0.18),transparent_32%),radial-gradient(circle_at_10%_32%,rgba(34,211,238,0.13),transparent_34%),radial-gradient(circle_at_90%_74%,rgba(139,92,246,0.10),transparent_34%)]" />
-        )}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_8%,rgba(250,204,21,0.18),transparent_32%),radial-gradient(circle_at_10%_32%,rgba(34,211,238,0.13),transparent_34%),radial-gradient(circle_at_90%_74%,rgba(139,92,246,0.10),transparent_34%)]" />
 
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/50 to-slate-950" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-slate-950/65 via-transparent to-slate-950/45" />

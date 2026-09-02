@@ -1,14 +1,11 @@
 "use client";
 
-import dynamic from "next/dynamic";
+
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import useIsDesktop from "@/hooks/useIsDesktop";
 
-const MagicBento = dynamic(() => import("@/components/MagicBento"), {
-  ssr: false,
-});
 
 export default function SocialSection() {
   const isDesktop = useIsDesktop();
@@ -38,39 +35,7 @@ export default function SocialSection() {
           </p>
         </div>
 
-        {isDesktop ? (
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.45 }}
-          >
-            <MagicBento
-              cards={socialLinks.map((item) => ({
-                title: item.label,
-                description: item.region,
-                label: item.featured ? "Official" : "Regional",
-                href: item.href,
-                icon: item.icon,
-                color: item.featured
-                  ? "linear-gradient(135deg, rgba(234,179,8,0.11), rgba(34,211,238,0.07), rgba(255,255,255,0.035))"
-                  : "linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.035))",
-              }))}
-              textAutoHide={true}
-              enableStars
-              enableSpotlight
-              enableBorderGlow
-              enableTilt={false}
-              enableMagnetism={false}
-              clickEffect
-              spotlightRadius={400}
-              particleCount={12}
-              glowColor="234, 179, 8"
-              disableAnimations={false}
-            />
-          </motion.div>
-        ) : (
-          <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 md:grid-cols-4 md:gap-4 lg:grid-cols-4">
             {socialLinks.map((item) => {
               const Icon = item.icon;
 
@@ -109,7 +74,6 @@ export default function SocialSection() {
               );
             })}
           </div>
-        )}
       </div>
     </section>
   );

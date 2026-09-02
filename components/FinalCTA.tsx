@@ -23,7 +23,7 @@ export default function FinalCTA() {
         glowRadius={isDesktop ? 38 : 24}
         glowIntensity={isDesktop ? 1.08 : 0.65}
         coneSpread={24}
-        animated={isDesktop}
+        animated={false}
         colors={["#fde047", "#22d3ee", "#60a5fa"]}
         fillOpacity={isDesktop ? 0.18 : 0.08}
         className="relative mx-auto max-w-[1400px]"
