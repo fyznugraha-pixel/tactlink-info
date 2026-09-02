@@ -384,8 +384,8 @@ const en: HelpData = {
               ],
               images: [
                   "/images/helpcenter/admin_p3_21.jpeg",
-                  "/images/helpcenter/admin_p4_30.png",
-                  "/images/helpcenter/admin_p4_29.png"
+                  "/images/helpcenter/admin_p4_29.png",
+                  "/images/helpcenter/admin_p4_30.png"
               ]
           }
       ]
@@ -755,8 +755,8 @@ const id: HelpData = {
               ],
               images: [
                   "/images/helpcenter/admin_p3_21.jpeg",
-                  "/images/helpcenter/admin_p4_30.png",
-                  "/images/helpcenter/admin_p4_29.png"
+                  "/images/helpcenter/admin_p4_29.png",
+                  "/images/helpcenter/admin_p4_30.png"
               ]
           }
       ]
