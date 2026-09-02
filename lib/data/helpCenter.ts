@@ -356,8 +356,8 @@ const en: HelpData = {
               ],
               images: [
                   "/images/helpcenter/admin_p3_21.jpeg",
-                  "/images/helpcenter/admin_p3_22.png",
-                  "/images/helpcenter/admin_p4_23.png"
+                  "/images/helpcenter/admin_p4_24.jpeg",
+                  "/images/helpcenter/admin_p4_25.png"
               ]
           },
           {
@@ -369,10 +369,10 @@ const en: HelpData = {
                   "Step 4: In step 3, click \"Create Event\" to schedule a new event."
               ],
               images: [
-                  "/images/helpcenter/admin_p4_24.jpeg",
-                  "/images/helpcenter/admin_p4_25.png",
+                  "/images/helpcenter/admin_p3_21.jpeg",
                   "/images/helpcenter/admin_p4_26.png",
-                  "/images/helpcenter/admin_p4_27.png"
+                  "/images/helpcenter/admin_p4_27.png",
+                  "/images/helpcenter/admin_p4_28.png"
               ]
           },
           {
@@ -383,7 +383,7 @@ const en: HelpData = {
                   "Step 3: Set the membership number format by adding a prefix to member numbers. The prefix can be customized or left blank to use sequential numbers without a prefix."
               ],
               images: [
-                  "/images/helpcenter/admin_p4_28.png",
+                  "/images/helpcenter/admin_p3_21.jpeg",
                   "/images/helpcenter/admin_p4_30.png",
                   "/images/helpcenter/admin_p4_29.png"
               ]
@@ -727,8 +727,8 @@ const id: HelpData = {
               ],
               images: [
                   "/images/helpcenter/admin_p3_21.jpeg",
-                  "/images/helpcenter/admin_p3_22.png",
-                  "/images/helpcenter/admin_p4_23.png"
+                  "/images/helpcenter/admin_p4_24.jpeg",
+                  "/images/helpcenter/admin_p4_25.png"
               ]
           },
           {
@@ -740,10 +740,10 @@ const id: HelpData = {
                   "Langkah 4: Pada langkah 3, klik \"Create Event\" untuk menjadwalkan acara baru."
               ],
               images: [
-                  "/images/helpcenter/admin_p4_24.jpeg",
-                  "/images/helpcenter/admin_p4_25.png",
+                  "/images/helpcenter/admin_p3_21.jpeg",
                   "/images/helpcenter/admin_p4_26.png",
-                  "/images/helpcenter/admin_p4_27.png"
+                  "/images/helpcenter/admin_p4_27.png",
+                  "/images/helpcenter/admin_p4_28.png"
               ]
           },
           {
@@ -754,7 +754,7 @@ const id: HelpData = {
                   "Langkah 3: Atur format nomor keanggotaan dengan menambahkan awalan (prefix) pada nomor anggota. Awalan ini dapat disesuaikan atau dibiarkan kosong untuk menggunakan angka berurutan tanpa awalan."
               ],
               images: [
-                  "/images/helpcenter/admin_p4_28.png",
+                  "/images/helpcenter/admin_p3_21.jpeg",
                   "/images/helpcenter/admin_p4_30.png",
                   "/images/helpcenter/admin_p4_29.png"
               ]
