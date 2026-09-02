@@ -1,0 +1,124 @@
+--- PAGE 1 ---
+Find answers to your questions
+How to Check-in Event Detail?
+Admin workflow for managing events and 
+participants
+Step:1 Event Schedule
+Step:2 Event Detail
+Step:3 Event QR
+Step:4 Participant List
+Admin views the list and 
+schedule of managed events 
+Admin opens the event details to 
+view event information
+Admin can share the event QR 
+code with participant
+Admin can view the participant 
+list
+How to Check-in Event Admin Flow?
+Admin can check in participants using two 
+methods: Scan Pass or Walk-in            
+Step 1: Click the “Check-in” feature to manage 
+the list of event participants 
+Step 2: Click “Scan passes” to scan the 
+participant's QR code, it will update in real-time 
+Step 3: Click “Walk-in” if the participant does not 
+have a QR code. Admin can enter the participant’s 
+name and email directly 
+How do I create a lucky draw in the TactLink app?
+
+--- PAGE 2 ---
+Step 1: Open an event and click “Lucky Draw” to 
+create prizes for event participants 
+Step 2: Set the Lucky Draw opening and closing 
+times, then add the prizes to be given to 
+participants
+ 
+Step 3: Once the Lucky Draw is created, the 
+Lucky Draw icon will appear on the right side
+How to set up speed networking on the TactLink app?
+Step 1: Open an event and click “Create Speed 
+Networking” to create prizes for event participants 
+Step 2: set the number of members per group and 
+the desired number of rounds, then click 
+“Generate Preview”
+ 
+Step 3: After creating Speed Networking, a 
+preview will appear showing which team each 
+participant is assigned to
+Step 4: From Step 3, click “Publish” to display the 
+screen shown in the following image
+Step 5: Once “Speed Networking” is successfully 
+created, its icon will appear on the event page
+How do I view the association feature on the TactLink App? 
+Admin workflow for managing events and 
+participants, and monitoring the check-in process.    
+Step 1: Click “Create New Association” to add a 
+new association
+Step 2: Complete the photo, association name, 
+location, and description.
+ 
+Step 3: Click on one of the associations in the list 
+to view detailed information
+ 
+Step 4:  Click “members” to see the number of 
+participants
+Step 5:  In Step 3, click “View All” to view event 
+information
+
+--- PAGE 3 ---
+How can I access the Association Admin Dashboard?
+Step 1: Click link https://tactlink-admin-prod.vercel.app/  Log in 
+using your registered email or Apple account if you are an iOS user 
+and have been registered by the TactLink team as an association 
+admin
+ 
+Step 2: On the Dashboard, admins can view the number and 
+growth of Members, manage member Dues, monitor items 
+that require attention under Needs Attention, and view 
+upcoming events in the Upcoming section
+ 
+How can I manage association members?
+Step 1: Click link https://tactlink-admin-prod.vercel.app/  Log in 
+using your registered email or Apple account if you are an iOS user 
+and have been registered by the TactLink team as an association 
+admin
+ 
+Step 2: Click the icon in the top-left corner to explore the web 
+features, then click “Members” to view the number of 
+members, email addresses, status, and association roles
+ 
+Step 3: Click “Invite Members” to add association members 
+by entering their email addresses, then click “Send 
+Invitation”
+ 
+
+--- PAGE 4 ---
+How can I create a new event?
+Step 1: Click link https://tactlink-admin-prod.vercel.app/  Log in 
+using your registered email or Apple account if you are an iOS user 
+and have been registered by the TactLink team as an association 
+admin
+ 
+Step 2: Click the “Events” feature to view event details within 
+the association
+ 
+Step 3: View information about past, in-progress, and 
+upcoming events
+ 
+Step 4: In step 3, click "Create Event" to schedule a new 
+event
+ 
+How can I manage association settings?
+Step 1: Click link https://tactlink-admin-prod.vercel.app/  Log in 
+using your registered email or Apple account if you are an iOS user 
+and have been registered by the TactLink team as an association 
+admin
+ 
+Step 2: Manage association-related settings.
+ 
+Step 3: Set the membership number format by adding a prefix 
+to member numbers. The prefix can be customized or left 
+blank to use sequential numbers without a prefix.
+ 
+

@@ -5,7 +5,7 @@ export type HelpCategory = "general" | "attendee" | "admin";
 export interface HelpItem {
   question: string;
   answer: string | string[];
-  images?: string[];
+  images?: (string | string[])[];
 }
 
 export interface HelpData {
@@ -315,8 +315,8 @@ const en: HelpData = {
                   "Step 5: Once “Speed Networking” is successfully created, its icon will appear on the event page."
               ],
               images: [
-                  "",
-                  "",
+                  "/images/helpcenter/admin_p2_8.png",
+                  "/images/helpcenter/admin_p2_11.png",
                   "/images/helpcenter/admin_p2_12.png",
                   "/images/helpcenter/admin_p2_13.png",
                   "/images/helpcenter/admin_p2_14.png"
@@ -334,9 +334,9 @@ const en: HelpData = {
               images: [
                   "/images/helpcenter/admin_p2_15.png",
                   "/images/helpcenter/admin_p2_16.png",
-                  "/images/helpcenter/admin_p3_17.png",
-                  "/images/helpcenter/admin_p3_18.png",
-                  "/images/helpcenter/admin_p3_17.png"
+                  "/images/helpcenter/q5_step3.png",
+                  "/images/helpcenter/q5_step4.png",
+                  "/images/helpcenter/q5_step5.png"
               ]
           },
           {
@@ -346,8 +346,8 @@ const en: HelpData = {
                   "Step 2: On the Dashboard, admins can view the number and growth of Members, manage member Dues, monitor items that require attention under Needs Attention, and view upcoming events in the Upcoming section."
               ],
               images: [
-                  "/images/helpcenter/admin_p3_19.png",
-                  "/images/helpcenter/admin_p3_20.png"
+                  "/images/helpcenter/admin_p4_23.png",
+                  ["/images/helpcenter/admin_p3_19.png", "/images/helpcenter/admin_p3_20.png"]
               ]
           },
           {
@@ -358,7 +358,7 @@ const en: HelpData = {
                   "Step 3: Click “Invite Members” to add association members by entering their email addresses, then click “Send Invitation”."
               ],
               images: [
-                  "/images/helpcenter/admin_p3_21.jpeg",
+                  "/images/helpcenter/admin_p4_23.png",
                   "/images/helpcenter/admin_p4_24.jpeg",
                   "/images/helpcenter/admin_p4_25.png"
               ]
@@ -372,7 +372,7 @@ const en: HelpData = {
                   "Step 4: In step 3, click \"Create Event\" to schedule a new event."
               ],
               images: [
-                  "/images/helpcenter/admin_p3_21.jpeg",
+                  "/images/helpcenter/admin_p4_23.png",
                   "/images/helpcenter/admin_p4_26.png",
                   "/images/helpcenter/admin_p4_27.png",
                   "/images/helpcenter/admin_p4_28.png"
@@ -386,7 +386,7 @@ const en: HelpData = {
                   "Step 3: Set the membership number format by adding a prefix to member numbers. The prefix can be customized or left blank to use sequential numbers without a prefix."
               ],
               images: [
-                  "/images/helpcenter/admin_p3_21.jpeg",
+                  "/images/helpcenter/admin_p4_23.png",
                   "/images/helpcenter/admin_p4_29.png",
                   "/images/helpcenter/admin_p4_30.png"
               ]
@@ -689,8 +689,8 @@ const id: HelpData = {
                   "Langkah 5: Setelah “Speed Networking” berhasil dibuat, ikonnya akan muncul di halaman acara."
               ],
               images: [
-                  "",
-                  "",
+                  "/images/helpcenter/admin_p2_8.png",
+                  "/images/helpcenter/admin_p2_11.png",
                   "/images/helpcenter/admin_p2_12.png",
                   "/images/helpcenter/admin_p2_13.png",
                   "/images/helpcenter/admin_p2_14.png"
@@ -708,9 +708,9 @@ const id: HelpData = {
               images: [
                   "/images/helpcenter/admin_p2_15.png",
                   "/images/helpcenter/admin_p2_16.png",
-                  "/images/helpcenter/admin_p3_17.png",
-                  "/images/helpcenter/admin_p3_18.png",
-                  "/images/helpcenter/admin_p3_17.png"
+                  "/images/helpcenter/q5_step3.png",
+                  "/images/helpcenter/q5_step4.png",
+                  "/images/helpcenter/q5_step5.png"
               ]
           },
           {
@@ -720,8 +720,8 @@ const id: HelpData = {
                   "Langkah 2: Di Dasbor, admin dapat melihat jumlah dan pertumbuhan Anggota, mengelola Iuran (Dues) anggota, memantau hal-hal yang memerlukan perhatian (Needs Attention), serta melihat acara mendatang di bagian Upcoming."
               ],
               images: [
-                  "/images/helpcenter/admin_p3_19.png",
-                  "/images/helpcenter/admin_p3_20.png"
+                  "/images/helpcenter/admin_p4_23.png",
+                  ["/images/helpcenter/admin_p3_19.png", "/images/helpcenter/admin_p3_20.png"]
               ]
           },
           {
@@ -732,7 +732,7 @@ const id: HelpData = {
                   "Langkah 3: Klik “Invite Members” untuk menambahkan anggota asosiasi dengan memasukkan alamat email mereka, lalu klik “Send Invitation”."
               ],
               images: [
-                  "/images/helpcenter/admin_p3_21.jpeg",
+                  "/images/helpcenter/admin_p4_23.png",
                   "/images/helpcenter/admin_p4_24.jpeg",
                   "/images/helpcenter/admin_p4_25.png"
               ]
@@ -746,7 +746,7 @@ const id: HelpData = {
                   "Langkah 4: Pada langkah 3, klik \"Create Event\" untuk menjadwalkan acara baru."
               ],
               images: [
-                  "/images/helpcenter/admin_p3_21.jpeg",
+                  "/images/helpcenter/admin_p4_23.png",
                   "/images/helpcenter/admin_p4_26.png",
                   "/images/helpcenter/admin_p4_27.png",
                   "/images/helpcenter/admin_p4_28.png"
@@ -760,7 +760,7 @@ const id: HelpData = {
                   "Langkah 3: Atur format nomor keanggotaan dengan menambahkan awalan (prefix) pada nomor anggota. Awalan ini dapat disesuaikan atau dibiarkan kosong untuk menggunakan angka berurutan tanpa awalan."
               ],
               images: [
-                  "/images/helpcenter/admin_p3_21.jpeg",
+                  "/images/helpcenter/admin_p4_23.png",
                   "/images/helpcenter/admin_p4_29.png",
                   "/images/helpcenter/admin_p4_30.png"
               ]

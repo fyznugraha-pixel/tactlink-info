@@ -196,14 +196,29 @@ export default function HelpCenterPage() {
                                         <span className="leading-relaxed">{line}</span>
                                       </div>
                                       {item.images && item.images[i] && (
-                                        <div className="mt-2 w-full max-w-[260px] overflow-hidden rounded-xl border border-white/10 bg-black/40 p-1.5 sm:max-w-[320px]">
-                                          <img 
-                                            src={`/links${item.images[i]}`} 
-                                            alt={`Step illustration ${i + 1}`} 
-                                            className="h-auto w-full object-contain rounded-lg"
-                                            loading="lazy"
-                                          />
-                                        </div>
+                                        Array.isArray(item.images[i])
+                                          ? (item.images[i] as string[]).map((imgSrc, imgIdx) => (
+                                            imgSrc && (
+                                              <div key={imgIdx} className="mt-2 w-full max-w-[260px] overflow-hidden rounded-xl border border-white/10 bg-black/40 p-1.5 sm:max-w-[320px]">
+                                                <img 
+                                                  src={`/links${imgSrc}`} 
+                                                  alt={`Step illustration ${i + 1}-${imgIdx + 1}`} 
+                                                  className="h-auto w-full object-contain rounded-lg"
+                                                  loading="lazy"
+                                                />
+                                              </div>
+                                            )
+                                          ))
+                                          : (
+                                            <div className="mt-2 w-full max-w-[260px] overflow-hidden rounded-xl border border-white/10 bg-black/40 p-1.5 sm:max-w-[320px]">
+                                              <img 
+                                                src={`/links${item.images[i]}`} 
+                                                alt={`Step illustration ${i + 1}`} 
+                                                className="h-auto w-full object-contain rounded-lg"
+                                                loading="lazy"
+                                              />
+                                            </div>
+                                          )
                                       )}
                                     </li>
                                   ))}

@@ -1,0 +1,70 @@
+--- PAGE 1 ---
+Find answers to your questions
+How to Check-in Event Detail?
+Admin workflow for managing events and 
+participants, and monitoring the check-in process.
+Step:1 Event Schedule
+Step:2 Event Detail
+Step:3 Event QR
+Step:4 Participant List
+Admin views the list and 
+schedule of managed events 
+Admin opens the event details to 
+view event information
+Admin can share the event QR 
+code with participant
+Admin can view the participant 
+list
+How to Check-in Event Admin Flow?
+Admin can check in participants using two 
+methods: Scan Pass or Walk-in            
+Step 1: Click the “Check-in” feature to manage 
+the list of event participants 
+Step 2: Click “Scan passes” to scan the 
+participant's QR code, it will update in real-time 
+Step 3: Click “Walk-in” if the participant does not 
+have a QR code. Admin can enter the participant’s 
+name and email directly 
+How do I create a lucky draw in the TactLink app?
+
+--- PAGE 2 ---
+Step 1: pen an event and click “Lucky Draw” to 
+create prizes for event participants 
+Step 2: Set the Lucky Draw opening and closing 
+times, then add the prizes to be given to 
+participants
+ 
+Step 3: Once the Lucky Draw is created, the Lucky 
+Draw icon will appear on the right side
+How to set up speed networking on the TactLink app?
+Step 1: Open an event and click “Lucky Draw” to 
+create prizes for event participants 
+Step 2: Click “Create Speed Networking” to set 
+the number of members per group and the desired 
+number of rounds, then click “Generate Preview”
+ 
+Step 3: After creating Speed Networking, a 
+preview will appear showing which team each 
+participant is assigned to
+Step 4: From Step 3, click “Publish” to display the 
+screen shown in the following image
+Step 5: Once “Speed Networking” is successfully 
+created, its icon will appear on the event page
+How do I view the association feature ? 
+Admin workflow for managing events and 
+participants, and monitoring the check-in process.    
+Step 1: Click “Create New Association” to add a 
+new association
+Step 2: Click on one of the associations in the list 
+to view detailed information, and click “members” 
+to see the number of participants
+ 
+Step 2: Click on one of the associations in the list 
+to view detailed information, and click “members” 
+to see the number of participants
+ 
+Step 3: In Step 2, click “View All” to view event 
+information.
+
+--- PAGE 3 ---
+
