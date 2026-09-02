@@ -317,9 +317,9 @@ const en: HelpData = {
               images: [
                   "",
                   "",
-                  "/images/helpcenter/admin_p2_10.png",
-                  "/images/helpcenter/admin_p2_11.png",
-                  ""
+                  "/images/helpcenter/admin_p2_12.png",
+                  "/images/helpcenter/admin_p2_13.png",
+                  "/images/helpcenter/admin_p2_14.png"
               ]
           },
           {
@@ -332,11 +332,11 @@ const en: HelpData = {
                   "Step 5: In Step 3, click “View All” to view event information."
               ],
               images: [
-                  "/images/helpcenter/admin_p2_12.png",
-                  "/images/helpcenter/admin_p2_13.png",
-                  "/images/helpcenter/admin_p2_12.png",
                   "/images/helpcenter/admin_p2_15.png",
-                  "/images/helpcenter/admin_p2_14.png"
+                  "/images/helpcenter/admin_p2_16.png",
+                  "/images/helpcenter/admin_p3_17.png",
+                  "/images/helpcenter/admin_p3_18.png",
+                  "/images/helpcenter/admin_p3_17.png"
               ]
           },
           {
@@ -691,9 +691,9 @@ const id: HelpData = {
               images: [
                   "",
                   "",
-                  "/images/helpcenter/admin_p2_10.png",
-                  "/images/helpcenter/admin_p2_11.png",
-                  ""
+                  "/images/helpcenter/admin_p2_12.png",
+                  "/images/helpcenter/admin_p2_13.png",
+                  "/images/helpcenter/admin_p2_14.png"
               ]
           },
           {
@@ -706,11 +706,11 @@ const id: HelpData = {
                   "Langkah 5: Pada Langkah 3, klik “View All” untuk melihat informasi acara."
               ],
               images: [
-                  "/images/helpcenter/admin_p2_12.png",
-                  "/images/helpcenter/admin_p2_13.png",
-                  "/images/helpcenter/admin_p2_12.png",
                   "/images/helpcenter/admin_p2_15.png",
-                  "/images/helpcenter/admin_p2_14.png"
+                  "/images/helpcenter/admin_p2_16.png",
+                  "/images/helpcenter/admin_p3_17.png",
+                  "/images/helpcenter/admin_p3_18.png",
+                  "/images/helpcenter/admin_p3_17.png"
               ]
           },
           {
