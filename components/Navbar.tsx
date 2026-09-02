@@ -3,7 +3,9 @@
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Menu, Sparkles, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import BorderGlow from "@/components/BorderGlow";
 import useIsDesktop from "@/hooks/useIsDesktop";
 import { useLanguage } from "@/context/LanguageContext";
@@ -11,14 +13,15 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import LocationSuggester from "./LocationSuggester";
 
 export default function Navbar() {
-  const { dict } = useLanguage();
+  const { dict, language } = useLanguage();
+  const pathname = usePathname();
+  const router = useRouter();
   const navItems = dict.navItems;
   const isDesktop = useIsDesktop();
   const lastScrollYRef = useRef(0);
 
   const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [isScrolled, setIsScrolled] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
   const [activeHref, setActiveHref] = useState(navItems[0]?.href ?? "#top");
 
   const sectionHrefs = useMemo(
@@ -37,10 +40,8 @@ export default function Navbar() {
       setIsScrolled(currentScrollY > 18);
 
       if (currentScrollY < 80 || scrollingUp) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-        setIsOpen(false);
+              } else {
+                setIsOpen(false);
       }
 
       lastScrollYRef.current = currentScrollY;
@@ -82,6 +83,19 @@ export default function Navbar() {
   }, [sectionHrefs]);
 
   useEffect(() => {
+    if (pathname !== "/" && pathname !== `/${language}`) {
+      const currentItem = navItems.find((item) => 
+        !item.href.startsWith("#") && pathname.endsWith(item.href)
+      );
+      if (currentItem) {
+        setActiveHref(currentItem.href);
+      } else {
+        setActiveHref("");
+      }
+    }
+  }, [pathname, language, navItems]);
+
+  useEffect(() => {
     if (isDesktop) {
       setIsOpen(false);
     }
@@ -105,7 +119,7 @@ export default function Navbar() {
       <div className="relative flex items-center justify-between px-3 py-2.5 md:px-5 md:py-3">
         <a
           href="#top"
-          className="group flex min-w-0 items-center gap-2.5 md:gap-3"
+          className="group flex flex-1 min-w-0 items-center gap-2.5 md:gap-3"
           onClick={() => {
             setIsOpen(false);
             setActiveHref("#top");
@@ -128,10 +142,7 @@ export default function Navbar() {
           <span className="min-w-0">
             <span className="flex items-center gap-1.5 text-sm font-black leading-none tracking-wide text-white">
               TactLink
-              <Sparkles
-                size={12}
-                className="hidden text-yellow-200 opacity-0 transition duration-300 md:block md:group-hover:opacity-100"
-              />
+              
             </span>
 
             <span className="mt-1 hidden text-xs font-medium text-slate-400 sm:block">
@@ -144,16 +155,20 @@ export default function Navbar() {
           {navItems.map((item) => {
             const isActive = activeHref === item.href;
 
-            return (
+            return item.href.startsWith("#") ? (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={(e) => {
                   e.preventDefault();
                   setActiveHref(item.href);
-                  const target = document.querySelector(item.href);
-                  if (target) {
-                    target.scrollIntoView({ behavior: "smooth" });
+                  if (pathname === `/${language}` || pathname === "/") {
+                    const target = document.querySelector(item.href);
+                    if (target) {
+                      target.scrollIntoView({ behavior: "smooth" });
+                    }
+                  } else {
+                    router.push(`/${language}${item.href}`);
                   }
                 }}
                 className={`relative rounded-full px-4 py-2 text-sm font-bold transition duration-300 ${
@@ -173,30 +188,41 @@ export default function Navbar() {
                     }}
                   />
                 )}
-
                 <span className="relative z-10">{item.label}</span>
               </a>
+            ) : (
+              <Link
+                key={item.href}
+                href={`/${language}${item.href}`}
+                className={`relative rounded-full px-4 py-2 text-sm font-bold transition duration-300 ${
+                  isActive
+                    ? "text-slate-950 bg-yellow-300 shadow-[0_0_24px_rgba(250,204,21,0.22)]"
+                    : "text-slate-300 hover:text-yellow-100"
+                }`}
+              >
+                <span className="relative z-10">{item.label}</span>
+              </Link>
             );
           })}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-1 items-center justify-end gap-2">
           <LanguageSwitcher />
 
-          <a
-            href="#download"
+          <Link
+            href={`/${language}/help`}
             className="group relative hidden overflow-hidden rounded-full border border-yellow-300/25 bg-yellow-300 px-4 py-2.5 text-sm font-black text-slate-950 shadow-[0_0_28px_rgba(250,204,21,0.18)] transition duration-300 hover:-translate-y-0.5 hover:bg-yellow-200 hover:shadow-[0_0_38px_rgba(250,204,21,0.28)] md:inline-flex"
           >
             <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/45 to-transparent transition duration-700 group-hover:translate-x-full" />
 
             <span className="relative flex items-center gap-2">
-              {dict.ui.start}
+              {dict.ui.helpCenter}
               <ArrowUpRight
                 size={16}
                 className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </span>
-          </a>
+          </Link>
 
           <button
             type="button"
@@ -238,55 +264,65 @@ export default function Navbar() {
                   const isActive = activeHref === item.href;
 
                   return (
-                    <a
-                      key={item.href}
-                      href={item.href}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setIsOpen(false);
-                        setActiveHref(item.href);
-                        const target = document.querySelector(item.href);
-                        if (target) {
-                          target.scrollIntoView({ behavior: "smooth" });
-                        }
-                      }}
-                      className={`relative flex items-center justify-between overflow-hidden rounded-2xl px-4 py-3 text-sm font-bold transition active:scale-[0.99] ${
-                        isActive
-                          ? "bg-yellow-300 text-slate-950"
-                          : "bg-white/[0.035] text-slate-200"
-                      }`}
-                    >
-                      {isActive && (
-                        <span className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,255,255,0.32),transparent_38%)]" />
-                      )}
-
-                      <span className="relative">{item.label}</span>
-
-                      {isActive ? (
-                        <span className="relative h-1.5 w-1.5 rounded-full bg-slate-950" />
-                      ) : (
+                    item.href.startsWith("#") ? (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setIsOpen(false);
+                          setActiveHref(item.href);
+                          if (pathname === `/${language}` || pathname === "/") {
+                            const target = document.querySelector(item.href);
+                            if (target) {
+                              target.scrollIntoView({ behavior: "smooth" });
+                            }
+                          } else {
+                            router.push(`/${language}${item.href}`);
+                          }
+                        }}
+                        className={`relative flex items-center justify-between overflow-hidden rounded-2xl px-4 py-3 text-sm font-bold transition active:scale-[0.99] ${
+                          isActive
+                            ? "bg-yellow-300 text-slate-950"
+                            : "bg-white/[0.035] text-slate-200"
+                        }`}
+                      >
+                        {isActive && (
+                          <span className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,255,255,0.32),transparent_38%)]" />
+                        )}
+                        <span className="relative">{item.label}</span>
+                        {isActive ? (
+                          <span className="relative h-1.5 w-1.5 rounded-full bg-slate-950" />
+                        ) : (
+                          <ArrowUpRight size={14} className="text-slate-500" />
+                        )}
+                      </a>
+                    ) : (
+                      <Link
+                        key={item.href}
+                        href={`/${language}${item.href}`}
+                        onClick={() => setIsOpen(false)}
+                        className={`relative flex items-center justify-between overflow-hidden rounded-2xl px-4 py-3 text-sm font-bold transition active:scale-[0.99] ${
+                          isActive
+                            ? "bg-yellow-300 text-slate-950"
+                            : "bg-white/[0.035] text-slate-200"
+                        }`}
+                      >
+                        <span className="relative">{item.label}</span>
                         <ArrowUpRight size={14} className="text-slate-500" />
-                      )}
-                    </a>
+                      </Link>
+                    )
                   );
                 })}
 
-                <a
-                  href="#download"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setIsOpen(false);
-                    setActiveHref("#download");
-                    const target = document.querySelector("#download");
-                    if (target) {
-                      target.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
+                <Link
+                  href={`/${language}/help`}
+                  onClick={() => setIsOpen(false)}
                   className="mt-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-yellow-300 px-4 py-3 text-sm font-black text-slate-950 shadow-[0_0_24px_rgba(250,204,21,0.16)] transition active:scale-[0.99]"
                 >
-                  {dict.ui.downloadApp}
+                  {dict.ui.helpCenter}
                   <ArrowUpRight size={16} />
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -297,16 +333,7 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.header
-        initial={false}
-        animate={{ 
-          y: isVisible ? 0 : -90, 
-          opacity: isVisible ? 1 : 0, 
-          scale: isVisible ? 1 : 0.98 
-        }}
-        transition={{ duration: 0.28, ease: "easeOut" }}
-        className={`fixed inset-x-0 top-0 z-50 px-3 py-3 sm:px-4 ${isVisible ? 'pointer-events-auto' : 'pointer-events-none'}`}
-      >
+      <header className="fixed inset-x-0 top-0 z-50 px-3 py-3 sm:px-4 pointer-events-auto">
         <div className="mx-auto max-w-[1400px]">
           {isDesktop ? (
             <BorderGlow
@@ -330,7 +357,7 @@ export default function Navbar() {
             navbarContent
           )}
         </div>
-      </motion.header>
+      </header>
       <LocationSuggester />
     </>
   );

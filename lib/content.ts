@@ -10,7 +10,7 @@ import {
   Rocket,
   ScanLine,
   ShieldCheck,
-  Sparkles,
+  
   Smartphone,
   Users,
   Zap,
@@ -266,7 +266,7 @@ export const benefits = [
   },
   {
     title: "Professional identity",
-    icon: Sparkles,
+    icon: ShieldCheck,
   },
   {
     title: "Scalable networking",

@@ -1,7 +1,7 @@
 import type { ComponentType } from "react";
 import {
   Building2, CalendarCheck, Contact, Globe2, Mail, Network, QrCode, Rocket,
-  ScanLine, ShieldCheck, Sparkles, Smartphone, Users, Zap, AppWindow,
+  ScanLine, ShieldCheck, Smartphone, Users, Zap, AppWindow,
 } from "lucide-react";
 import {
   AppleIcon, FacebookIcon, GooglePlayIcon, InstagramIcon, LinkedinIcon,
@@ -131,7 +131,7 @@ export const benefits = [
   { title: "গ্লোবাল সম্প্রদায়ের জন্য নির্মিত", icon: Globe2 },
   { title: "দ্রুত প্রোফাইল বিনিময়", icon: Zap },
   { title: "মোবাইল-প্রথম অভিজ্ঞতা", icon: Smartphone },
-  { title: "পেশাদার পরিচয়", icon: Sparkles },
+  { title: "পেশাদার পরিচয়", icon: ShieldCheck },
   { title: "স্কেলেবল নেটওয়ার্কিং", icon: Rocket },
   { title: "OCR যোগাযোগ ক্যাপচার", icon: ScanLine },
   { title: "অল-ইন-ওয়ান হাব", icon: AppWindow },
@@ -173,7 +173,8 @@ export const ui = {
   downloadAppHeadline: "আজই স্মার্ট সংযোগ তৈরি করা শুরু করুন।",
   downloadAppDesc: "আপনার ডিজিটাল প্রোফাইল তৈরি করুন, আপনার স্মার্ট ডিরেক্টরি শেয়ার করুন এবং অফিসিয়াল TactLink অ্যাপের মাধ্যমে দ্রুত সংযোগ করুন।",
   openLink: "লিঙ্ক খুলুন",
-  start: "শুরু করুন",
+  start: "শুরু করুন", 
+  helpCenter: "Help Center",
   smartDirectory: "স্মার্ট ডিরেক্টরি",
   featuresTitle: "যারা নেটওয়ার্ক তৈরি করে, সম্প্রদায় পরিচালনা করে এবং ইভেন্ট চালায় তাদের জন্য নির্মিত।",
   featuresDesc: "ব্যক্তিগত ডিজিটাল পরিচয় থেকে শুরু করে অ্যাসোসিয়েশন-স্কেল নেটওয়ার্কিং পর্যন্ত, TactLink সংযোগগুলিকে তৈরি করা, পরিচালনা করা এবং বৃদ্ধি করা সহজ করে তোলে।",

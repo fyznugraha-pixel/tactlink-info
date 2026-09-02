@@ -1,7 +1,7 @@
 import type { ComponentType } from "react";
 import {
   Building2, CalendarCheck, Contact, Globe2, Mail, Network, QrCode, Rocket,
-  ScanLine, ShieldCheck, Sparkles, Smartphone, Users, Zap, AppWindow,
+  ScanLine, ShieldCheck, Smartphone, Users, Zap, AppWindow,
 } from "lucide-react";
 import {
   AppleIcon, FacebookIcon, GooglePlayIcon, InstagramIcon, LinkedinIcon,
@@ -131,7 +131,7 @@ export const benefits = [
   { title: "Được xây dựng cho cộng đồng toàn cầu", icon: Globe2 },
   { title: "Trao đổi hồ sơ nhanh chóng", icon: Zap },
   { title: "Ưu tiên trải nghiệm di động", icon: Smartphone },
-  { title: "Danh tính chuyên nghiệp", icon: Sparkles },
+  { title: "Danh tính chuyên nghiệp", icon: ShieldCheck },
   { title: "Mạng lưới có thể mở rộng", icon: Rocket },
   { title: "Chụp ảnh liên hệ OCR", icon: ScanLine },
   { title: "Trung tâm tất cả trong một", icon: AppWindow },
@@ -173,7 +173,8 @@ export const ui = {
   downloadAppHeadline: "Bắt đầu xây dựng kết nối thông minh hơn ngay hôm nay.",
   downloadAppDesc: "Tạo hồ sơ kỹ thuật số của bạn, chia sẻ danh bạ thông minh và kết nối nhanh hơn qua ứng dụng TactLink chính thức.",
   openLink: "Mở liên kết",
-  start: "Bắt đầu",
+  start: "Bắt đầu", 
+  helpCenter: "Help Center",
   smartDirectory: "Danh bạ thông minh",
   featuresTitle: "Được xây dựng cho những người xây dựng mạng lưới, quản lý cộng đồng và tổ chức sự kiện.",
   featuresDesc: "Từ danh tính kỹ thuật số cá nhân đến mạng lưới quy mô hiệp hội, TactLink giúp tạo, quản lý và phát triển các kết nối dễ dàng hơn.",

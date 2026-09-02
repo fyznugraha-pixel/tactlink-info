@@ -1,7 +1,7 @@
 import type { ComponentType } from "react";
 import {
   Building2, CalendarCheck, Contact, Globe2, Mail, Network, QrCode, Rocket,
-  ScanLine, ShieldCheck, Sparkles, Smartphone, Users, Zap, AppWindow,
+  ScanLine, ShieldCheck, Smartphone, Users, Zap, AppWindow,
 } from "lucide-react";
 import {
   AppleIcon, FacebookIcon, GooglePlayIcon, InstagramIcon, LinkedinIcon,
@@ -131,7 +131,7 @@ export const benefits = [
   { title: "Dibangun untuk komunitas global", icon: Globe2 },
   { title: "Pertukaran profil cepat", icon: Zap },
   { title: "Pengalaman mengutamakan seluler", icon: Smartphone },
-  { title: "Identitas profesional", icon: Sparkles },
+  { title: "Identitas profesional", icon: ShieldCheck },
   { title: "Networking yang dapat diskalakan", icon: Rocket },
   { title: "Tangkapan kontak OCR", icon: ScanLine },
   { title: "Hub serba ada", icon: AppWindow },
@@ -173,7 +173,8 @@ export const ui = {
   downloadAppHeadline: "Mulai bangun koneksi yang lebih cerdas hari ini.",
   downloadAppDesc: "Buat profil digital Anda, bagikan direktori pintar Anda, dan terhubung lebih cepat melalui aplikasi resmi TactLink.",
   openLink: "Buka Tautan",
-  start: "Mulai",
+  start: "Mulai", 
+  helpCenter: "Bantuan",
   smartDirectory: "Direktori Pintar",
   featuresTitle: "Dibuat untuk mereka yang membangun jaringan, mengelola komunitas, dan menjalankan acara.",
   featuresDesc: "Dari identitas digital pribadi hingga jaringan skala asosiasi, TactLink membuat koneksi lebih mudah dibuat, dikelola, dan dikembangkan.",

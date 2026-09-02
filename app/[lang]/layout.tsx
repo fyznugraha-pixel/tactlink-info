@@ -4,6 +4,7 @@ import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { LanguageProvider, Language } from "@/context/LanguageContext";
 import { Analytics } from "@vercel/analytics/react";
+import FloatingHelp from "@/components/FloatingHelp";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -33,6 +34,7 @@ export default async function RootLayout({
       <body suppressHydrationWarning>
         <LanguageProvider lang={lang as Language}>
           {children}
+          <FloatingHelp />
         </LanguageProvider>
         <Analytics />
       </body>

@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import GradientText from "@/components/GradientText";
 import useIsDesktop from "@/hooks/useIsDesktop";
@@ -46,7 +46,6 @@ export default function HeroSection() {
           className="mx-auto w-full max-w-[38rem] text-center md:mx-0 md:max-w-none md:text-left"
         >
           <div className="mx-auto mb-4 inline-flex max-w-full items-center gap-2 rounded-full border border-yellow-300/20 bg-yellow-300/10 px-3 py-2 text-[10px] font-black text-yellow-100 shadow-lg shadow-yellow-950/10 backdrop-blur-xl sm:text-sm md:mx-0 md:px-4">
-            <Sparkles size={14} />
             <span className="truncate">{brand.tagline}</span>
           </div>
 

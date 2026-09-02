@@ -1,7 +1,7 @@
 import type { ComponentType } from "react";
 import {
   Building2, CalendarCheck, Contact, Globe2, Mail, Network, QrCode, Rocket,
-  ScanLine, ShieldCheck, Sparkles, Smartphone, Users, Zap, AppWindow,
+  ScanLine, ShieldCheck, Smartphone, Users, Zap, AppWindow,
 } from "lucide-react";
 import {
   AppleIcon, FacebookIcon, GooglePlayIcon, InstagramIcon, LinkedinIcon,
@@ -131,7 +131,7 @@ export const benefits = [
   { title: "Built for global communities", icon: Globe2 },
   { title: "Fast profile exchange", icon: Zap },
   { title: "Mobile-first experience", icon: Smartphone },
-  { title: "Professional identity", icon: Sparkles },
+  { title: "Professional identity", icon: ShieldCheck },
   { title: "Scalable networking", icon: Rocket },
   { title: "OCR contact capture", icon: ScanLine },
   { title: "All-in-one hub", icon: AppWindow },
@@ -186,7 +186,8 @@ export const ui = {
   downloadAppHeadline: "Start building smarter connections today.",
   downloadAppDesc: "Create your digital profile, share your smart directory, and connect faster through the official TactLink app.",
   openLink: "Open Link",
-  start: "Start",
+  start: "Start", 
+  helpCenter: "Help Center",
   smartDirectory: "Smart Directory",
   featuresTitle: "Built for people who network, manage communities, and run events.",
   featuresDesc: "From personal digital identity to association-scale networking, TactLink makes connections easier to create, manage, and grow.",
