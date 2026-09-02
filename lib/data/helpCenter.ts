@@ -118,10 +118,14 @@ const en: HelpData = {
           {
               question: "How to complete your Digital Business Card?",
               answer: [
-                  "Click “Complete My Card” to add a profile photo, company details, a logo, and social media links."
+                  "Step 1: Click “Complete My Card” on your dashboard.",
+                  "Step 2: Add your profile photo and complete company details.",
+                  "Step 3: Add a logo and link your social media accounts."
               ],
               images: [
-                  "/images/helpcenter/attendee_p1_4.png"
+                  "/images/helpcenter/attendee_p1_4.png",
+                  "/images/helpcenter/attendee_p1_5.png",
+                  "/images/helpcenter/attendee_p1_6.png"
               ]
           },
           {
@@ -141,8 +145,8 @@ const en: HelpData = {
                   "/images/helpcenter/attendee_p1_9.png",
                   "/images/helpcenter/attendee_p1_10.png",
                   "/images/helpcenter/attendee_p1_11.png",
-                  "",
-                  ""
+                  "/images/helpcenter/attendee_p1_12.png",
+                  "/images/helpcenter/attendee_p1_13.png"
               ]
           },
           {
@@ -153,9 +157,9 @@ const en: HelpData = {
                   "Step 3: Select one of the layouts you wish to use"
               ],
               images: [
-                  "/images/helpcenter/attendee_p1_12.png",
-                  "/images/helpcenter/attendee_p1_13.png",
-                  "/images/helpcenter/attendee_p1_14.png"
+                  "/images/helpcenter/attendee_p1_14.png",
+                  "/images/helpcenter/attendee_p1_15.png",
+                  "/images/helpcenter/attendee_p1_16.png"
               ]
           },
           {
@@ -166,9 +170,9 @@ const en: HelpData = {
                   "Step 3: Complete profile details such as name, email, mobile number, address, social media, and logo"
               ],
               images: [
-                  "/images/helpcenter/attendee_p2_20.png",
-                  "/images/helpcenter/attendee_p2_21.png",
-                  "/images/helpcenter/attendee_p2_22.png"
+                  "/images/helpcenter/attendee_p2_17.png",
+                  "/images/helpcenter/attendee_p2_18.png",
+                  "/images/helpcenter/attendee_p2_19.png"
               ]
           },
           {
@@ -177,6 +181,11 @@ const en: HelpData = {
                   "Step 1: Click the digital business card to change the layout, and if you wish to add a business card, click \"Add new card\"",
                   "Step 2: Click \"My QR\" to view the digital business card",
                   "Step 3: Share this QR code to connect with another people and digital business cards can also be downloaded"
+              ],
+              images: [
+                  "/images/helpcenter/attendee_p2_20.png",
+                  "/images/helpcenter/attendee_p2_21.png",
+                  "/images/helpcenter/attendee_p2_22.png"
               ]
           },
           {
@@ -187,9 +196,9 @@ const en: HelpData = {
                   "Step 3: list of connected contacts will appear"
               ],
               images: [
-                  "/images/helpcenter/attendee_p3_26.png",
-                  "/images/helpcenter/attendee_p3_27.png",
-                  ""
+                  "/images/helpcenter/attendee_p2_23.png",
+                  "/images/helpcenter/attendee_p2_24.png",
+                  "/images/helpcenter/attendee_p2_25.png"
               ]
           },
           {
@@ -198,6 +207,11 @@ const en: HelpData = {
                   "Step 1: Go to the Home Page and click your profile photo, a screen like the one above will appear, then click \"Chats\"",
                   "Step 2: Click the three lines in the top right corner, then click “Create New Group”",
                   "Step 3: Add a photo and the group name, then add members and click “Create”"
+              ],
+              images: [
+                  "/images/helpcenter/attendee_p3_26.png",
+                  "/images/helpcenter/attendee_p3_27.png",
+                  "/images/helpcenter/attendee_p3_28.png"
               ]
           },
           {
@@ -210,11 +224,11 @@ const en: HelpData = {
                   "Step 5: Obtain a QR pass as proof of access"
               ],
               images: [
+                  "/images/helpcenter/attendee_p3_29.png",
+                  "/images/helpcenter/attendee_p3_30.png",
+                  "/images/helpcenter/attendee_p3_31.png",
                   "/images/helpcenter/attendee_p3_32.png",
-                  "/images/helpcenter/attendee_p3_33.png",
-                  "/images/helpcenter/attendee_p3_34.png",
-                  "/images/helpcenter/attendee_p3_35.png",
-                  ""
+                  "/images/helpcenter/attendee_p3_33.png"
               ]
           },
           {
@@ -224,6 +238,12 @@ const en: HelpData = {
                   "Step 2: View association information, including the number of members, events, and activities",
                   "Step 3: Find and select available events within the association",
                   "Step 4: View the list of members in the association."
+              ],
+              images: [
+                  "/images/helpcenter/attendee_p3_34.png",
+                  "/images/helpcenter/attendee_p3_35.png",
+                  "/images/helpcenter/attendee_p3_36.png",
+                  "/images/helpcenter/attendee_p3_37.png"
               ]
           },
           {
@@ -233,31 +253,142 @@ const en: HelpData = {
                   "Step 2: Click the contact who sent the request to connect",
                   "Step 3: Click “Accept” to accept the connection request, or click “View Contact” to view the contact’s details",
                   "Step 4: Clicking \"View contact\" displays the digital business card, you can then click \"Accept\" to accept the connection request."
+              ],
+              images: [
+                  "/images/helpcenter/attendee_p3_38.png",
+                  "/images/helpcenter/attendee_p3_39.png",
+                  "/images/helpcenter/attendee_p3_40.png",
+                  "/images/helpcenter/attendee_p3_41.png"
               ]
           }
       ],
     admin: [
-      {
-        question: "How to Check-in Event Admin Flow?",
-        answer: "1. Click the 'Check-in' feature to manage the list of event participants. 2. Click 'Scan passes' to scan the participant's QR code, it will update in real-time. 3. Click 'Walk-in' if the participant does not have a QR code. Admin can enter the participant's name and email directly.",
-        images: ["/images/helpcenter/admin_p1_5.png", "/images/helpcenter/admin_p1_6.png", "/images/helpcenter/admin_p1_7.png"]
-      },
-      {
-        question: "How do I create a lucky draw in the TactLink app?",
-        answer: "1. Open an event and click 'Lucky Draw'. 2. Set the opening and closing times, then add the prizes. 3. Once created, the Lucky Draw icon will appear on the right side.",
-        images: ["/images/helpcenter/admin_p2_8.png", "/images/helpcenter/admin_p2_9.png", "/images/helpcenter/admin_p2_10.png"]
-      },
-      {
-        question: "How to set up speed networking on the TactLink app?",
-        answer: "1. Open an event and click 'Speed Networking'. 2. Set the number of members per group and rounds, then 'Generate Preview'. 3. Review the team assignments. 4. Click 'Publish'. 5. The 'Speed Networking' icon will appear on the event page.",
-        images: ["/images/helpcenter/admin_p2_11.png", "/images/helpcenter/admin_p2_12.png", "/images/helpcenter/admin_p2_13.png", "/images/helpcenter/admin_p2_14.png", "/images/helpcenter/admin_p2_15.png"]
-      },
-      {
-        question: "How do I view the association feature?",
-        answer: "1. Click 'Create New Association' to add a new association. 2. Click on one of the associations in the list to view detailed information. 3. Click 'members' to see the number of participants, or 'View All' to see event information.",
-        images: ["/images/helpcenter/admin_p2_16.png", "/images/helpcenter/admin_p3_17.png", "/images/helpcenter/admin_p3_18.png"]
-      }
-    ]
+          {
+              question: "How to Check-in Event Detail?",
+              answer: [
+                  "Step 1: Event Schedule. Admin views the list and schedule of managed events.",
+                  "Step 2: Event Detail. Admin opens the event details to view event information.",
+                  "Step 3: Event QR. Admin can share the event QR code with participants.",
+                  "Step 4: Participant List. Admin can view the participant list."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p1_4.png",
+                  "/images/helpcenter/admin_p1_3.png",
+                  "/images/helpcenter/admin_p1_2.png",
+                  "/images/helpcenter/admin_p1_1.png"
+              ]
+          },
+          {
+              question: "How to Check-in Event Admin Flow?",
+              answer: [
+                  "Step 1: Click the “Check-in” feature to manage the list of event participants.",
+                  "Step 2: Click “Scan passes” to scan the participant's QR code, it will update in real-time.",
+                  "Step 3: Click “Walk-in” if the participant does not have a QR code. Admin can enter the participant’s name and email directly."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p1_5.png",
+                  "/images/helpcenter/admin_p1_6.png",
+                  "/images/helpcenter/admin_p1_7.png"
+              ]
+          },
+          {
+              question: "How do I create a lucky draw in the TactLink app?",
+              answer: [
+                  "Step 1: Open an event and click “Lucky Draw” to create prizes for event participants.",
+                  "Step 2: Set the Lucky Draw opening and closing times, then add the prizes to be given to participants.",
+                  "Step 3: Once the Lucky Draw is created, the Lucky Draw icon will appear on the right side."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p2_8.png",
+                  "/images/helpcenter/admin_p2_9.png"
+              ]
+          },
+          {
+              question: "How to set up speed networking on the TactLink app?",
+              answer: [
+                  "Step 1: Open an event and click “Create Speed Networking” to create prizes for event participants.",
+                  "Step 2: Set the number of members per group and the desired number of rounds, then click “Generate Preview”.",
+                  "Step 3: After creating Speed Networking, a preview will appear showing which team each participant is assigned to.",
+                  "Step 4: From Step 3, click “Publish” to display the screen.",
+                  "Step 5: Once “Speed Networking” is successfully created, its icon will appear on the event page."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p2_10.png",
+                  "/images/helpcenter/admin_p2_11.png",
+                  "/images/helpcenter/admin_p2_12.png",
+                  "/images/helpcenter/admin_p2_13.png",
+                  "/images/helpcenter/admin_p2_14.png"
+              ]
+          },
+          {
+              question: "How do I view the association feature on the TactLink App?",
+              answer: [
+                  "Step 1: Click “Create New Association” to add a new association.",
+                  "Step 2: Complete the photo, association name, location, and description.",
+                  "Step 3: Click on one of the associations in the list to view detailed information.",
+                  "Step 4: Click “members” to see the number of participants.",
+                  "Step 5: In Step 3, click “View All” to view event information."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p2_15.png",
+                  "/images/helpcenter/admin_p2_16.png",
+                  "/images/helpcenter/admin_p3_17.png",
+                  "/images/helpcenter/admin_p3_18.png"
+              ]
+          },
+          {
+              question: "How can I access the Association Admin Dashboard?",
+              answer: [
+                  "Step 1: Click link https://tactlink-admin-prod.vercel.app/. Log in using your registered email or Apple account if you are an iOS user and have been registered by the TactLink team as an association admin.",
+                  "Step 2: On the Dashboard, admins can view the number and growth of Members, manage member Dues, monitor items that require attention under Needs Attention, and view upcoming events in the Upcoming section."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p3_19.png",
+                  "/images/helpcenter/admin_p3_20.png"
+              ]
+          },
+          {
+              question: "How can I manage association members?",
+              answer: [
+                  "Step 1: Click link https://tactlink-admin-prod.vercel.app/. Log in using your registered email or Apple account if you are an iOS user.",
+                  "Step 2: Click the icon in the top-left corner to explore the web features, then click “Members” to view the number of members, email addresses, status, and association roles.",
+                  "Step 3: Click “Invite Members” to add association members by entering their email addresses, then click “Send Invitation”."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p3_21.jpeg",
+                  "/images/helpcenter/admin_p3_22.png",
+                  "/images/helpcenter/admin_p4_23.png"
+              ]
+          },
+          {
+              question: "How can I create a new event?",
+              answer: [
+                  "Step 1: Click link https://tactlink-admin-prod.vercel.app/. Log in using your registered email or Apple account.",
+                  "Step 2: Click the “Events” feature to view event details within the association.",
+                  "Step 3: View information about past, in-progress, and upcoming events.",
+                  "Step 4: In step 3, click \"Create Event\" to schedule a new event."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p4_24.jpeg",
+                  "/images/helpcenter/admin_p4_25.png",
+                  "/images/helpcenter/admin_p4_26.png",
+                  "/images/helpcenter/admin_p4_27.png"
+              ]
+          },
+          {
+              question: "How can I manage association settings?",
+              answer: [
+                  "Step 1: Click link https://tactlink-admin-prod.vercel.app/. Log in using your registered email or Apple account.",
+                  "Step 2: Manage association-related settings.",
+                  "Step 3: Set the membership number format by adding a prefix to member numbers. The prefix can be customized or left blank to use sequential numbers without a prefix."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p4_28.png",
+                  "/images/helpcenter/admin_p4_30.png",
+                  "/images/helpcenter/admin_p4_29.png"
+              ]
+          }
+      ]
   }
 };
 
@@ -358,10 +489,14 @@ const id: HelpData = {
           {
               question: "Bagaimana cara melengkapi Kartu Nama Digital Anda?",
               answer: [
-                  "Klik “Lengkapi Kartu Saya” untuk menambahkan foto profil, detail perusahaan, logo, dan tautan media sosial."
+                  "Langkah 1: Klik “Lengkapi Kartu Saya” di dasbor Anda.",
+                  "Langkah 2: Tambahkan foto profil dan lengkapi detail perusahaan.",
+                  "Langkah 3: Tambahkan logo dan tautkan media sosial Anda."
               ],
               images: [
-                  "/images/helpcenter/attendee_p1_4.png"
+                  "/images/helpcenter/attendee_p1_4.png",
+                  "/images/helpcenter/attendee_p1_5.png",
+                  "/images/helpcenter/attendee_p1_6.png"
               ]
           },
           {
@@ -381,8 +516,8 @@ const id: HelpData = {
                   "/images/helpcenter/attendee_p1_9.png",
                   "/images/helpcenter/attendee_p1_10.png",
                   "/images/helpcenter/attendee_p1_11.png",
-                  "",
-                  ""
+                  "/images/helpcenter/attendee_p1_12.png",
+                  "/images/helpcenter/attendee_p1_13.png"
               ]
           },
           {
@@ -393,9 +528,9 @@ const id: HelpData = {
                   "Langkah 3: Pilih salah satu tata letak yang ingin Anda gunakan"
               ],
               images: [
-                  "/images/helpcenter/attendee_p1_12.png",
-                  "/images/helpcenter/attendee_p1_13.png",
-                  "/images/helpcenter/attendee_p1_14.png"
+                  "/images/helpcenter/attendee_p1_14.png",
+                  "/images/helpcenter/attendee_p1_15.png",
+                  "/images/helpcenter/attendee_p1_16.png"
               ]
           },
           {
@@ -406,9 +541,9 @@ const id: HelpData = {
                   "Langkah 3: Lengkapi detail profil seperti nama, email, nomor ponsel, alamat, media sosial, dan logo"
               ],
               images: [
-                  "/images/helpcenter/attendee_p2_20.png",
-                  "/images/helpcenter/attendee_p2_21.png",
-                  "/images/helpcenter/attendee_p2_22.png"
+                  "/images/helpcenter/attendee_p2_17.png",
+                  "/images/helpcenter/attendee_p2_18.png",
+                  "/images/helpcenter/attendee_p2_19.png"
               ]
           },
           {
@@ -417,6 +552,11 @@ const id: HelpData = {
                   "Langkah 1: Klik kartu nama digital untuk mengubah tata letaknya, dan jika Anda ingin menambahkan kartu nama, klik \"Tambahkan kartu baru\"",
                   "Langkah 2: Klik \"QR Saya\" untuk melihat kartu nama digital",
                   "Langkah 3: Bagikan kode QR ini untuk terhubung dengan orang lain dan kartu nama digital juga dapat diunduh"
+              ],
+              images: [
+                  "/images/helpcenter/attendee_p2_20.png",
+                  "/images/helpcenter/attendee_p2_21.png",
+                  "/images/helpcenter/attendee_p2_22.png"
               ]
           },
           {
@@ -427,9 +567,9 @@ const id: HelpData = {
                   "Langkah 3: Daftar kontak yang terhubung akan muncul"
               ],
               images: [
-                  "/images/helpcenter/attendee_p3_26.png",
-                  "/images/helpcenter/attendee_p3_27.png",
-                  ""
+                  "/images/helpcenter/attendee_p2_23.png",
+                  "/images/helpcenter/attendee_p2_24.png",
+                  "/images/helpcenter/attendee_p2_25.png"
               ]
           },
           {
@@ -438,6 +578,11 @@ const id: HelpData = {
                   "Langkah 1: Buka Beranda dan klik foto profil Anda, layar seperti di atas akan muncul, lalu klik \"Obrolan\"",
                   "Langkah 2: Klik tiga garis di sudut kanan atas, lalu klik “Buat Grup Baru”",
                   "Langkah 3: Tambahkan foto dan nama grup, lalu tambahkan anggota dan klik “Buat”"
+              ],
+              images: [
+                  "/images/helpcenter/attendee_p3_26.png",
+                  "/images/helpcenter/attendee_p3_27.png",
+                  "/images/helpcenter/attendee_p3_28.png"
               ]
           },
           {
@@ -450,11 +595,11 @@ const id: HelpData = {
                   "Langkah 5: Dapatkan tiket QR sebagai bukti akses masuk"
               ],
               images: [
+                  "/images/helpcenter/attendee_p3_29.png",
+                  "/images/helpcenter/attendee_p3_30.png",
+                  "/images/helpcenter/attendee_p3_31.png",
                   "/images/helpcenter/attendee_p3_32.png",
-                  "/images/helpcenter/attendee_p3_33.png",
-                  "/images/helpcenter/attendee_p3_34.png",
-                  "/images/helpcenter/attendee_p3_35.png",
-                  ""
+                  "/images/helpcenter/attendee_p3_33.png"
               ]
           },
           {
@@ -464,6 +609,12 @@ const id: HelpData = {
                   "Langkah 2: Lihat informasi asosiasi, termasuk jumlah anggota, acara, dan aktivitas",
                   "Langkah 3: Temukan dan pilih acara yang tersedia di dalam asosiasi tersebut",
                   "Langkah 4: Lihat daftar anggota dalam asosiasi."
+              ],
+              images: [
+                  "/images/helpcenter/attendee_p3_34.png",
+                  "/images/helpcenter/attendee_p3_35.png",
+                  "/images/helpcenter/attendee_p3_36.png",
+                  "/images/helpcenter/attendee_p3_37.png"
               ]
           },
           {
@@ -473,31 +624,142 @@ const id: HelpData = {
                   "Langkah 2: Klik kontak yang mengirimkan permintaan untuk terhubung",
                   "Langkah 3: Klik “Terima” untuk menerima permintaan koneksi, atau klik “Lihat Kontak” untuk melihat detail kontak",
                   "Langkah 4: Mengeklik \"Lihat kontak\" akan menampilkan kartu nama digital, Anda kemudian dapat mengeklik \"Terima\" untuk menerima permintaan."
+              ],
+              images: [
+                  "/images/helpcenter/attendee_p3_38.png",
+                  "/images/helpcenter/attendee_p3_39.png",
+                  "/images/helpcenter/attendee_p3_40.png",
+                  "/images/helpcenter/attendee_p3_41.png"
               ]
           }
       ],
     admin: [
-      {
-        question: "Bagaimana alur Check-in bagi Admin?",
-        answer: "1. Klik fitur 'Check-in' untuk mengelola daftar peserta acara. 2. Klik 'Scan passes' untuk memindai kode QR peserta, data akan diperbarui secara real-time. 3. Klik 'Walk-in' jika peserta tidak memiliki kode QR. Admin dapat memasukkan nama dan email peserta secara langsung.",
-        images: ["/images/helpcenter/admin_p1_5.png", "/images/helpcenter/admin_p1_6.png", "/images/helpcenter/admin_p1_7.png"]
-      },
-      {
-        question: "Bagaimana cara membuat Lucky Draw di aplikasi TactLink?",
-        answer: "1. Buka acara dan klik 'Lucky Draw'. 2. Atur waktu pembukaan dan penutupan, lalu tambahkan hadiah. 3. Ikon Lucky Draw akan muncul di sisi kanan.",
-        images: ["/images/helpcenter/admin_p2_8.png", "/images/helpcenter/admin_p2_9.png", "/images/helpcenter/admin_p2_10.png"]
-      },
-      {
-        question: "Bagaimana cara mengatur Speed Networking?",
-        answer: "1. Buka acara dan klik 'Speed Networking'. 2. Atur jumlah anggota per grup dan ronde, lalu klik 'Generate Preview'. 3. Tinjau pembagian tim. 4. Klik 'Publish'.",
-        images: ["/images/helpcenter/admin_p2_11.png", "/images/helpcenter/admin_p2_12.png", "/images/helpcenter/admin_p2_13.png", "/images/helpcenter/admin_p2_14.png", "/images/helpcenter/admin_p2_15.png"]
-      },
-      {
-        question: "Bagaimana cara melihat fitur Asosiasi?",
-        answer: "1. Klik 'Create New Association' untuk menambah asosiasi baru. 2. Klik salah satu asosiasi dalam daftar untuk melihat info detail. 3. Klik 'members' untuk melihat jumlah peserta, atau 'View All' untuk info acara.",
-        images: ["/images/helpcenter/admin_p2_16.png", "/images/helpcenter/admin_p3_17.png", "/images/helpcenter/admin_p3_18.png"]
-      }
-    ]
+          {
+              question: "Bagaimana cara melihat Detail Check-in Acara (Event Detail)?",
+              answer: [
+                  "Langkah 1: Jadwal Acara. Admin melihat daftar dan jadwal acara yang dikelola.",
+                  "Langkah 2: Detail Acara. Admin membuka detail acara untuk melihat informasi acara.",
+                  "Langkah 3: QR Acara. Admin dapat membagikan kode QR acara kepada peserta.",
+                  "Langkah 4: Daftar Peserta. Admin dapat melihat daftar peserta."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p1_4.png",
+                  "/images/helpcenter/admin_p1_3.png",
+                  "/images/helpcenter/admin_p1_2.png",
+                  "/images/helpcenter/admin_p1_1.png"
+              ]
+          },
+          {
+              question: "Bagaimana Alur Check-in Acara untuk Admin?",
+              answer: [
+                  "Langkah 1: Klik fitur “Check-in” untuk mengelola daftar peserta acara.",
+                  "Langkah 2: Klik “Scan passes” untuk memindai kode QR peserta, status akan diperbarui secara real-time.",
+                  "Langkah 3: Klik “Walk-in” jika peserta tidak memiliki kode QR. Admin dapat memasukkan nama dan email peserta secara langsung."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p1_5.png",
+                  "/images/helpcenter/admin_p1_6.png",
+                  "/images/helpcenter/admin_p1_7.png"
+              ]
+          },
+          {
+              question: "Bagaimana cara membuat Lucky Draw di aplikasi TactLink?",
+              answer: [
+                  "Langkah 1: Buka acara dan klik “Lucky Draw” untuk membuat hadiah bagi peserta acara.",
+                  "Langkah 2: Atur waktu buka dan tutup Lucky Draw, lalu tambahkan hadiah yang akan diberikan kepada peserta.",
+                  "Langkah 3: Setelah Lucky Draw berhasil dibuat, ikon Lucky Draw akan muncul di sisi kanan."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p2_8.png",
+                  "/images/helpcenter/admin_p2_9.png"
+              ]
+          },
+          {
+              question: "Bagaimana cara mengatur Speed Networking di aplikasi TactLink?",
+              answer: [
+                  "Langkah 1: Buka acara dan klik “Create Speed Networking”.",
+                  "Langkah 2: Atur jumlah anggota per grup dan jumlah ronde yang diinginkan, lalu klik “Generate Preview”.",
+                  "Langkah 3: Setelah membuat Speed Networking, pratinjau (preview) akan muncul menunjukkan ke tim mana setiap peserta ditugaskan.",
+                  "Langkah 4: Dari Langkah 3, klik “Publish” untuk menampilkan layar seperti pada gambar.",
+                  "Langkah 5: Setelah “Speed Networking” berhasil dibuat, ikonnya akan muncul di halaman acara."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p2_10.png",
+                  "/images/helpcenter/admin_p2_11.png",
+                  "/images/helpcenter/admin_p2_12.png",
+                  "/images/helpcenter/admin_p2_13.png",
+                  "/images/helpcenter/admin_p2_14.png"
+              ]
+          },
+          {
+              question: "Bagaimana cara melihat fitur Asosiasi di Aplikasi TactLink?",
+              answer: [
+                  "Langkah 1: Klik “Create New Association” untuk menambahkan asosiasi baru.",
+                  "Langkah 2: Lengkapi foto, nama asosiasi, lokasi, dan deskripsi.",
+                  "Langkah 3: Klik salah satu asosiasi dalam daftar untuk melihat informasi lebih rinci.",
+                  "Langkah 4: Klik “members” untuk melihat jumlah peserta.",
+                  "Langkah 5: Pada Langkah 3, klik “View All” untuk melihat informasi acara."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p2_15.png",
+                  "/images/helpcenter/admin_p2_16.png",
+                  "/images/helpcenter/admin_p3_17.png",
+                  "/images/helpcenter/admin_p3_18.png"
+              ]
+          },
+          {
+              question: "Bagaimana cara mengakses Dasbor Admin Asosiasi?",
+              answer: [
+                  "Langkah 1: Buka tautan https://tactlink-admin-prod.vercel.app/. Masuk menggunakan email yang terdaftar atau akun Apple (untuk pengguna iOS) jika Anda telah didaftarkan oleh tim TactLink sebagai admin asosiasi.",
+                  "Langkah 2: Di Dasbor, admin dapat melihat jumlah dan pertumbuhan Anggota, mengelola Iuran (Dues) anggota, memantau hal-hal yang memerlukan perhatian (Needs Attention), serta melihat acara mendatang di bagian Upcoming."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p3_19.png",
+                  "/images/helpcenter/admin_p3_20.png"
+              ]
+          },
+          {
+              question: "Bagaimana cara mengelola anggota asosiasi?",
+              answer: [
+                  "Langkah 1: Buka tautan https://tactlink-admin-prod.vercel.app/ dan masuk menggunakan email atau akun Apple Anda.",
+                  "Langkah 2: Klik ikon di sudut kiri atas untuk menjelajahi fitur web, lalu klik “Members” untuk melihat jumlah anggota, alamat email, status, dan peran dalam asosiasi.",
+                  "Langkah 3: Klik “Invite Members” untuk menambahkan anggota asosiasi dengan memasukkan alamat email mereka, lalu klik “Send Invitation”."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p3_21.jpeg",
+                  "/images/helpcenter/admin_p3_22.png",
+                  "/images/helpcenter/admin_p4_23.png"
+              ]
+          },
+          {
+              question: "Bagaimana cara membuat acara baru?",
+              answer: [
+                  "Langkah 1: Buka tautan https://tactlink-admin-prod.vercel.app/ dan masuk dengan akun Anda.",
+                  "Langkah 2: Klik fitur “Events” untuk melihat detail acara di dalam asosiasi.",
+                  "Langkah 3: Lihat informasi tentang acara yang sudah lewat, sedang berlangsung, dan yang akan datang.",
+                  "Langkah 4: Pada langkah 3, klik \"Create Event\" untuk menjadwalkan acara baru."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p4_24.jpeg",
+                  "/images/helpcenter/admin_p4_25.png",
+                  "/images/helpcenter/admin_p4_26.png",
+                  "/images/helpcenter/admin_p4_27.png"
+              ]
+          },
+          {
+              question: "Bagaimana cara mengelola pengaturan asosiasi?",
+              answer: [
+                  "Langkah 1: Buka tautan https://tactlink-admin-prod.vercel.app/ dan masuk dengan akun Anda.",
+                  "Langkah 2: Kelola pengaturan terkait asosiasi.",
+                  "Langkah 3: Atur format nomor keanggotaan dengan menambahkan awalan (prefix) pada nomor anggota. Awalan ini dapat disesuaikan atau dibiarkan kosong untuk menggunakan angka berurutan tanpa awalan."
+              ],
+              images: [
+                  "/images/helpcenter/admin_p4_28.png",
+                  "/images/helpcenter/admin_p4_30.png",
+                  "/images/helpcenter/admin_p4_29.png"
+              ]
+          }
+      ]
   }
 };
 
