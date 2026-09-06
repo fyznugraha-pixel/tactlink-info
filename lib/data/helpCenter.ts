@@ -408,7 +408,7 @@ const id: HelpData = {
     },
     {
       id: "attendee",
-      title: "Untuk Peserta",
+      title: "Untuk Pengguna",
       description: "Panduan bikin profil, koneksi, dan obrolan.",
       icon: User,
     },
@@ -427,7 +427,7 @@ const id: HelpData = {
           },
           {
               question: "Gimana sih cara kerja TactLink?",
-              answer: "TactLink mengubah cara networking tradisional jadi serba digital. Mulai dari kartu nama, kelola kontak, direktori anggota, sampai networking event—semuanya ada dalam satu platform. Kamu tinggal bikin profil digital, share dengan gampang pakai QR atau link, dan koneksimu otomatis tersimpan rapi. Buat asosiasi atau komunitas, TactLink jadi pusat digital tempat anggota bisa saling sapa, ngobrol, dan kolaborasi. Event organizer juga bisa pakai platform ini buat ngatur acara biar peserta lebih gampang networking."
+              answer: "TactLink mengubah cara networking tradisional jadi serba digital. Mulai dari kartu nama, kelola kontak, direktori anggota, sampai networking event—semuanya ada dalam satu platform. Kamu tinggal bikin profil digital, share dengan gampang pakai QR atau link, dan koneksimu otomatis tersimpan rapi. Buat asosiasi atau komunitas, TactLink jadi pusat digital tempat anggota bisa saling sapa, ngobrol, dan kolaborasi. Event organizer juga bisa pakai platform ini buat ngatur acara biar Pengguna lebih gampang networking."
           },
           {
               question: "Fitur unggulan apa aja yang ada di TactLink?",
@@ -439,7 +439,7 @@ const id: HelpData = {
           },
           {
               question: "Gimana TactLink ngebantu event dan networking?",
-              answer: "TactLink bikin urusan networking jadi jauh lebih praktis. Peserta, anggota asosiasi, atau profesional bisa saling terhubung dengan mudah. Khusus buat event, TactLink siap bantu memfasilitasi peserta buat ngobrol dan kenalan, baik sebelum, pas hari H, maupun sesudah acara."
+              answer: "TactLink bikin urusan networking jadi jauh lebih praktis. Pengguna, anggota asosiasi, atau profesional bisa saling terhubung dengan mudah. Khusus buat event, TactLink siap bantu memfasilitasi Pengguna buat ngobrol dan kenalan, baik sebelum, pas hari H, maupun sesudah acara."
           },
           {
               question: "Siapa aja yang cocok pakai TactLink?",
@@ -642,8 +642,8 @@ const id: HelpData = {
               answer: [
                   "Langkah 1: Jadwal Acara. Admin bisa ngecek daftar dan jadwal acara yang lagi dikelola.",
                   "Langkah 2: Detail Acara. Buka halaman detail acara buat ngelihat info lengkapnya.",
-                  "Langkah 3: QR Acara. Admin bisa langsung nge-share kode QR acara ke para peserta.",
-                  "Langkah 4: Daftar Peserta. Pantau terus daftar peserta yang udah gabung."
+                  "Langkah 3: QR Acara. Admin bisa langsung nge-share kode QR acara ke para Pengguna.",
+                  "Langkah 4: Daftar Pengguna. Pantau terus daftar Pengguna yang udah gabung."
               ],
               images: [
                   "/images/helpcenter/admin_p1_4.png",
@@ -655,9 +655,9 @@ const id: HelpData = {
           {
               question: "Gimana cara Admin nerapin Alur Check-in Event?",
               answer: [
-                  "Langkah 1: Buka fitur “Check-in” buat ngatur daftar peserta acara.",
-                  "Langkah 2: Klik “Scan passes” buat scan kode QR peserta. Status kehadiran bakal langsung update saat itu juga.",
-                  "Langkah 3: Pilih opsi “Walk-in” kalau ada peserta yang nggak punya QR. Admin bisa masukin nama dan email mereka secara manual."
+                  "Langkah 1: Buka fitur “Check-in” buat ngatur daftar Pengguna acara.",
+                  "Langkah 2: Klik “Scan passes” buat scan kode QR Pengguna. Status kehadiran bakal langsung update saat itu juga.",
+                  "Langkah 3: Pilih opsi “Walk-in” kalau ada Pengguna yang nggak punya QR. Admin bisa masukin nama dan email mereka secara manual."
               ],
               images: [
                   "/images/helpcenter/admin_p1_5.png",
@@ -668,7 +668,7 @@ const id: HelpData = {
           {
               question: "Gimana cara bikin Lucky Draw di TactLink?",
               answer: [
-                  "Langkah 1: Masuk ke halaman event, terus klik “Lucky Draw” buat nyiapin hadiah untuk peserta.",
+                  "Langkah 1: Masuk ke halaman event, terus klik “Lucky Draw” buat nyiapin hadiah untuk Pengguna.",
                   "Langkah 2: Tentukan jam buka-tutup Lucky Draw, lalu masukin hadiah apa aja yang mau dibagi-bagiin.",
                   "Langkah 3: Kalau udah berhasil dibuat, ikon Lucky Draw bakal muncul di sebelah kanan layar."
               ],
@@ -684,7 +684,7 @@ const id: HelpData = {
               answer: [
                   "Langkah 1: Buka event-nya dan klik “Create Speed Networking”.",
                   "Langkah 2: Tentuin berapa orang per grup dan jumlah ronde yang dimau, habis itu klik “Generate Preview”.",
-                  "Langkah 3: Setelah dibuat, bakal muncul layar preview yang nunjukin pembagian tim masing-masing peserta.",
+                  "Langkah 3: Setelah dibuat, bakal muncul layar preview yang nunjukin pembagian tim masing-masing Pengguna.",
                   "Langkah 4: Dari layar preview tadi, klik “Publish” biar tampilannya live kayak di gambar.",
                   "Langkah 5: Kalau fitur “Speed Networking” sukses dibikin, ikonnya langsung nongol di halaman event."
               ],
@@ -776,3 +776,4 @@ export const helpDictionaries: Record<string, HelpData> = {
   bn: en,
   tl: en,
 };
+
