@@ -397,25 +397,25 @@ const en: HelpData = {
 
 const id: HelpData = {
   title: "Ada yang bisa kami bantu?",
-  subtitle: "Temukan jawaban, panduan, dan tutorial penggunaan TactLink.",
+  subtitle: "Temukan jawaban, panduan, dan tutorial penggunaan TactLink dengan gampang.",
   searchPlaceholder: "Cari topik bantuan...",
   categories: [
     {
       id: "general",
       title: "Pengenalan",
-      description: "Pemahaman dasar tentang platform dan fitur TactLink.",
+      description: "Pemahaman dasar soal platform dan fitur TactLink.",
       icon: BookOpen,
     },
     {
       id: "attendee",
       title: "Untuk Peserta",
-      description: "Panduan membuat profil, jejaring, dan obrolan.",
+      description: "Panduan bikin profil, koneksi, dan obrolan.",
       icon: User,
     },
     {
       id: "admin",
       title: "Untuk Admin",
-      description: "Mengelola acara, check-in, dan asosiasi.",
+      description: "Cara mudah ngatur event, check-in, dan komunitas.",
       icon: Shield,
     },
   ],
@@ -423,65 +423,66 @@ const id: HelpData = {
     general: [
           {
               question: "Apa itu TactLink?",
-              answer: "TactLink adalah platform jejaring digital dan manajemen kontak yang dirancang untuk membantu individu, profesional, asosiasi, dan komunitas membangun koneksi yang bermakna. TactLink memungkinkan pengguna membuat dan berbagi kartu nama digital, mengelola kontak, menemukan dan terhubung dengan anggota, serta berpartisipasi dalam pengalaman jejaring interaktif."
+              answer: "TactLink adalah platform jejaring digital dan manajemen kontak yang dirancang khusus buat ngebantu kamu, profesional, asosiasi, hingga komunitas dalam membangun koneksi yang bermakna. Di sini, kamu bisa bikin dan membagikan kartu nama digital, ngelola kontak, nyari anggota, sampai ikutan aktivitas networking yang interaktif."
           },
           {
-              question: "Bagaimana cara kerja TactLink?",
-              answer: "TactLink mendigitalkan jejaring tradisional dengan membawa kartu nama digital, manajemen kontak, direktori anggota, dan jejaring acara ke dalam satu platform. Pengguna dapat membuat identitas digital mereka, membagikannya secara instan melalui kode QR atau tautan, mengumpulkan dan mengatur koneksi, serta berkomunikasi dengan jaringan mereka melalui platform. Untuk asosiasi dan komunitas, TactLink menyediakan lingkungan digital terpusat di mana anggota dapat menemukan, terhubung, dan berkolaborasi. Organisasi juga dapat menggunakan TactLink untuk mengelola acara, memfasilitasi jejaring, dan meningkatkan keterlibatan anggota."
+              question: "Gimana sih cara kerja TactLink?",
+              answer: "TactLink mengubah cara networking tradisional jadi serba digital. Mulai dari kartu nama, kelola kontak, direktori anggota, sampai networking event—semuanya ada dalam satu platform. Kamu tinggal bikin profil digital, share dengan gampang pakai QR atau link, dan koneksimu otomatis tersimpan rapi. Buat asosiasi atau komunitas, TactLink jadi pusat digital tempat anggota bisa saling sapa, ngobrol, dan kolaborasi. Event organizer juga bisa pakai platform ini buat ngatur acara biar peserta lebih gampang networking."
           },
           {
-              question: "Fitur apa saja yang ditawarkan TactLink?",
-              answer: "TactLink menawarkan berbagai fitur yang mendukung jejaring digital, termasuk kartu nama digital, manajemen acara, manajemen asosiasi, direktori jejaring pintar, koneksi, dan obrolan. Fitur-fitur ini membantu pengguna membangun, mengelola, dan berinteraksi dengan jaringan profesional mereka di satu platform."
+              question: "Fitur unggulan apa aja yang ada di TactLink?",
+              answer: "Banyak banget! Mulai dari Kartu Nama Digital, Manajemen Event, Dashboard Asosiasi, Direktori Pintar, fitur Connect, sampai Chat. Semua fitur ini dirancang biar kamu gampang bangun dan ngelola jaringan profesionalmu cukup di satu tempat."
           },
           {
-              question: "Apa itu Kartu Nama Digital?",
-              answer: "Kartu Nama Digital adalah versi digital dari kartu nama tradisional yang memungkinkan pengguna membagikan informasi profesional mereka secara elektronik. Dengan TactLink, pengguna dapat membuat dan menyesuaikan kartu nama digital mereka serta membagikannya dengan orang lain tanpa perlu kartu fisik."
+              question: "Apa sih bedanya Kartu Nama Digital?",
+              answer: "Kartu Nama Digital itu versi modern dari kartu cetak biasa, tapi serba elektronik. Di TactLink, kamu bebas ngatur tampilan kartu namamu dan langsung bisa nge-share ke orang lain tanpa harus repot bawa-bawa kertas fisik lagi."
           },
           {
-              question: "Bagaimana TactLink dapat mendukung jejaring dan acara?",
-              answer: "TactLink membantu membuat jejaring lebih efisien dengan menghubungkan peserta, anggota, dan profesional melalui alat jejaring digital. Untuk acara, TactLink dapat mendukung manajemen acara dan aktivitas jejaring, memungkinkan peserta untuk terhubung dan terlibat dengan orang lain sebelum, selama, atau setelah acara."
+              question: "Gimana TactLink ngebantu event dan networking?",
+              answer: "TactLink bikin urusan networking jadi jauh lebih praktis. Peserta, anggota asosiasi, atau profesional bisa saling terhubung dengan mudah. Khusus buat event, TactLink siap bantu memfasilitasi peserta buat ngobrol dan kenalan, baik sebelum, pas hari H, maupun sesudah acara."
           },
           {
-              question: "Siapa yang dapat menggunakan TactLink?",
-              answer: "TactLink dapat digunakan oleh individu, profesional, organisasi, asosiasi, komunitas, dan penyelenggara acara. Platform ini dapat mendukung berbagai kebutuhan jejaring, dari membangun koneksi profesional hingga mengelola keterlibatan anggota dan acara."
+              question: "Siapa aja yang cocok pakai TactLink?",
+              answer: "Siapa aja! Mulai dari individu, profesional, perusahaan, asosiasi, komunitas, sampai penyelenggara acara (Event Organizer). TactLink bisa memenuhi berbagai kebutuhan networking-mu, dari sekadar nambah koneksi bisnis sampai ngurus aktivitas anggota dan event besar."
           },
           {
-              question: "Mengapa saya harus menggunakan TactLink?",
-              answer: "TactLink membuat jejaring menjadi lebih mudah, lebih efisien, dan lebih berkelanjutan dengan membantu pengguna terhubung, membagikan kartu nama digital mereka, dan membangun hubungan profesional di satu platform."
+              question: "Kenapa aku harus pakai TactLink?",
+              answer: "Karena TactLink bikin networking jauh lebih gampang, cepat, dan pastinya ramah lingkungan! Kamu bisa ngurus semua kebutuhan kenalan, bagi kartu nama, sampai jaga hubungan profesional hanya dari satu platform yang rapi."
           },
           {
-              question: "Apa itu jejaring digital?",
-              answer: "Jejaring digital adalah proses membangun dan memelihara koneksi profesional melalui platform digital. Ini memungkinkan orang untuk terhubung, berbagi informasi, dan tetap berhubungan tanpa hanya mengandalkan jejaring tatap muka tradisional."
+              question: "Apa yang dimaksud jejaring digital?",
+              answer: "Jejaring digital itu cara kita ngebangun dan menjaga koneksi kerja atau bisnis secara online. Jadi, kamu tetap bisa bagi info, ngobrol, dan menjaga hubungan profesional tanpa harus selalu mengandalkan pertemuan fisik."
           },
           {
-              question: "Apa yang membedakan TactLink dari jejaring tradisional?",
-              answer: "TactLink menggabungkan jejaring, kartu nama digital, acara, dan koneksi komunitas dalam satu platform. Platform ini memberikan cara yang lebih nyaman dan berkelanjutan untuk terhubung dibandingkan dengan mengandalkan kartu nama fisik dan metode jejaring tradisional."
+              question: "Apa bedanya TactLink dengan networking biasa?",
+              answer: "TactLink menggabungkan urusan networking, kartu nama digital, event, sampai komunitas ke dalam satu platform aja. Jauh lebih praktis dan ramah lingkungan dibandingkan harus mengumpulkan atau membagikan kartu nama kertas setiap kali ada acara."
           },
           {
-              question: "Bagaimana TactLink mendukung Tujuan Pembangunan Berkelanjutan (SDGs)?",
+          {
+              question: "Gimana cara TactLink dukung Tujuan Pembangunan Berkelanjutan (SDGs)?",
               answer: [
-                  "SDG 12 – Konsumsi dan Produksi yang Bertanggung Jawab: Mengurangi penggunaan kartu nama kertas dan limbah pencetakan.",
-                  "SDG 13 – Penanganan Perubahan Iklim: Mengurangi jejak karbon melalui jejaring digital.",
-                  "SDG 15 – Ekosistem Daratan: Mendukung pelestarian sumber daya alam dan hutan.",
-                  "SDG 17 – Kemitraan untuk Mencapai Tujuan: Memperkuat kolaborasi dan kemitraan antar individu, organisasi, dan komunitas melalui platform jejaring digital."
+                  "SDG 12 – Konsumsi & Produksi Bertanggung Jawab: Kurangi limbah kertas dari cetak kartu nama.",
+                  "SDG 13 – Penanganan Perubahan Iklim: Pangkas jejak karbon lewat networking digital.",
+                  "SDG 15 – Ekosistem Daratan: Bantu jaga kelestarian alam dan hutan.",
+                  "SDG 17 – Kemitraan: Perkuat kolaborasi antar individu, organisasi, dan komunitas lewat platform digital."
               ]
           },
           {
-              question: "Bisakah saya memindai kartu nama fisik dengan TactLink?",
-              answer: "TactLink memungkinkan Anda memindai kartu nama fisik menggunakan OCR (Pengenalan Karakter Optik). Informasi dari kartu yang dipindai dapat didigitalkan dan disimpan ke Smart Directory Anda, membuatnya lebih mudah untuk mengelola dan tetap terhubung dengan kontak Anda."
+              question: "Bisa nggak sih scan kartu nama fisik pakai TactLink?",
+              answer: "Bisa banget! TactLink punya fitur OCR (Optical Character Recognition) buat scan kartu nama fisik. Info dari kartu fisik otomatis masuk ke Smart Directory kamu, jadi lebih gampang disimpan dan dikelola."
           },
           {
-              question: "Dapatkah saya terhubung dengan seseorang dengan memindai kode QR mereka?",
-              answer: "TactLink memungkinkan pengguna memindai kode QR untuk dengan cepat mengakses dan menyimpan kartu nama digital pengguna lain, membuatnya lebih mudah untuk terhubung dan bertukar informasi profesional."
+              question: "Bisa terhubung dengan orang lain cuma lewat scan QR?",
+              answer: "Tentu bisa! Kamu tinggal scan QR code pengguna lain buat langsung akses dan menyimpan kartu nama digital mereka. Tukeran kontak kerjaan jadi lebih cepat dan praktis."
           }
       ],
     attendee: [
           {
-              question: "Bagaimana cara membuat akun TactLink?",
+              question: "Gimana cara bikin akun TactLink?",
               answer: [
-                  "Langkah 1: Akses Aplikasi",
-                  "Langkah 2: Lengkapi detail pribadi Anda dengan mengeklik “Buat Akun” dan masukkan nama, email, nomor ponsel, dan kata sandi Anda.",
-                  "Langkah 3: Daftar menggunakan Gmail atau Apple (untuk pengguna iOS)"
+                  "Langkah 1: Buka aplikasi TactLink",
+                  "Langkah 2: Lengkapi profil kamu dengan klik “Buat Akun”, lalu masukin nama, email, nomor HP, dan password.",
+                  "Langkah 3: Atau, kamu bisa langsung daftar pakai Gmail atau Apple ID (khusus iOS)"
               ],
               images: [
                   "/images/helpcenter/attendee_p1_1.png",
@@ -490,11 +491,11 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana cara melengkapi Kartu Nama Digital Anda?",
+              question: "Gimana cara ngelengkapin Kartu Nama Digital?",
               answer: [
-                  "Langkah 1: Klik “Lengkapi Kartu Saya” di dasbor Anda.",
-                  "Langkah 2: Tambahkan foto profil dan lengkapi detail perusahaan.",
-                  "Langkah 3: Tambahkan logo dan tautkan media sosial Anda."
+                  "Langkah 1: Klik “Lengkapi Kartu Saya” di halaman dasbor.",
+                  "Langkah 2: Tambahkan foto profil dan isi info perusahaanmu.",
+                  "Langkah 3: Jangan lupa tambahkan logo dan link media sosialmu."
               ],
               images: [
                   "/images/helpcenter/attendee_p1_4.png",
@@ -503,15 +504,15 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana cara Memindai Kartu Nama Digital?",
+              question: "Gimana cara Scan Kartu Nama Digital orang lain?",
               answer: [
-                  "Langkah 1: Klik ikon pindai di sudut kanan atas",
-                  "Langkah 2: Pilih metode yang tersedia untuk menambahkan kartu nama",
-                  "Langkah 3: Setelah memindai, layar berikut akan muncul. Kemudian, klik “Selesai”",
-                  "Langkah 4: Buka fitur “Kontak” dan klik salah satu kontak yang ingin Anda hubungkan",
-                  "Langkah 5: Klik tanda (+) untuk terhubung, Anda juga dapat melihat perusahaan, jabatan, dan nomor ponsel kontak.",
-                  "Langkah 6: Setelah mengeklik “Hubungkan” kartu nama digital Anda akan muncul. Klik kartu nama digital tersebut, lalu klik “Berikutnya”.",
-                  "Langkah 7: Setelah berhasil, klik “Kirim Permintaan” untuk terhubung"
+                  "Langkah 1: Klik ikon scan di pojok kanan atas layar",
+                  "Langkah 2: Pilih metode tambah kontak yang kamu mau",
+                  "Langkah 3: Habis scan, bakal muncul info kontaknya. Terus klik “Selesai”",
+                  "Langkah 4: Buka menu “Kontak” dan pilih kontak yang mau kamu ajak koneksi",
+                  "Langkah 5: Klik tombol (+) buat connect. Kamu juga bisa lihat info perusahaan, jabatan, dan nomor HP mereka.",
+                  "Langkah 6: Setelah klik “Hubungkan”, pilih kartu namamu yang mau kamu share, lalu klik “Berikutnya”.",
+                  "Langkah 7: Kalau udah, klik “Kirim Permintaan” buat mulai berteman"
               ],
               images: [
                   "/images/helpcenter/attendee_p1_7.png",
@@ -524,11 +525,11 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana cara mengubah tata letak kartu nama digital?",
+              question: "Gimana cara ganti desain/tata letak kartu namaku?",
               answer: [
-                  "Langkah 1: Klik kartu nama digital untuk mengubah tata letaknya, dan jika Anda ingin menambahkan kartu nama baru, klik \"Tambahkan kartu baru\"",
-                  "Langkah 2: Klik \"Ubah tata letak\" untuk mengganti desain kartu nama digital Anda",
-                  "Langkah 3: Pilih salah satu tata letak yang ingin Anda gunakan"
+                  "Langkah 1: Klik kartu nama digital kamu. Kalau mau nambah kartu baru, klik \"Tambahkan kartu baru\"",
+                  "Langkah 2: Klik \"Ubah tata letak\" buat pilih desain kartu namamu",
+                  "Langkah 3: Pilih desain atau layout yang paling pas buat kamu"
               ],
               images: [
                   "/images/helpcenter/attendee_p1_14.png",
@@ -537,11 +538,11 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana cara mengedit profil Anda?",
+              question: "Gimana cara edit profil?",
               answer: [
-                  "Langkah 1: Klik kartu nama digital untuk mengubah tata letaknya, dan jika Anda ingin menambahkan kartu nama, klik \"Tambahkan kartu baru\"",
-                  "Langkah 2: Klik \"Edit\" untuk mengubah detail profil",
-                  "Langkah 3: Lengkapi detail profil seperti nama, email, nomor ponsel, alamat, media sosial, dan logo"
+                  "Langkah 1: Klik kartu nama digitalmu. Kalau mau bikin profil baru, klik \"Tambahkan kartu baru\"",
+                  "Langkah 2: Pilih \"Edit\" buat ubah detail profilmu",
+                  "Langkah 3: Lengkapi profil seperti nama, email, nomor HP, alamat, sosmed, atau logo"
               ],
               images: [
                   "/images/helpcenter/attendee_p2_17.png",
@@ -550,11 +551,11 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana cara membagikan Kartu Nama Digital?",
+              question: "Gimana cara nge-share Kartu Nama Digital?",
               answer: [
-                  "Langkah 1: Klik kartu nama digital untuk mengubah tata letaknya, dan jika Anda ingin menambahkan kartu nama, klik \"Tambahkan kartu baru\"",
-                  "Langkah 2: Klik \"QR Saya\" untuk melihat kartu nama digital",
-                  "Langkah 3: Bagikan kode QR ini untuk terhubung dengan orang lain dan kartu nama digital juga dapat diunduh"
+                  "Langkah 1: Klik kartu nama digital kamu. Kalau mau nambah profil baru, klik \"Tambahkan kartu baru\"",
+                  "Langkah 2: Pilih \"QR Saya\" buat nampilin kode QR kartu namamu",
+                  "Langkah 3: Tunjukin QR ini ke orang lain buat di-scan. Kartu nama digitalmu juga bisa di-download lho!"
               ],
               images: [
                   "/images/helpcenter/attendee_p2_20.png",
@@ -563,11 +564,11 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana cara melihat fitur obrolan (chat)?",
+              question: "Gimana cara buka fitur Chat (Obrolan)?",
               answer: [
-                  "Langkah 1: Buka Beranda dan klik foto profil Anda, layar seperti di atas akan muncul, lalu klik \"Obrolan (Chats)\"",
-                  "Langkah 2: Klik tiga garis di sudut kanan atas, lalu klik “Obrolan Baru”",
-                  "Langkah 3: Daftar kontak yang terhubung akan muncul"
+                  "Langkah 1: Buka halaman Beranda, klik foto profilmu, terus pilih menu \"Obrolan (Chats)\"",
+                  "Langkah 2: Klik ikon tiga garis di pojok kanan atas, lalu pilih “Obrolan Baru”",
+                  "Langkah 3: Daftar kontak yang udah terhubung sama kamu bakal muncul di sini"
               ],
               images: [
                   "/images/helpcenter/attendee_p2_23.png",
@@ -576,11 +577,11 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana cara membuat grup?",
+              question: "Gimana cara bikin Grup Chat?",
               answer: [
-                  "Langkah 1: Buka Beranda dan klik foto profil Anda, layar seperti di atas akan muncul, lalu klik \"Obrolan\"",
-                  "Langkah 2: Klik tiga garis di sudut kanan atas, lalu klik “Buat Grup Baru”",
-                  "Langkah 3: Tambahkan foto dan nama grup, lalu tambahkan anggota dan klik “Buat”"
+                  "Langkah 1: Buka halaman Beranda, klik foto profilmu, terus pilih menu \"Obrolan\"",
+                  "Langkah 2: Klik ikon tiga garis di pojok kanan atas, lalu pilih “Buat Grup Baru”",
+                  "Langkah 3: Masukin foto dan nama grup, tambahin anggota yang mau diundang, terus klik “Buat”"
               ],
               images: [
                   "/images/helpcenter/attendee_p3_26.png",
@@ -589,13 +590,13 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana cara Check-in di Acara (Event)?",
+              question: "Gimana cara Check-in di Event?",
               answer: [
-                  "Langkah 1: Buka fitur acara, temukan acara di halaman Jelajahi (Discover).",
-                  "Langkah 2: Lihat informasi detail acara",
-                  "Langkah 3: Pilih kategori acara yang sesuai",
-                  "Langkah 4: Lakukan Check-in untuk acara tersebut",
-                  "Langkah 5: Dapatkan tiket QR sebagai bukti akses masuk"
+                  "Langkah 1: Buka menu Event, cari event yang mau kamu datengin di halaman Jelajahi (Discover)",
+                  "Langkah 2: Cek info detail soal event-nya",
+                  "Langkah 3: Pilih kategori tiket atau event yang sesuai",
+                  "Langkah 4: Lakukan Check-in buat dapetin akses",
+                  "Langkah 5: Kamu bakal dapet tiket QR sebagai bukti buat masuk ke acara"
               ],
               images: [
                   "/images/helpcenter/attendee_p3_29.png",
@@ -606,12 +607,12 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana cara melihat fitur asosiasi?",
+              question: "Gimana cara gabung ke Asosiasi/Komunitas?",
               answer: [
-                  "Langkah 1: Lihat daftar asosiasi yang Anda ikuti",
-                  "Langkah 2: Lihat informasi asosiasi, termasuk jumlah anggota, acara, dan aktivitas",
-                  "Langkah 3: Temukan dan pilih acara yang tersedia di dalam asosiasi tersebut",
-                  "Langkah 4: Lihat daftar anggota dalam asosiasi."
+                  "Langkah 1: Buka daftar asosiasi atau komunitas yang kamu ikuti",
+                  "Langkah 2: Cek info lengkap asosiasinya, mulai dari jumlah anggota sampai aktivitas terbaru",
+                  "Langkah 3: Cari dan pilih event yang lagi diadain sama asosiasi tersebut",
+                  "Langkah 4: Kamu juga bisa ngelihat daftar anggota lain di komunitas itu"
               ],
               images: [
                   "/images/helpcenter/attendee_p3_34.png",
@@ -621,12 +622,12 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana cara Menerima Permintaan Koneksi di Aplikasi TactLink?",
+              question: "Gimana cara Nerima Permintaan Koneksi (Add Friend)?",
               answer: [
-                  "Langkah 1: Klik ikon lonceng untuk melihat notifikasi dan melihat siapa yang mengirimi Anda permintaan koneksi",
-                  "Langkah 2: Klik kontak yang mengirimkan permintaan untuk terhubung",
-                  "Langkah 3: Klik “Terima” untuk menerima permintaan koneksi, atau klik “Lihat Kontak” untuk melihat detail kontak",
-                  "Langkah 4: Mengeklik \"Lihat kontak\" akan menampilkan kartu nama digital, Anda kemudian dapat mengeklik \"Terima\" untuk menerima permintaan."
+                  "Langkah 1: Klik ikon lonceng buat ngecek notifikasi, di situ kelihatan siapa aja yang ngajak konekan",
+                  "Langkah 2: Klik profil orang yang ngirim permintaan",
+                  "Langkah 3: Langsung klik “Terima” buat konfirmasi, atau klik “Lihat Kontak” kalau pengen kepo profilnya dulu",
+                  "Langkah 4: Kalau klik \"Lihat kontak\", bakal muncul detail kartu nama digitalnya. Setelah itu baru klik \"Terima\"."
               ],
               images: [
                   "/images/helpcenter/attendee_p3_38.png",
@@ -638,12 +639,12 @@ const id: HelpData = {
       ],
     admin: [
           {
-              question: "Bagaimana cara melihat Detail Check-in Acara (Event Detail)?",
+              question: "Gimana cara ngecek Detail Check-in Event?",
               answer: [
-                  "Langkah 1: Jadwal Acara. Admin melihat daftar dan jadwal acara yang dikelola.",
-                  "Langkah 2: Detail Acara. Admin membuka detail acara untuk melihat informasi acara.",
-                  "Langkah 3: QR Acara. Admin dapat membagikan kode QR acara kepada peserta.",
-                  "Langkah 4: Daftar Peserta. Admin dapat melihat daftar peserta."
+                  "Langkah 1: Jadwal Acara. Admin bisa ngecek daftar dan jadwal acara yang lagi dikelola.",
+                  "Langkah 2: Detail Acara. Buka halaman detail acara buat ngelihat info lengkapnya.",
+                  "Langkah 3: QR Acara. Admin bisa langsung nge-share kode QR acara ke para peserta.",
+                  "Langkah 4: Daftar Peserta. Pantau terus daftar peserta yang udah gabung."
               ],
               images: [
                   "/images/helpcenter/admin_p1_4.png",
@@ -653,11 +654,11 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana Alur Check-in Acara untuk Admin?",
+              question: "Gimana cara Admin nerapin Alur Check-in Event?",
               answer: [
-                  "Langkah 1: Klik fitur “Check-in” untuk mengelola daftar peserta acara.",
-                  "Langkah 2: Klik “Scan passes” untuk memindai kode QR peserta, status akan diperbarui secara real-time.",
-                  "Langkah 3: Klik “Walk-in” jika peserta tidak memiliki kode QR. Admin dapat memasukkan nama dan email peserta secara langsung."
+                  "Langkah 1: Buka fitur “Check-in” buat ngatur daftar peserta acara.",
+                  "Langkah 2: Klik “Scan passes” buat scan kode QR peserta. Status kehadiran bakal langsung update saat itu juga.",
+                  "Langkah 3: Pilih opsi “Walk-in” kalau ada peserta yang nggak punya QR. Admin bisa masukin nama dan email mereka secara manual."
               ],
               images: [
                   "/images/helpcenter/admin_p1_5.png",
@@ -666,11 +667,11 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana cara membuat Lucky Draw di aplikasi TactLink?",
+              question: "Gimana cara bikin Lucky Draw di TactLink?",
               answer: [
-                  "Langkah 1: Buka acara dan klik “Lucky Draw” untuk membuat hadiah bagi peserta acara.",
-                  "Langkah 2: Atur waktu buka dan tutup Lucky Draw, lalu tambahkan hadiah yang akan diberikan kepada peserta.",
-                  "Langkah 3: Setelah Lucky Draw berhasil dibuat, ikon Lucky Draw akan muncul di sisi kanan."
+                  "Langkah 1: Masuk ke halaman event, terus klik “Lucky Draw” buat nyiapin hadiah untuk peserta.",
+                  "Langkah 2: Tentukan jam buka-tutup Lucky Draw, lalu masukin hadiah apa aja yang mau dibagi-bagiin.",
+                  "Langkah 3: Kalau udah berhasil dibuat, ikon Lucky Draw bakal muncul di sebelah kanan layar."
               ],
               images: [
                   "/images/helpcenter/admin_p2_8.png",
@@ -680,13 +681,13 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana cara mengatur Speed Networking di aplikasi TactLink?",
+              question: "Gimana cara ngatur Speed Networking?",
               answer: [
-                  "Langkah 1: Buka acara dan klik “Create Speed Networking”.",
-                  "Langkah 2: Atur jumlah anggota per grup dan jumlah ronde yang diinginkan, lalu klik “Generate Preview”.",
-                  "Langkah 3: Setelah membuat Speed Networking, pratinjau (preview) akan muncul menunjukkan ke tim mana setiap peserta ditugaskan.",
-                  "Langkah 4: Dari Langkah 3, klik “Publish” untuk menampilkan layar seperti pada gambar.",
-                  "Langkah 5: Setelah “Speed Networking” berhasil dibuat, ikonnya akan muncul di halaman acara."
+                  "Langkah 1: Buka event-nya dan klik “Create Speed Networking”.",
+                  "Langkah 2: Tentuin berapa orang per grup dan jumlah ronde yang dimau, habis itu klik “Generate Preview”.",
+                  "Langkah 3: Setelah dibuat, bakal muncul layar preview yang nunjukin pembagian tim masing-masing peserta.",
+                  "Langkah 4: Dari layar preview tadi, klik “Publish” biar tampilannya live kayak di gambar.",
+                  "Langkah 5: Kalau fitur “Speed Networking” sukses dibikin, ikonnya langsung nongol di halaman event."
               ],
               images: [
                   "/images/helpcenter/admin_p2_8.png",
@@ -697,13 +698,13 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana cara melihat fitur Asosiasi di Aplikasi TactLink?",
+              question: "Gimana cara lihat fitur Asosiasi?",
               answer: [
-                  "Langkah 1: Klik “Create New Association” untuk menambahkan asosiasi baru.",
-                  "Langkah 2: Lengkapi foto, nama asosiasi, lokasi, dan deskripsi.",
-                  "Langkah 3: Klik salah satu asosiasi dalam daftar untuk melihat informasi lebih rinci.",
-                  "Langkah 4: Klik “members” untuk melihat jumlah peserta.",
-                  "Langkah 5: Pada Langkah 3, klik “View All” untuk melihat informasi acara."
+                  "Langkah 1: Klik “Create New Association” kalau kamu mau nambahin asosiasi baru.",
+                  "Langkah 2: Jangan lupa isi foto, nama asosiasi, lokasi, beserta deskripsinya.",
+                  "Langkah 3: Pilih salah satu asosiasi yang ada di daftar buat ngelihat info detailnya.",
+                  "Langkah 4: Klik menu “members” buat ngecek jumlah anggotanya.",
+                  "Langkah 5: Pas di Langkah 3, kamu juga bisa klik “View All” buat mantau info event-nya."
               ],
               images: [
                   "/images/helpcenter/admin_p2_15.png",
@@ -714,10 +715,10 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana cara mengakses Dasbor Admin Asosiasi?",
+              question: "Gimana cara akses Dasbor Admin Asosiasi?",
               answer: [
-                  "Langkah 1: Buka tautan https://tactlink-admin-prod.vercel.app/. Masuk menggunakan email yang terdaftar atau akun Apple (untuk pengguna iOS) jika Anda telah didaftarkan oleh tim TactLink sebagai admin asosiasi.",
-                  "Langkah 2: Di Dasbor, admin dapat melihat jumlah dan pertumbuhan Anggota, mengelola Iuran (Dues) anggota, memantau hal-hal yang memerlukan perhatian (Needs Attention), serta melihat acara mendatang di bagian Upcoming."
+                  "Langkah 1: Buka link https://tactlink-admin-prod.vercel.app/. Login pakai email yang udah didaftarin atau Apple ID (khusus iOS), pastikan tim TactLink udah daftarin kamu sebagai admin asosiasi ya.",
+                  "Langkah 2: Di Dasbor, kamu bisa mantau perkembangan jumlah anggota, ngelola Iuran (Dues), merhatiin hal-hal penting di kolom Needs Attention, dan ngecek jadwal di bagian Upcoming."
               ],
               images: [
                   "/images/helpcenter/admin_p4_23.png",
@@ -725,11 +726,11 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana cara mengelola anggota asosiasi?",
+              question: "Gimana cara kelola anggota asosiasi?",
               answer: [
-                  "Langkah 1: Buka tautan https://tactlink-admin-prod.vercel.app/ dan masuk menggunakan email atau akun Apple Anda.",
-                  "Langkah 2: Klik ikon di sudut kiri atas untuk menjelajahi fitur web, lalu klik “Members” untuk melihat jumlah anggota, alamat email, status, dan peran dalam asosiasi.",
-                  "Langkah 3: Klik “Invite Members” untuk menambahkan anggota asosiasi dengan memasukkan alamat email mereka, lalu klik “Send Invitation”."
+                  "Langkah 1: Buka https://tactlink-admin-prod.vercel.app/ dan login pakai akun kamu.",
+                  "Langkah 2: Klik ikon di pojok kiri atas buat buka menu web, lalu klik “Members” buat mantau jumlah anggota, email, status, sama peran mereka di asosiasi.",
+                  "Langkah 3: Klik “Invite Members” buat ngundang orang masuk asosiasi. Cukup masukin email mereka, lalu klik “Send Invitation”."
               ],
               images: [
                   "/images/helpcenter/admin_p4_23.png",
@@ -738,12 +739,12 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana cara membuat acara baru?",
+              question: "Gimana cara bikin Event baru?",
               answer: [
-                  "Langkah 1: Buka tautan https://tactlink-admin-prod.vercel.app/ dan masuk dengan akun Anda.",
-                  "Langkah 2: Klik fitur “Events” untuk melihat detail acara di dalam asosiasi.",
-                  "Langkah 3: Lihat informasi tentang acara yang sudah lewat, sedang berlangsung, dan yang akan datang.",
-                  "Langkah 4: Pada langkah 3, klik \"Create Event\" untuk menjadwalkan acara baru."
+                  "Langkah 1: Buka web https://tactlink-admin-prod.vercel.app/ dan login.",
+                  "Langkah 2: Klik fitur “Events” buat ngecek detail acara yang ada di asosiasimu.",
+                  "Langkah 3: Cek info event yang udah lewat, lagi jalan, atau yang akan datang.",
+                  "Langkah 4: Di halaman tadi, tinggal klik \"Create Event\" buat jadwalkan event baru."
               ],
               images: [
                   "/images/helpcenter/admin_p4_23.png",
@@ -753,11 +754,11 @@ const id: HelpData = {
               ]
           },
           {
-              question: "Bagaimana cara mengelola pengaturan asosiasi?",
+              question: "Gimana cara ngatur setting-an asosiasi?",
               answer: [
-                  "Langkah 1: Buka tautan https://tactlink-admin-prod.vercel.app/ dan masuk dengan akun Anda.",
-                  "Langkah 2: Kelola pengaturan terkait asosiasi.",
-                  "Langkah 3: Atur format nomor keanggotaan dengan menambahkan awalan (prefix) pada nomor anggota. Awalan ini dapat disesuaikan atau dibiarkan kosong untuk menggunakan angka berurutan tanpa awalan."
+                  "Langkah 1: Buka web https://tactlink-admin-prod.vercel.app/ dan login.",
+                  "Langkah 2: Buka menu pengelolaan pengaturan atau setting asosiasi.",
+                  "Langkah 3: Atur format nomor anggota dengan nambahin awalan (prefix). Kamu bisa custom awalannya, atau biarin kosong aja kalau cuma mau pakai nomor urut biasa."
               ],
               images: [
                   "/images/helpcenter/admin_p4_23.png",
