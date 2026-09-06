@@ -458,7 +458,6 @@ const id: HelpData = {
               answer: "TactLink menggabungkan urusan networking, kartu nama digital, event, sampai komunitas ke dalam satu platform aja. Jauh lebih praktis dan ramah lingkungan dibandingkan harus mengumpulkan atau membagikan kartu nama kertas setiap kali ada acara."
           },
           {
-          {
               question: "Gimana cara TactLink dukung Tujuan Pembangunan Berkelanjutan (SDGs)?",
               answer: [
                   "SDG 12 – Konsumsi & Produksi Bertanggung Jawab: Kurangi limbah kertas dari cetak kartu nama.",
