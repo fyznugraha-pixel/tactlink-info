@@ -84,7 +84,7 @@ function CountUpStat({
       : Math.round(count).toLocaleString("en-US");
 
   return (
-    <p ref={ref} className="text-3xl font-black text-white md:text-4xl">
+    <p ref={ref} className="text-3xl font-black text-white md:text-4xl font-headline">
       {displayValue}
       {parsed.suffix}
     </p>
@@ -97,26 +97,23 @@ export default function TrustSection() {
   const { stats } = dict;
 
   const content = (
-    <div className="relative overflow-hidden rounded-[1.6rem] border border-white/10 bg-white/[0.055] p-4 shadow-2xl shadow-cyan-950/20 backdrop-blur-2xl md:rounded-[2rem] md:p-8">
-      <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-yellow-300/10 blur-3xl" />
-      <div className="pointer-events-none absolute -left-24 bottom-0 h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl" />
-
-      <div className="relative grid gap-6 md:grid-cols-[0.9fr_1.1fr] md:items-center md:gap-8">
+    <div className="relative overflow-hidden rounded-xl bg-primary p-8 shadow-md md:p-16">
+      <div className="relative grid gap-8 md:grid-cols-[1fr_1fr] md:items-center md:gap-12">
         <div className="relative text-center md:text-left">
-          <p className="text-xs font-black uppercase tracking-[0.25em] text-yellow-200 md:text-sm">
+          <p className="inline-block px-4 py-1.5 rounded bg-white/10 text-xs font-semibold uppercase tracking-widest text-secondary">
             {dict.ui.trustBadge}
           </p>
 
-          <h2 className="mt-3 text-2xl font-black text-white md:text-4xl">
+          <h2 className="mt-6 text-3xl font-bold text-white md:text-4xl lg:text-5xl font-headline">
             {dict.ui.trustTitle}
           </h2>
 
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-slate-300 md:mx-0 md:text-base">
+          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-blue-100 md:mx-0 font-normal">
             {dict.ui.trustDesc}
           </p>
         </div>
 
-        <div className="relative grid grid-cols-2 gap-3 sm:grid-cols-4 md:gap-3">
+        <div className="relative grid grid-cols-2 gap-4 sm:grid-cols-2 md:gap-6">
           {stats.map((stat, index) => {
             const statContent = (
               <>
@@ -125,8 +122,7 @@ export default function TrustSection() {
                   delay={isDesktop ? index * 120 : index * 70}
                   duration={isDesktop ? 1500 : 900}
                 />
-
-                <p className="mt-1 line-clamp-2 text-[11px] font-semibold leading-4 text-slate-400 transition md:mt-2 md:text-xs md:leading-5 md:group-hover:text-yellow-100/75">
+                <p className="mt-2 text-xs font-medium text-blue-100">
                   {stat.label}
                 </p>
               </>
@@ -144,18 +140,9 @@ export default function TrustSection() {
                 }}
                 className="min-w-0"
               >
-                {isDesktop ? (
-                  <SpotlightCard
-                    spotlightColor="rgba(234, 179, 8, 0.23)"
-                    className="group h-full rounded-3xl border border-white/10 bg-slate-950/45 p-4 text-center transition duration-300 hover:-translate-y-0.5 hover:border-yellow-300/25 hover:bg-slate-950/60"
-                  >
-                    {statContent}
-                  </SpotlightCard>
-                ) : (
-                  <div className="h-full rounded-2xl border border-white/10 bg-slate-950/45 p-4 text-center">
-                    {statContent}
-                  </div>
-                )}
+                <div className="h-full rounded-2xl bg-white/5 border border-white/10 p-6 text-center shadow-sm backdrop-blur-sm">
+                  {statContent}
+                </div>
               </motion.div>
             );
           })}
@@ -166,20 +153,8 @@ export default function TrustSection() {
 
   return (
     <section className="px-4 py-8 md:py-16">
-      <div className="mx-auto max-w-[1400px]">
-        <BorderGlow
-          edgeSensitivity={isDesktop ? 30 : 42}
-          glowColor="52 95 62"
-          backgroundColor="rgba(2, 6, 23, 0.9)"
-          borderRadius={isDesktop ? 32 : 26}
-          glowRadius={isDesktop ? 36 : 22}
-          glowIntensity={isDesktop ? 1.05 : 0.58}
-          coneSpread={isDesktop ? 24 : 20}
-          colors={["#fde047", "#22d3ee", "#60a5fa"]}
-          fillOpacity={isDesktop ? 0.16 : 0.08}
-        >
-          {content}
-        </BorderGlow>
+      <div className="mx-auto w-full max-w-[1440px]">
+        {content}
       </div>
     </section>
   );

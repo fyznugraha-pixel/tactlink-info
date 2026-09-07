@@ -10,7 +10,7 @@ import TrustSection from "@/components/TrustSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-slate-950 text-white">
+    <main className="min-h-screen overflow-hidden bg-slate-50 text-slate-900">
       <Navbar />
       <HeroSection />
       <QuickLinks />

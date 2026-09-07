@@ -1,7 +1,6 @@
 "use client";
 
 
-import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import useIsDesktop from "@/hooks/useIsDesktop";
@@ -13,29 +12,25 @@ export default function SocialSection() {
   const { socialLinks, ui } = dict;
 
   return (
-    <section id="socials" className="relative px-4 py-10 md:py-20">
-      <div className="pointer-events-none absolute inset-x-0 top-16 mx-auto h-72 max-w-4xl rounded-full bg-violet-500/10 blur-3xl" />
-      <div className="pointer-events-none absolute -right-24 bottom-10 hidden h-72 w-72 rounded-full bg-yellow-300/10 blur-3xl md:block" />
-      <div className="pointer-events-none absolute -left-24 top-1/2 hidden h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl md:block" />
-
-      <div className="relative mx-auto max-w-[1400px]">
-        <div className="mb-6 flex flex-col gap-3 text-center md:mb-10 md:flex-row md:items-end md:justify-between md:text-left">
+    <section id="socials" className="relative px-4 py-10 md:py-20 bg-white">
+      <div className="relative mx-auto w-full max-w-[1440px]">
+        <div className="mb-8 flex flex-col gap-4 text-center md:mb-12 md:flex-row md:items-end md:justify-between md:text-left">
           <div className="max-w-3xl">
-            <p className="text-xs font-black uppercase tracking-[0.25em] text-yellow-200 md:text-sm">
+            <p className="inline-block px-1 py-1 text-xs font-semibold uppercase tracking-widest text-slate-400">
               {ui.connectRegion}
             </p>
 
-            <h2 className="mt-3 text-2xl font-black tracking-tight text-white md:text-5xl">
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-black md:text-5xl">
               {ui.socialTitle}
             </h2>
           </div>
 
-          <p className="hidden max-w-md leading-7 text-slate-300 sm:block md:text-right">
+          <p className="hidden max-w-md leading-relaxed text-slate-500 font-medium sm:block md:text-right">
             {ui.socialDesc}
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 md:grid-cols-4 md:gap-4 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-4 md:gap-6 lg:grid-cols-4">
             {socialLinks.map((item) => {
               const Icon = item.icon;
 
@@ -45,28 +40,28 @@ export default function SocialSection() {
                   href={item.href}
                   target="_blank"
                   rel="noreferrer"
-                  className={`group relative overflow-hidden rounded-[1.35rem] border p-4 ${
+                  className={`group relative overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg ${
                     item.featured
-                      ? "border-yellow-300/25 bg-yellow-300/[0.075]"
-                      : "border-white/10 bg-white/[0.055]"
+                      ? "bg-slate-50 shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
+                      : "bg-slate-50"
                   }`}
                 >
-                  <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-yellow-300/10 blur-2xl" />
-
-                  <div className="relative flex items-center justify-between gap-3">
-                    <div className="grid h-10 w-10 place-items-center rounded-2xl bg-white/[0.07] text-yellow-100 ring-1 ring-white/10">
-                      <Icon size={20} />
+                  <div className="relative flex items-center justify-between gap-4">
+                    <div className="grid h-12 w-12 place-items-center rounded-2xl bg-white text-black shadow-sm transition duration-300 group-hover:scale-105 group-hover:text-blue-950">
+                      <Icon size={24} />
                     </div>
 
-                    <ArrowUpRight size={16} className="text-slate-500" />
+                    <div className="grid h-8 w-8 place-items-center rounded-full bg-black/5 text-slate-500 transition group-hover:bg-blue-950 group-hover:text-white">
+                      <ArrowUpRight size={16} />
+                    </div>
                   </div>
 
-                  <div className="relative mt-4">
-                    <p className="text-sm font-black text-white">
+                  <div className="relative mt-8">
+                    <p className="text-xl font-bold text-black transition group-hover:text-blue-950">
                       {item.label}
                     </p>
 
-                    <p className="mt-1 text-xs font-semibold text-yellow-100/75">
+                    <p className="mt-2 text-xs font-semibold text-slate-500">
                       {item.region}
                     </p>
                   </div>

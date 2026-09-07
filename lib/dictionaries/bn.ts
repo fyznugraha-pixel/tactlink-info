@@ -7,17 +7,14 @@ import {
   AppleIcon, FacebookIcon, GooglePlayIcon, InstagramIcon, LinkedinIcon,
 } from "@/components/BrandIcons";
 
-export type IconType = ComponentType<{
-  size?: number;
-  className?: string;
-}>;
+export type IconType = ComponentType<any>; // 
 
 export const brand = {
   name: "TactLink",
   tagline: "আধুনিক নেটওয়ার্কিংয়ের জন্য স্মার্ট ডিরেক্টরি",
   headline: "স্মার্টলি সংযুক্ত হন। দ্রুত নেটওয়ার্ক করুন। কাগজবিহীন হন।",
   description: "TactLink পেশাদার, সম্প্রদায়, সমিতি এবং ইভেন্ট আয়োজকদের ডিজিটাল প্রোফাইল, স্মার্ট ডিরেক্টরি এবং নির্বিঘ্ন নেটওয়ার্কিং টুলের মাধ্যমে অর্থবহ সংযোগ গড়ে তুলতে সাহায্য করে।",
-  logo: "/logo/logotactlink.png",
+  logo: "/links/logo/logotactlink.png",
 };
 
 export const navItems = [

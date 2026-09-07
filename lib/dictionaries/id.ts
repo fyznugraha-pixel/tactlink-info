@@ -7,17 +7,14 @@ import {
   AppleIcon, FacebookIcon, GooglePlayIcon, InstagramIcon, LinkedinIcon,
 } from "@/components/BrandIcons";
 
-export type IconType = ComponentType<{
-  size?: number;
-  className?: string;
-}>;
+export type IconType = ComponentType<any>; // 
 
 export const brand = {
   name: "TactLink",
   tagline: "Direktori Pintar untuk Networking Masa Kini",
-  headline: "Koneksi cerdas, networking lebih cepat, 100% bebas kertas.",
+  headline: "Koneksi cerdas,\nnetworking lebih cepat,\n100% bebas kertas.",
   description: "TactLink hadir untuk bantu para profesional, komunitas, asosiasi, dan event organizer membangun koneksi yang bermakna. Mulai dari profil digital, direktori pintar, sampai fitur networking yang super praktis.",
-  logo: "/logo/logotactlink.png",
+  logo: "/links/logo/logotactlink.png",
 };
 
 export const navItems = [

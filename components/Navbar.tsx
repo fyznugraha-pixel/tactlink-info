@@ -102,261 +102,201 @@ export default function Navbar() {
   }, [isDesktop]);
 
   const navbarContent = (
-    <nav
-      className={`relative border transition-colors duration-300 ${
-        isDesktop ? "rounded-full" : "rounded-[1.5rem]"
-      } ${
-        isScrolled
-          ? "border-yellow-300/15 bg-slate-950/82 shadow-2xl shadow-cyan-950/30 backdrop-blur-2xl"
-          : "border-white/10 bg-slate-950/68 shadow-xl shadow-cyan-950/20 backdrop-blur-2xl"
-      }`}
-    >
-      <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(250,204,21,0.12),transparent_32%),radial-gradient(circle_at_80%_10%,rgba(34,211,238,0.10),transparent_34%)]" />
-        <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-yellow-200/45 to-transparent" />
-      </div>
-
-      <div className="relative flex items-center justify-between px-3 py-2.5 md:px-5 md:py-3">
-        <a
-          href="#top"
-          className="group flex flex-1 min-w-0 items-center gap-2.5 md:gap-3"
-          onClick={() => {
-            setIsOpen(false);
-            setActiveHref("#top");
-          }}
-          aria-label="Go to top"
-        >
-          <span className="relative grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-full border border-yellow-300/30 bg-white shadow-[0_0_24px_rgba(250,204,21,0.14)] transition duration-300 md:h-11 md:w-11 md:group-hover:scale-105 md:group-hover:shadow-[0_0_40px_rgba(250,204,21,0.28)]">
-            <span className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(250,204,21,0.26),transparent_42%)]" />
-
-            <Image
-              src="/logo/logotactlink.png"
-              alt="TactLink logo"
-              width={32}
-              height={32}
-              className="relative h-6 w-6 object-contain md:h-7 md:w-7"
-              priority
-            />
-          </span>
-
-          <span className="min-w-0">
-            <span className="flex items-center gap-1.5 text-sm font-black leading-none tracking-wide text-white">
-              TactLink
-              
-            </span>
-
-            <span className="mt-1 hidden text-xs font-medium text-slate-400 sm:block">
-              {dict.ui.smartDirectory}
-            </span>
-          </span>
-        </a>
-
-        <div className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.045] p-1 md:flex">
-          {navItems.map((item) => {
-            const isActive = activeHref === item.href;
-
-            return item.href.startsWith("#") ? (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setActiveHref(item.href);
-                  if (pathname === `/${language}` || pathname === "/") {
-                    const target = document.querySelector(item.href);
-                    if (target) {
-                      target.scrollIntoView({ behavior: "smooth" });
-                    }
-                  } else {
-                    router.push(`/${language}${item.href}`);
-                  }
-                }}
-                className={`relative rounded-full px-4 py-2 text-sm font-bold transition duration-300 ${
-                  isActive
-                    ? "text-slate-950"
-                    : "text-slate-300 hover:text-yellow-100"
-                }`}
-              >
-                {isActive && (
-                  <motion.span
-                    layoutId="navbar-active-pill"
-                    className="absolute inset-0 rounded-full bg-yellow-300 shadow-[0_0_24px_rgba(250,204,21,0.22)]"
-                    transition={{
-                      type: "spring",
-                      stiffness: 420,
-                      damping: 34,
-                    }}
-                  />
-                )}
-                <span className="relative z-10">{item.label}</span>
-              </a>
-            ) : (
-              <Link
-                key={item.href}
-                href={`/${language}${item.href}`}
-                className={`relative rounded-full px-4 py-2 text-sm font-bold transition duration-300 ${
-                  isActive
-                    ? "text-slate-950 bg-yellow-300 shadow-[0_0_24px_rgba(250,204,21,0.22)]"
-                    : "text-slate-300 hover:text-yellow-100"
-                }`}
-              >
-                <span className="relative z-10">{item.label}</span>
-              </Link>
-            );
-          })}
-        </div>
-
-        <div className="flex flex-1 items-center justify-end gap-2">
-          <LanguageSwitcher />
-
-          <Link
-            href={`/${language}/help`}
-            className="group relative hidden overflow-hidden rounded-full border border-yellow-300/25 bg-yellow-300 px-4 py-2.5 text-sm font-black text-slate-950 shadow-[0_0_28px_rgba(250,204,21,0.18)] transition duration-300 hover:-translate-y-0.5 hover:bg-yellow-200 hover:shadow-[0_0_38px_rgba(250,204,21,0.28)] md:inline-flex"
+    <div className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4 md:pt-6 pointer-events-auto">
+      <nav
+        className={`relative w-full max-w-5xl rounded-2xl transition-all duration-300 border ${
+          isScrolled
+            ? "border-slate-200 bg-white/90 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
+            : "border-transparent bg-transparent"
+        }`}
+      >
+        <div className="flex items-center justify-between px-4 py-3 md:px-6 md:py-3">
+          <a
+            href="#top"
+            className="group flex items-center gap-3"
+            onClick={() => {
+              setIsOpen(false);
+              setActiveHref("#top");
+            }}
+            aria-label="Go to top"
           >
-            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/45 to-transparent transition duration-700 group-hover:translate-x-full" />
-
-            <span className="relative flex items-center gap-2">
-              {dict.ui.helpCenter}
-              <ArrowUpRight
-                size={16}
-                className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            <span className="relative grid h-8 w-8 place-items-center overflow-hidden">
+              <Image
+                src="/links/logo/icon.png"
+                alt="TactLink logo"
+                width={32}
+                height={32}
+                className={`relative h-full w-full object-contain transition group-hover:opacity-100 ${isScrolled ? "opacity-90" : "opacity-100"}`}
+                priority
               />
             </span>
-          </Link>
+            <span className={`text-lg font-bold tracking-tight transition-colors ${isScrolled ? "text-primary" : "text-secondary"}`}>
+              TactLink
+            </span>
+          </a>
 
-          <button
-            type="button"
-            onClick={() => setIsOpen((value) => !value)}
-            className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/[0.06] text-white transition active:scale-95 md:hidden"
-            aria-label="Toggle navigation"
-            aria-expanded={isOpen}
-          >
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.span
-                key={isOpen ? "close" : "menu"}
-                initial={{ rotate: -90, opacity: 0, scale: 0.85 }}
-                animate={{ rotate: 0, opacity: 1, scale: 1 }}
-                exit={{ rotate: 90, opacity: 0, scale: 0.85 }}
-                transition={{ duration: 0.16 }}
-              >
-                {isOpen ? <X size={19} /> : <Menu size={19} />}
-              </motion.span>
-            </AnimatePresence>
-          </button>
-        </div>
-      </div>
+          <div className="hidden items-center gap-8 md:flex">
+            {navItems.map((item) => {
+              const isActive = activeHref === item.href;
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            key="mobile-menu"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.22, ease: "easeOut" }}
-            className="relative overflow-hidden md:hidden"
-          >
-            <div className="border-t border-white/10 px-3 pb-3 pt-2">
-              <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-yellow-200/35 to-transparent" />
-
-              <div className="grid gap-1.5">
-                {navItems.map((item) => {
-                  const isActive = activeHref === item.href;
-
-                  return (
-                    item.href.startsWith("#") ? (
-                      <a
-                        key={item.href}
-                        href={item.href}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setIsOpen(false);
-                          setActiveHref(item.href);
-                          if (pathname === `/${language}` || pathname === "/") {
-                            const target = document.querySelector(item.href);
-                            if (target) {
-                              target.scrollIntoView({ behavior: "smooth" });
-                            }
-                          } else {
-                            router.push(`/${language}${item.href}`);
-                          }
-                        }}
-                        className={`relative flex items-center justify-between overflow-hidden rounded-2xl px-4 py-3 text-sm font-bold transition active:scale-[0.99] ${
-                          isActive
-                            ? "bg-yellow-300 text-slate-950"
-                            : "bg-white/[0.035] text-slate-200"
-                        }`}
-                      >
-                        {isActive && (
-                          <span className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,255,255,0.32),transparent_38%)]" />
-                        )}
-                        <span className="relative">{item.label}</span>
-                        {isActive ? (
-                          <span className="relative h-1.5 w-1.5 rounded-full bg-slate-950" />
-                        ) : (
-                          <ArrowUpRight size={14} className="text-slate-500" />
-                        )}
-                      </a>
-                    ) : (
-                      <Link
-                        key={item.href}
-                        href={`/${language}${item.href}`}
-                        onClick={() => setIsOpen(false)}
-                        className={`relative flex items-center justify-between overflow-hidden rounded-2xl px-4 py-3 text-sm font-bold transition active:scale-[0.99] ${
-                          isActive
-                            ? "bg-yellow-300 text-slate-950"
-                            : "bg-white/[0.035] text-slate-200"
-                        }`}
-                      >
-                        <span className="relative">{item.label}</span>
-                        <ArrowUpRight size={14} className="text-slate-500" />
-                      </Link>
-                    )
-                  );
-                })}
-
-                <Link
-                  href={`/${language}/help`}
-                  onClick={() => setIsOpen(false)}
-                  className="mt-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-yellow-300 px-4 py-3 text-sm font-black text-slate-950 shadow-[0_0_24px_rgba(250,204,21,0.16)] transition active:scale-[0.99]"
+              return item.href.startsWith("#") ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setActiveHref(item.href);
+                    if (pathname === `/${language}` || pathname === "/") {
+                      const target = document.querySelector(item.href);
+                      if (target) {
+                        target.scrollIntoView({ behavior: "smooth" });
+                      }
+                    } else {
+                      router.push(`/${language}${item.href}`);
+                    }
+                  }}
+                  className={`text-sm transition-all duration-200 ${
+                    isActive
+                      ? (isScrolled ? "text-primary font-bold" : "text-secondary font-bold")
+                      : (isScrolled ? "text-slate-500 hover:text-primary font-medium" : "text-secondary/80 hover:text-secondary font-medium")
+                  }`}
                 >
-                  {dict.ui.helpCenter}
-                  <ArrowUpRight size={16} />
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={`/${language}${item.href}`}
+                  className={`text-sm transition-all duration-200 ${
+                    isActive
+                      ? (isScrolled ? "text-primary font-bold" : "text-secondary font-bold")
+                      : (isScrolled ? "text-slate-500 hover:text-primary font-medium" : "text-secondary/80 hover:text-secondary font-medium")
+                  }`}
+                >
+                  {item.label}
                 </Link>
-              </div>
+              );
+            })}
+          </div>
+
+          <div className="flex items-center justify-end gap-3">
+            <div className={isScrolled ? "" : "text-secondary"}>
+              <LanguageSwitcher />
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+
+            <Link
+              href={`/${language}/help`}
+              className={`hidden md:inline-flex items-center justify-center rounded-lg px-5 py-2 text-sm font-bold shadow-sm transition hover:-translate-y-0.5 ${
+                isScrolled
+                  ? "bg-primary text-secondary hover:bg-primary/90"
+                  : "bg-secondary text-primary hover:bg-[#e0bb42]"
+              }`}
+            >
+              {dict.ui.helpCenter}
+            </Link>
+
+            <button
+              type="button"
+              onClick={() => setIsOpen((value) => !value)}
+              className={`grid h-10 w-10 place-items-center rounded-lg transition active:scale-95 md:hidden ${
+                isScrolled ? "bg-slate-100 text-primary" : "bg-white/20 text-secondary"
+              }`}
+              aria-label="Toggle navigation"
+              aria-expanded={isOpen}
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.span
+                  key={isOpen ? "close" : "menu"}
+                  initial={{ rotate: -90, opacity: 0, scale: 0.85 }}
+                  animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                  exit={{ rotate: 90, opacity: 0, scale: 0.85 }}
+                  transition={{ duration: 0.16 }}
+                >
+                  {isOpen ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
+                </motion.span>
+              </AnimatePresence>
+            </button>
+          </div>
+        </div>
+
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              key="mobile-menu"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.22, ease: "easeOut" }}
+              className="relative overflow-hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-slate-900/5 rounded-b-2xl"
+            >
+              <div className="px-4 pb-6 pt-3">
+                <div className="grid gap-2">
+                  {navItems.map((item) => {
+                    const isActive = activeHref === item.href;
+
+                    return (
+                      item.href.startsWith("#") ? (
+                        <a
+                          key={item.href}
+                          href={item.href}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setIsOpen(false);
+                            setActiveHref(item.href);
+                            if (pathname === `/${language}` || pathname === "/") {
+                              const target = document.querySelector(item.href);
+                              if (target) {
+                                target.scrollIntoView({ behavior: "smooth" });
+                              }
+                            } else {
+                              router.push(`/${language}${item.href}`);
+                            }
+                          }}
+                          className={`flex items-center justify-between rounded-xl px-5 py-3.5 text-sm transition-colors ${
+                            isActive
+                              ? "bg-slate-100 text-primary font-bold"
+                              : "text-slate-600 font-medium hover:bg-slate-50"
+                          }`}
+                        >
+                          <span>{item.label}</span>
+                        </a>
+                      ) : (
+                        <Link
+                          key={item.href}
+                          href={`/${language}${item.href}`}
+                          onClick={() => setIsOpen(false)}
+                          className={`flex items-center justify-between rounded-xl px-5 py-3.5 text-sm transition-colors ${
+                            isActive
+                              ? "bg-slate-100 text-primary font-bold"
+                              : "text-slate-600 font-medium hover:bg-slate-50"
+                          }`}
+                        >
+                          <span>{item.label}</span>
+                        </Link>
+                      )
+                    );
+                  })}
+
+                  <Link
+                    href={`/${language}/help`}
+                    onClick={() => setIsOpen(false)}
+                    className="mt-4 flex items-center justify-center rounded-xl bg-primary px-5 py-3.5 text-sm font-bold text-secondary shadow-sm transition hover:opacity-90"
+                  >
+                    {dict.ui.helpCenter}
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+    </div>
   );
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 px-3 py-3 sm:px-4 pointer-events-auto">
-        <div className="mx-auto max-w-[1400px]">
-          {isDesktop ? (
-            <BorderGlow
-              edgeSensitivity={26}
-              glowColor="52 95 62"
-              backgroundColor={
-                isScrolled ? "rgba(2, 6, 23, 0.86)" : "rgba(2, 6, 23, 0.68)"
-              }
-              borderRadius={999}
-              glowRadius={26}
-              glowIntensity={0.82}
-              coneSpread={22}
-              animated={false}
-              colors={["#fde047", "#22d3ee", "#60a5fa"]}
-              fillOpacity={0.11}
-              className="rounded-full"
-            >
-              {navbarContent}
-            </BorderGlow>
-          ) : (
-            navbarContent
-          )}
-        </div>
+      <header className="fixed inset-x-0 top-0 z-50 pointer-events-auto">
+        {navbarContent}
       </header>
       <LocationSuggester />
     </>

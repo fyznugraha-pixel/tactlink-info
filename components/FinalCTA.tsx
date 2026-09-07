@@ -2,7 +2,6 @@
 
 import { ArrowUpRight, Mail } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
-import BorderGlow from "@/components/BorderGlow";
 import useIsDesktop from "@/hooks/useIsDesktop";
 
 export default function FinalCTA() {
@@ -11,42 +10,23 @@ export default function FinalCTA() {
   const { appDownloadLinks, ui } = dict;
 
   return (
-    <section className="relative px-4 py-10 md:py-20">
-      <div className="pointer-events-none absolute inset-x-0 top-10 mx-auto h-72 max-w-[1400px] rounded-full bg-yellow-300/10 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 right-10 hidden h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl md:block" />
-
-      <BorderGlow
-        edgeSensitivity={30}
-        glowColor="52 95 62"
-        backgroundColor="rgba(2, 6, 23, 0.9)"
-        borderRadius={isDesktop ? 34 : 28}
-        glowRadius={isDesktop ? 38 : 24}
-        glowIntensity={isDesktop ? 1.08 : 0.65}
-        coneSpread={24}
-        animated={false}
-        colors={["#fde047", "#22d3ee", "#60a5fa"]}
-        fillOpacity={isDesktop ? 0.18 : 0.08}
-        className="relative mx-auto max-w-[1400px]"
-      >
-        <div className="relative overflow-hidden rounded-[1.8rem] bg-gradient-to-br from-yellow-300/16 via-cyan-400/12 to-violet-600/20 p-5 text-center shadow-2xl shadow-cyan-950/30 md:rounded-[2.2rem] md:p-12">
-          <div className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-yellow-300/20 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-24 -right-16 h-72 w-72 rounded-full bg-cyan-400/15 blur-3xl" />
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-yellow-200/40 to-transparent" />
-
+    <section className="relative px-4 py-10 md:py-20 bg-primary">
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none"><div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_100%,#000_70%,transparent_100%)]" /><div className="absolute top-[10%] left-[20%] w-[30%] h-[40%] rounded-full bg-secondary/15 blur-[100px]" /><div className="absolute bottom-[0%] right-[10%] w-[50%] h-[50%] rounded-full bg-blue-500/15 blur-[120px]" /></div><div className="relative z-10 mx-auto w-full max-w-[1440px]">
+        <div className="relative overflow-hidden rounded-xl bg-white/5 border border-white/10 p-8 text-center md:p-16">
           <div className="relative">
-            <p className="text-xs font-black uppercase tracking-[0.25em] text-yellow-100 md:text-sm">
+            <p className="inline-block px-3 py-1.5 rounded text-xs font-bold uppercase tracking-widest text-primary bg-secondary">
               {ui.readyToStart}
             </p>
 
-            <h2 className="mx-auto mt-3 max-w-3xl text-3xl font-black tracking-tight text-white md:mt-4 md:text-6xl">
+            <h2 className="mx-auto mt-6 max-w-3xl text-3xl font-bold tracking-tight text-white md:mt-8 md:text-5xl font-headline">
               {ui.ctaTitle}
             </h2>
 
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-cyan-50/80 sm:text-base">
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/80 font-medium">
               {ui.readyDesc}
             </p>
 
-            <div className="mx-auto mt-7 grid max-w-xl gap-3 sm:grid-cols-2 md:mt-8">
+            <div className="mx-auto mt-10 grid max-w-xl gap-4 sm:grid-cols-2 md:mt-12">
               {appDownloadLinks.map((item) => {
                 const Icon = item.icon;
                 const isAppStore = item.label.toLowerCase().includes("app");
@@ -57,42 +37,38 @@ export default function FinalCTA() {
                     href={item.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="group inline-flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-4 text-left transition active:scale-[0.99] hover:border-yellow-300/30 hover:bg-slate-950/85 md:hover:-translate-y-0.5"
+                    className="group inline-flex items-center justify-between gap-4 rounded-xl bg-white/10 border border-white/10 px-6 py-5 text-left transition-all hover:-translate-y-1 hover:bg-white/20"
                   >
-                    <span className="flex min-w-0 items-center gap-3">
-                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-yellow-300 text-slate-950 shadow-[0_0_24px_rgba(250,204,21,0.18)] ring-1 ring-yellow-100/40 transition duration-300 group-hover:bg-yellow-200 group-hover:shadow-[0_0_32px_rgba(250,204,21,0.26)]">
-                        <Icon
-                          size={isAppStore ? 20 : 22}
-                          className={isAppStore ? "translate-y-[-1px]" : ""}
-                        />
+                    <span className="flex min-w-0 items-center gap-4">
+                      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-secondary text-primary transition duration-300">
+                        <Icon size={isAppStore ? 22 : 24} />
                       </span>
 
                       <span className="min-w-0">
-                        <span className="block text-xs font-semibold text-slate-400">
+                        <span className="block whitespace-nowrap text-[10px] font-bold uppercase tracking-wider text-white/70">
                           {item.subLabel}
                         </span>
-
-                        <span className="block truncate text-sm font-black text-white">
+                        <span className="block whitespace-nowrap text-sm text-sm font-bold text-white transition-colors group-hover:text-secondary">
                           {item.label}
                         </span>
                       </span>
                     </span>
 
                     <ArrowUpRight
-                      size={17}
-                      className="shrink-0 text-slate-500 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-yellow-200"
+                      size={18}
+                      className="shrink-0 text-white/50 transition group-hover:text-secondary"
                     />
                   </a>
                 );
               })}
             </div>
 
-            <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:justify-center">
               <a
                 href="mailto:info@tactlink.com"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-4 text-sm font-black text-white transition active:scale-[0.99] hover:border-yellow-300/25 hover:bg-white/15 hover:text-yellow-100"
+                className="inline-flex items-center justify-center gap-2 rounded bg-secondary shadow-[0_4px_14px_0_rgba(239,201,75,0.39)] hover:shadow-[0_6px_20px_rgba(239,201,75,0.23)] px-8 py-4 text-sm font-bold text-primary transition-all hover:-translate-y-0.5"
               >
-                <Mail size={18} />
+                <Mail size={18} strokeWidth={1.5} />
                 {ui.emailTactlink}
               </a>
 
@@ -100,7 +76,7 @@ export default function FinalCTA() {
                 href="https://www.tactlink.com/contact"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-yellow-300/25 bg-yellow-300/10 px-6 py-4 text-sm font-black text-yellow-100 transition active:scale-[0.99] hover:bg-yellow-300 hover:text-slate-950"
+                className="inline-flex items-center justify-center gap-2 rounded bg-white/10 border border-white/20 px-8 py-4 text-sm font-bold text-white transition-all hover:bg-white/20 hover:-translate-y-0.5"
               >
                 {ui.becomePartner}
                 <ArrowUpRight size={18} />
@@ -108,7 +84,7 @@ export default function FinalCTA() {
             </div>
           </div>
         </div>
-      </BorderGlow>
+      </div>
     </section>
   );
 }

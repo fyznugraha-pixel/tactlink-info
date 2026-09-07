@@ -33,10 +33,10 @@ export type IconType = ComponentType<{
 export const brand = {
   name: "TactLink",
   tagline: "Smart Directory for Modern Networking",
-  headline: "Connect smarter. Network faster. Go paperless.",
+  headline: "Connect smarter.\nNetwork faster.\nGo paperless.",
   description:
     "TactLink helps professionals, communities, associations, and event organizers build meaningful connections through digital profiles, smart directories, and seamless networking tools.",
-  logo: "/logo/logotactlink.png",
+  logo: "/links/logo/logotactlink.png",
 };
 
 export const navItems = [

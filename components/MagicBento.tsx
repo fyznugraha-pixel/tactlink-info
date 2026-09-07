@@ -574,15 +574,15 @@ const useMobileDetection = () => {
 const MagicBento: React.FC<BentoProps> = ({
   cards,
   textAutoHide = true,
-  enableStars = true,
-  enableSpotlight = true,
-  enableBorderGlow = true,
+  enableStars = false,
+  enableSpotlight = false,
+  enableBorderGlow = false,
   disableAnimations = false,
   spotlightRadius = DEFAULT_SPOTLIGHT_RADIUS,
   particleCount = DEFAULT_PARTICLE_COUNT,
   enableTilt = false,
   glowColor = DEFAULT_GLOW_COLOR,
-  clickEffect = true,
+  clickEffect = false,
   enableMagnetism = false,
 }) => {
   const gridRef = useRef<HTMLDivElement>(null);

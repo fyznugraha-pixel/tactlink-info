@@ -6,7 +6,7 @@ import { LanguageProvider, Language } from "@/context/LanguageContext";
 import { Analytics } from "@vercel/analytics/react";
 import FloatingHelp from "@/components/FloatingHelp";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "TactLink | Quick Information",
@@ -31,7 +31,7 @@ export default async function RootLayout({
   const { lang } = await params;
   return (
     <html lang={lang} className={cn("font-sans", geist.variable)}>
-      <body suppressHydrationWarning>
+      <body suppressHydrationWarning className="font-sans antialiased text-primary">
         <LanguageProvider lang={lang as Language}>
           {children}
           <FloatingHelp />

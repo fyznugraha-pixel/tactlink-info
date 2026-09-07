@@ -11,6 +11,16 @@ const nextConfig: NextConfig = {
     ],
   },
   async redirects() {
+    if (process.env.NODE_ENV !== 'production') {
+      return [
+        {
+          source: '/',
+          destination: '/links',
+          permanent: false,
+          basePath: false,
+        }
+      ];
+    }
     return [
       {
         source: '/:lang(en|id|vi|bn|tl)',
@@ -29,3 +39,5 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+// force reload

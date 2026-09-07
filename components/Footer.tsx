@@ -9,65 +9,64 @@ export default function Footer() {
   const ContactIcon = contact.icon;
 
   return (
-    <footer className="border-t border-white/10 px-4 py-10">
-      <div className="mx-auto flex max-w-[1400px] flex-col gap-8 md:flex-row md:items-center md:justify-between">
+    <footer className="border-t border-slate-100 px-4 py-16 bg-slate-50">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-10 md:flex-row md:items-center md:justify-between">
         <div>
           <div className="flex items-center gap-3">
-            <span className="relative grid h-11 w-11 place-items-center overflow-hidden rounded-full border border-yellow-300/25 bg-slate-900">
-              <span className="absolute inset-0 bg-gradient-to-br from-yellow-300/15 via-cyan-300/10 to-transparent" />
+            <span className="relative grid h-12 w-12 place-items-center overflow-hidden rounded-[14px] bg-white shadow-sm">
               <Image
                 src={brand.logo}
                 alt="TactLink logo"
                 width={36}
                 height={36}
-                className="relative h-8 w-8 object-contain"
+                className="relative h-8 w-8 object-contain opacity-90"
               />
             </span>
 
             <div>
-              <p className="text-lg font-black text-white">TactLink</p>
-              <p className="text-xs font-medium text-slate-500">
+              <p className="text-xl font-bold text-black tracking-tight">TactLink</p>
+              <p className="text-xs font-semibold text-slate-500">
                 Smart Directory
               </p>
             </div>
           </div>
 
-          <p className="mt-4 max-w-md text-sm leading-6 text-slate-400">
+          <p className="mt-5 max-w-md text-sm leading-relaxed text-slate-500 font-medium">
             {ui.footerDesc}
           </p>
         </div>
 
-        <div className="flex flex-col gap-4 md:items-end">
+        <div className="flex flex-col gap-5 md:items-end">
           <a
             href={`mailto:${contact.email}`}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-slate-300 hover:text-yellow-100"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-blue-950 transition"
           >
-            <ContactIcon size={16} />
+            <ContactIcon size={18} />
             {contact.email}
           </a>
 
-          <div className="flex flex-wrap gap-3 md:justify-end">
+          <div className="flex flex-wrap gap-5 md:justify-end">
             {secondaryLinks.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm font-medium text-slate-400 hover:text-yellow-100"
+                className="text-sm font-semibold text-slate-500 hover:text-blue-950 transition"
               >
                 {item.label}
               </a>
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-3 md:justify-end">
+          <div className="flex flex-wrap gap-5 md:justify-end">
             {socialLinks.slice(0, 3).map((item) => (
               <a
                 key={`${item.label}-${item.region}`}
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="text-xs font-bold text-yellow-100/65 hover:text-yellow-100"
+                className="text-xs font-bold text-slate-400 hover:text-blue-950 transition"
               >
                 {item.region}
               </a>
@@ -76,7 +75,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-8 flex max-w-[1400px] flex-col gap-2 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto mt-12 flex w-full max-w-[1440px] flex-col gap-3 border-t border-slate-200/50 pt-8 text-xs text-slate-400 font-medium sm:flex-row sm:items-center sm:justify-between">
         <p>© {new Date().getFullYear()} TactLink. {ui.allRightsReserved}</p>
         <p>{ui.footerSlogan}</p>
       </div>
