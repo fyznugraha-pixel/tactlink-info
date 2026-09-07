@@ -4,7 +4,10 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
+import useSwipeReset from "@/hooks/useSwipeReset";
+
 export default function FeatureSection() {
+  const swipeRef = useSwipeReset(5000);
   const { dict } = useLanguage();
   const { features, ui } = dict;
   return (
@@ -26,18 +29,14 @@ export default function FeatureSection() {
 
         {/* Mobile: horizontal scroll with balanced left-right spacing */}
         <div className="md:hidden">
-          <div className="no-scrollbar flex gap-4 overflow-x-auto px-1 pb-4">
+          <div ref={swipeRef} className="no-scrollbar flex gap-3.5 overflow-x-auto -mx-4 px-6 pb-4 snap-x snap-mandatory scroll-pl-6 scroll-pr-6">
             {features.map((feature, index) => {
               const Icon = feature.icon;
 
               return (
-                <motion.div
+                <div
                   key={feature.title}
-                  initial={{ opacity: 0, y: 8 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.22, delay: 0 }}
-                  className="group relative w-[85%] shrink-0 overflow-hidden rounded-xl bg-white p-8 border-b-4 border-b-transparent hover:border-b-secondary shadow-sm"
+                  className="group relative w-[76vw] max-w-[320px] shrink-0 overflow-hidden rounded-xl bg-white p-6 sm:p-8 border-b-4 border-b-transparent hover:border-b-secondary shadow-sm snap-start"
                 >
                   <div className="relative mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-secondary text-primary shadow-sm transition duration-300 group-hover:-translate-y-1">
                     <Icon size={24} strokeWidth={1.5} />
@@ -64,7 +63,7 @@ export default function FeatureSection() {
                       ))}
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>

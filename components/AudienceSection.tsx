@@ -3,9 +3,11 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import useIsDesktop from "@/hooks/useIsDesktop";
+import useSwipeReset from "@/hooks/useSwipeReset";
 
 export default function AudienceSection() {
   const isDesktop = useIsDesktop();
+  const swipeRef = useSwipeReset(5000);
   const { dict } = useLanguage();
   const { audiences, ui } = dict;
 
@@ -26,21 +28,21 @@ export default function AudienceSection() {
           </p>
         </div>
 
-        <div className="no-scrollbar mt-12 flex snap-x gap-4 overflow-x-auto overflow-y-hidden pb-4 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible lg:grid-cols-4">
+        <div ref={swipeRef} className="no-scrollbar mt-8 sm:mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto overflow-y-hidden pb-4 -mx-4 px-6 scroll-pl-6 scroll-pr-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible lg:grid-cols-4">
           {audiences.map((audience, index) => {
             const Icon = audience.icon;
 
             const content = (
               <>
-                <div className="mx-auto mb-6 grid h-14 w-14 place-items-center rounded-xl bg-secondary text-primary shadow-sm transition group-hover:scale-105 group-hover:-translate-y-1">
-                  <Icon size={24} />
+                <div className="mx-auto mb-5 sm:mb-6 grid h-12 w-12 sm:h-14 sm:w-14 place-items-center rounded-xl bg-secondary text-primary shadow-sm transition group-hover:scale-105 group-hover:-translate-y-1">
+                  <Icon size={22} className="sm:size-6" />
                 </div>
 
-                <h3 className="text-lg font-bold text-white font-headline">
+                <h3 className="text-base sm:text-lg font-bold text-white font-headline">
                   {audience.title}
                 </h3>
 
-                <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-white/70 font-medium">
+                <p className="mt-2.5 sm:mt-3 line-clamp-3 text-xs sm:text-sm leading-relaxed text-white/70 font-medium">
                   {audience.description}
                 </p>
               </>
@@ -49,16 +51,17 @@ export default function AudienceSection() {
             return (
               <motion.div
                 key={audience.title}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{
-                  duration: isDesktop ? 0.45 : 0.24,
-                  delay: isDesktop ? index * 0.05 : 0,
-                }}
-                className="min-w-[80%] snap-start sm:min-w-[46%] md:min-w-0"
+                initial={isDesktop ? { opacity: 0, y: 14 } : { opacity: 1, y: 0 }}
+                whileInView={isDesktop ? { opacity: 1, y: 0 } : undefined}
+                viewport={isDesktop ? { once: true, margin: "-80px" } : undefined}
+                transition={
+                  isDesktop
+                    ? { duration: 0.45, delay: index * 0.05 }
+                    : undefined
+                }
+                className="flex-none w-[76vw] max-w-[320px] snap-start sm:w-[46%] md:w-auto min-w-0"
               >
-                <div className="group h-full rounded-xl bg-white/5 border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white/10">
+                <div className="group h-full rounded-2xl bg-white/5 border border-white/10 p-6 sm:p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white/10">
                   {content}
                 </div>
               </motion.div>

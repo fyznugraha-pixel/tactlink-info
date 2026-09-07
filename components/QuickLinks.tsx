@@ -4,9 +4,11 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import useIsDesktop from "@/hooks/useIsDesktop";
+import useSwipeReset from "@/hooks/useSwipeReset";
 
 export default function QuickLinks() {
   const isDesktop = useIsDesktop();
+  const swipeRef = useSwipeReset(5000);
   const { dict } = useLanguage();
   const { ui, primaryLinks } = dict;
 
@@ -25,7 +27,7 @@ export default function QuickLinks() {
           </p>
         </div>
 
-        <div className="flex md:grid gap-4 md:grid-cols-2 md:gap-6 overflow-x-auto md:overflow-visible hide-scrollbar snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0">
+        <div ref={swipeRef} className="flex md:grid gap-4 md:grid-cols-2 md:gap-6 overflow-x-auto md:overflow-visible hide-scrollbar snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-6 scroll-pl-6 scroll-pr-6 md:mx-0 md:px-0">
           {primaryLinks.map((item, index) => {
             const Icon = item.icon;
 
@@ -35,7 +37,7 @@ export default function QuickLinks() {
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="flex-none w-[85vw] sm:w-[60vw] md:w-auto snap-center md:snap-none group relative flex flex-col justify-between overflow-hidden rounded-[2rem] bg-slate-50 p-6 md:p-10 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                className="flex-none w-[76vw] max-w-[340px] sm:w-[60vw] md:w-auto snap-start md:snap-none group relative flex flex-col justify-between overflow-hidden rounded-[2rem] bg-slate-50 p-6 md:p-10 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
                 <div className="flex items-start justify-between">
                   <div className="grid h-14 w-14 place-items-center rounded-2xl bg-white shadow-sm text-black">
