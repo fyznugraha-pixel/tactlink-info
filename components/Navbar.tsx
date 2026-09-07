@@ -181,7 +181,7 @@ export default function Navbar() {
 
           <div className="flex items-center justify-end gap-3">
             <div className={isScrolled ? "" : "text-secondary"}>
-              <LanguageSwitcher />
+              <LanguageSwitcher isScrolled={isScrolled} />
             </div>
 
             <Link
@@ -227,7 +227,11 @@ export default function Navbar() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.22, ease: "easeOut" }}
-              className="relative overflow-hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-slate-900/5 rounded-b-2xl"
+              className={`relative overflow-hidden md:hidden rounded-b-[2rem] transition-colors duration-300 ${
+                isScrolled
+                  ? "bg-white/95 backdrop-blur-xl border-t border-slate-900/5 shadow-lg"
+                  : "bg-white/10 backdrop-blur-md border-t border-white/10"
+              }`}
             >
               <div className="px-4 pb-6 pt-3">
                 <div className="grid gap-2">
@@ -254,8 +258,8 @@ export default function Navbar() {
                           }}
                           className={`flex items-center justify-between rounded-xl px-5 py-3.5 text-sm transition-colors ${
                             isActive
-                              ? "bg-slate-100 text-primary font-bold"
-                              : "text-slate-600 font-medium hover:bg-slate-50"
+                              ? (isScrolled ? "bg-slate-100 text-primary font-bold" : "bg-white/20 text-secondary font-bold")
+                              : (isScrolled ? "text-slate-600 font-medium hover:bg-slate-50 hover:text-primary" : "text-white/90 font-medium hover:bg-white/10 hover:text-white")
                           }`}
                         >
                           <span>{item.label}</span>
@@ -267,8 +271,8 @@ export default function Navbar() {
                           onClick={() => setIsOpen(false)}
                           className={`flex items-center justify-between rounded-xl px-5 py-3.5 text-sm transition-colors ${
                             isActive
-                              ? "bg-slate-100 text-primary font-bold"
-                              : "text-slate-600 font-medium hover:bg-slate-50"
+                              ? (isScrolled ? "bg-slate-100 text-primary font-bold" : "bg-white/20 text-secondary font-bold")
+                              : (isScrolled ? "text-slate-600 font-medium hover:bg-slate-50 hover:text-primary" : "text-white/90 font-medium hover:bg-white/10 hover:text-white")
                           }`}
                         >
                           <span>{item.label}</span>
@@ -280,7 +284,11 @@ export default function Navbar() {
                   <Link
                     href={`/${language}/help`}
                     onClick={() => setIsOpen(false)}
-                    className="mt-4 flex items-center justify-center rounded-xl bg-primary px-5 py-3.5 text-sm font-bold text-secondary shadow-sm transition hover:opacity-90"
+                    className={`mt-4 flex items-center justify-center rounded-xl px-5 py-3.5 text-sm font-bold shadow-sm transition hover:opacity-90 ${
+                      isScrolled
+                        ? "bg-primary text-secondary"
+                        : "bg-secondary text-primary"
+                    }`}
                   >
                     {dict.ui.helpCenter}
                   </Link>

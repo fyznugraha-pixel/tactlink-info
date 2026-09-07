@@ -25,7 +25,7 @@ export default function QuickLinks() {
           </p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 md:gap-6">
+        <div className="flex md:grid gap-4 md:grid-cols-2 md:gap-6 overflow-x-auto md:overflow-visible hide-scrollbar snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0">
           {primaryLinks.map((item, index) => {
             const Icon = item.icon;
 
@@ -35,11 +35,11 @@ export default function QuickLinks() {
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="group relative flex flex-col overflow-hidden rounded-[2rem] bg-slate-50 p-6 md:p-10 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                className="flex-none w-[85vw] sm:w-[60vw] md:w-auto snap-center md:snap-none group relative flex flex-col justify-between overflow-hidden rounded-[2rem] bg-slate-50 p-6 md:p-10 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
                 <div className="flex items-start justify-between">
                   <div className="grid h-14 w-14 place-items-center rounded-2xl bg-white shadow-sm text-black">
-                    <Icon size={24} strokeWidth={1.5} />
+                    <Icon size={24} />
                   </div>
 
                   {item.badge && (
@@ -49,17 +49,17 @@ export default function QuickLinks() {
                   )}
                 </div>
 
-                <div className="mt-16 sm:mt-24">
-                  <h3 className="text-xl md:text-2xl font-bold text-black group-hover:text-blue-950 transition-colors">
-                    {item.label}
-                  </h3>
-                  <p className="mt-3 text-sm md:text-base font-medium leading-relaxed text-slate-500 max-w-sm">
-                    {item.description}
-                  </p>
-                </div>
+                <div className="mt-12 sm:mt-24 flex items-end justify-between gap-4">
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold text-black group-hover:text-blue-950 transition-colors">
+                      {item.label}
+                    </h3>
+                    <p className="mt-2 text-sm md:text-base font-medium leading-relaxed text-slate-500 max-w-[200px] md:max-w-sm">
+                      {item.description}
+                    </p>
+                  </div>
 
-                <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8">
-                  <div className="grid h-10 w-10 place-items-center rounded-full bg-black/5 text-black transition-colors group-hover:bg-blue-950 group-hover:text-white">
+                  <div className="flex-shrink-0 grid h-10 w-10 place-items-center rounded-full bg-black/5 text-black transition-colors group-hover:bg-blue-950 group-hover:text-white">
                     <ArrowUpRight size={18} strokeWidth={2} />
                   </div>
                 </div>
