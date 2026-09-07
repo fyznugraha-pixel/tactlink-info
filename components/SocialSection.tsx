@@ -40,11 +40,7 @@ export default function SocialSection() {
                   href={item.href}
                   target="_blank"
                   rel="noreferrer"
-                  className={`group relative overflow-hidden rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg ${
-                    item.featured
-                      ? "bg-slate-50 shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
-                      : "bg-slate-50"
-                  }`}
+                  className="group relative overflow-hidden rounded-[2rem] bg-slate-50 p-5 sm:p-6 transition duration-300 shadow-md shadow-slate-200/80 border border-slate-200/70 hover:-translate-y-1 hover:shadow-xl hover:border-slate-300"
                 >
                   <div className="relative flex items-center justify-between gap-4">
                     <div className="grid h-12 w-12 place-items-center rounded-2xl bg-white text-black shadow-sm transition duration-300 group-hover:scale-105 group-hover:text-blue-950">
