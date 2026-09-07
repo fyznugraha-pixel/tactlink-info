@@ -3,8 +3,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
-import BorderGlow from "@/components/BorderGlow";
-import SpotlightCard from "@/components/SpotlightCard";
 import useIsDesktop from "@/hooks/useIsDesktop";
 
 function parseStatValue(value: string) {
@@ -84,7 +82,7 @@ function CountUpStat({
       : Math.round(count).toLocaleString("en-US");
 
   return (
-    <p ref={ref} className="text-3xl font-black text-white md:text-4xl font-headline">
+    <p ref={ref} className="text-2xl font-black text-white sm:text-3xl md:text-4xl font-headline">
       {displayValue}
       {parsed.suffix}
     </p>
@@ -97,23 +95,23 @@ export default function TrustSection() {
   const { stats } = dict;
 
   const content = (
-    <div className="relative overflow-hidden rounded-xl bg-primary p-8 shadow-md md:p-16">
-      <div className="relative grid gap-8 md:grid-cols-[1fr_1fr] md:items-center md:gap-12">
+    <div data-theme="dark" className="relative overflow-hidden rounded-xl bg-primary px-5 py-7 shadow-md sm:p-8 md:p-16">
+      <div className="relative grid gap-6 md:grid-cols-[1fr_1fr] md:items-center md:gap-12">
         <div className="relative text-center md:text-left">
-          <p className="inline-block px-4 py-1.5 rounded bg-white/10 text-xs font-semibold uppercase tracking-widest text-secondary">
+          <p className="inline-block px-3.5 py-1 rounded bg-white/10 text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-secondary">
             {dict.ui.trustBadge}
           </p>
 
-          <h2 className="mt-6 text-3xl font-bold text-white md:text-4xl lg:text-5xl font-headline">
+          <h2 className="mt-4 text-2xl font-bold text-white sm:mt-6 sm:text-3xl md:text-4xl lg:text-5xl font-headline">
             {dict.ui.trustTitle}
           </h2>
 
-          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-blue-100 md:mx-0 font-normal">
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-blue-100 sm:mt-6 sm:text-base md:mx-0 font-normal">
             {dict.ui.trustDesc}
           </p>
         </div>
 
-        <div className="relative grid grid-cols-2 gap-4 sm:grid-cols-2 md:gap-6">
+        <div className="relative grid grid-cols-2 gap-2.5 sm:gap-4 md:gap-6">
           {stats.map((stat, index) => {
             const statContent = (
               <>
@@ -122,7 +120,7 @@ export default function TrustSection() {
                   delay={isDesktop ? index * 120 : index * 70}
                   duration={isDesktop ? 1500 : 900}
                 />
-                <p className="mt-2 text-xs font-medium text-blue-100">
+                <p className="mt-1 text-[11px] font-medium leading-tight text-blue-100/90 sm:mt-2 sm:text-xs">
                   {stat.label}
                 </p>
               </>
@@ -140,7 +138,7 @@ export default function TrustSection() {
                 }}
                 className="min-w-0"
               >
-                <div className="h-full rounded-2xl bg-white/5 border border-white/10 p-6 text-center shadow-sm backdrop-blur-sm">
+                <div className="h-full rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 px-3 py-3.5 sm:p-5 md:p-6 text-center shadow-sm backdrop-blur-lg backdrop-saturate-150">
                   {statContent}
                 </div>
               </motion.div>

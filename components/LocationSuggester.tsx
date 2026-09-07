@@ -78,7 +78,7 @@ export default function LocationSuggester() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            className="pointer-events-auto w-full max-w-sm rounded-2xl border border-slate-700 bg-slate-900/95 p-4 shadow-2xl shadow-slate-950/50 backdrop-blur-xl"
+            className="pointer-events-auto w-full max-w-sm rounded-2xl border border-slate-700 bg-slate-900/95 p-4 shadow-2xl shadow-slate-950/50 backdrop-blur-xl backdrop-saturate-200"
           >
           <button 
             onClick={() => setShow(false)}

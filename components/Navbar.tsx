@@ -21,7 +21,8 @@ export default function Navbar() {
   const lastScrollYRef = useRef(0);
 
   const [isOpen, setIsOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isOverDark, setIsOverDark] = useState(true);
   const [activeHref, setActiveHref] = useState(navItems[0]?.href ?? "#top");
 
   const sectionHrefs = useMemo(
@@ -39,10 +40,22 @@ export default function Navbar() {
 
       setIsScrolled(currentScrollY > 18);
 
-      if (currentScrollY < 80 || scrollingUp) {
-              } else {
-                setIsOpen(false);
+      if (Math.abs(currentScrollY - lastScrollYRef.current) > 10) {
+        setIsOpen(false);
       }
+
+      const darkElements = document.querySelectorAll('[data-theme="dark"]');
+      let overDark = false;
+      const navCenterY = 40; // Approximate center of the navbar vertically
+      
+      for (let i = 0; i < darkElements.length; i++) {
+        const rect = darkElements[i].getBoundingClientRect();
+        if (rect.top <= navCenterY && rect.bottom >= navCenterY) {
+          overDark = true;
+          break;
+        }
+      }
+      setIsOverDark(overDark);
 
       lastScrollYRef.current = currentScrollY;
       ticking = false;
@@ -105,12 +118,21 @@ export default function Navbar() {
     <div className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4 md:pt-6 pointer-events-auto">
       <nav
         className={`relative w-full max-w-5xl rounded-2xl transition-all duration-300 border ${
-          isScrolled
-            ? "border-slate-200 bg-white/90 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
-            : "border-transparent bg-transparent"
+          isScrolled || isOpen
+            ? "border-white/20 shadow-lg"
+            : "border-transparent"
         }`}
       >
-        <div className="flex items-center justify-between px-4 py-3 md:px-6 md:py-3">
+        <div className={`absolute inset-0 z-0 rounded-2xl transition-all duration-300 pointer-events-none ${
+          isScrolled || isOpen
+            ? "bg-white/10 backdrop-blur-xl backdrop-saturate-200"
+            : "bg-transparent backdrop-blur-none backdrop-saturate-100"
+        }`} />
+
+        {isScrolled && (
+          <div className="pointer-events-none absolute inset-x-6 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent z-10" />
+        )}
+        <div className="relative z-10 flex items-center justify-between px-4 py-3 md:px-6 md:py-3">
           <a
             href="#top"
             className="group flex items-center gap-3"
@@ -126,11 +148,11 @@ export default function Navbar() {
                 alt="TactLink logo"
                 width={32}
                 height={32}
-                className={`relative h-full w-full object-contain transition group-hover:opacity-100 ${isScrolled ? "opacity-90" : "opacity-100"}`}
+                className="relative h-full w-full object-contain transition group-hover:opacity-100 opacity-100"
                 priority
               />
             </span>
-            <span className={`text-lg font-bold tracking-tight transition-colors ${isScrolled ? "text-primary" : "text-secondary"}`}>
+            <span className={`text-lg font-bold tracking-tight transition-colors ${isOverDark ? "text-secondary" : "text-primary"}`}>
               TactLink
             </span>
           </a>
@@ -157,8 +179,8 @@ export default function Navbar() {
                   }}
                   className={`text-sm transition-all duration-200 ${
                     isActive
-                      ? (isScrolled ? "text-primary font-bold" : "text-secondary font-bold")
-                      : (isScrolled ? "text-slate-500 hover:text-primary font-medium" : "text-secondary/80 hover:text-secondary font-medium")
+                      ? (isOverDark ? "text-secondary font-bold" : "text-primary font-bold")
+                      : (isOverDark ? "text-white/80 hover:text-white font-medium" : "text-primary/75 hover:text-primary font-medium")
                   }`}
                 >
                   {item.label}
@@ -169,8 +191,8 @@ export default function Navbar() {
                   href={`/${language}${item.href}`}
                   className={`text-sm transition-all duration-200 ${
                     isActive
-                      ? (isScrolled ? "text-primary font-bold" : "text-secondary font-bold")
-                      : (isScrolled ? "text-slate-500 hover:text-primary font-medium" : "text-secondary/80 hover:text-secondary font-medium")
+                      ? (isOverDark ? "text-secondary font-bold" : "text-primary font-bold")
+                      : (isOverDark ? "text-white/80 hover:text-white font-medium" : "text-primary/75 hover:text-primary font-medium")
                   }`}
                 >
                   {item.label}
@@ -180,16 +202,14 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center justify-end gap-3">
-            <div className={isScrolled ? "" : "text-secondary"}>
-              <LanguageSwitcher isScrolled={isScrolled} />
-            </div>
+            <LanguageSwitcher isOverDark={isOverDark} />
 
             <Link
               href={`/${language}/help`}
               className={`hidden md:inline-flex items-center justify-center rounded-lg px-5 py-2 text-sm font-bold shadow-sm transition hover:-translate-y-0.5 ${
-                isScrolled
-                  ? "bg-primary text-secondary hover:bg-primary/90"
-                  : "bg-secondary text-primary hover:bg-[#e0bb42]"
+                isOverDark
+                  ? "bg-secondary text-primary hover:bg-[#e0bb42]"
+                  : "bg-primary text-secondary hover:bg-primary/90"
               }`}
             >
               {dict.ui.helpCenter}
@@ -198,8 +218,10 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setIsOpen((value) => !value)}
-              className={`grid h-10 w-10 place-items-center rounded-lg transition active:scale-95 md:hidden ${
-                isScrolled ? "bg-slate-100 text-primary" : "bg-white/20 text-secondary"
+              className={`grid h-10 w-10 place-items-center rounded-xl transition active:scale-95 md:hidden border backdrop-blur-lg backdrop-saturate-150 ${
+                isOverDark
+                  ? "border-white/15 bg-white/10 text-secondary"
+                  : "border-primary/20 bg-primary/5 text-primary"
               }`}
               aria-label="Toggle navigation"
               aria-expanded={isOpen}
@@ -227,11 +249,7 @@ export default function Navbar() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.22, ease: "easeOut" }}
-              className={`relative overflow-hidden md:hidden rounded-b-[2rem] transition-colors duration-300 ${
-                isScrolled
-                  ? "bg-white/95 backdrop-blur-xl border-t border-slate-900/5 shadow-lg"
-                  : "bg-white/10 backdrop-blur-md border-t border-white/10"
-              }`}
+              className={`relative z-10 overflow-hidden md:hidden rounded-b-[2rem] transition-colors duration-300 border-t border-white/20`}
             >
               <div className="px-4 pb-6 pt-3">
                 <div className="grid gap-2">
@@ -258,8 +276,8 @@ export default function Navbar() {
                           }}
                           className={`flex items-center justify-between rounded-xl px-5 py-3.5 text-sm transition-colors ${
                             isActive
-                              ? (isScrolled ? "bg-slate-100 text-primary font-bold" : "bg-white/20 text-secondary font-bold")
-                              : (isScrolled ? "text-slate-600 font-medium hover:bg-slate-50 hover:text-primary" : "text-white/90 font-medium hover:bg-white/10 hover:text-white")
+                              ? (isOverDark ? "bg-white/15 text-secondary font-bold" : "bg-primary/10 text-primary font-bold")
+                              : (isOverDark ? "text-white/80 font-medium hover:bg-white/10 hover:text-white" : "text-primary/80 font-medium hover:bg-primary/5 hover:text-primary")
                           }`}
                         >
                           <span>{item.label}</span>
@@ -271,8 +289,8 @@ export default function Navbar() {
                           onClick={() => setIsOpen(false)}
                           className={`flex items-center justify-between rounded-xl px-5 py-3.5 text-sm transition-colors ${
                             isActive
-                              ? (isScrolled ? "bg-slate-100 text-primary font-bold" : "bg-white/20 text-secondary font-bold")
-                              : (isScrolled ? "text-slate-600 font-medium hover:bg-slate-50 hover:text-primary" : "text-white/90 font-medium hover:bg-white/10 hover:text-white")
+                              ? (isOverDark ? "bg-white/15 text-secondary font-bold" : "bg-primary/10 text-primary font-bold")
+                              : (isOverDark ? "text-white/80 font-medium hover:bg-white/10 hover:text-white" : "text-primary/80 font-medium hover:bg-primary/5 hover:text-primary")
                           }`}
                         >
                           <span>{item.label}</span>
@@ -285,9 +303,9 @@ export default function Navbar() {
                     href={`/${language}/help`}
                     onClick={() => setIsOpen(false)}
                     className={`mt-4 flex items-center justify-center rounded-xl px-5 py-3.5 text-sm font-bold shadow-sm transition hover:opacity-90 ${
-                      isScrolled
-                        ? "bg-primary text-secondary"
-                        : "bg-secondary text-primary"
+                      isOverDark
+                        ? "bg-secondary text-primary"
+                        : "bg-primary text-secondary"
                     }`}
                   >
                     {dict.ui.helpCenter}

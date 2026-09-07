@@ -10,7 +10,7 @@ export default function AudienceSection() {
   const { audiences, ui } = dict;
 
   return (
-    <section id="audience" className="relative px-4 py-10 md:py-20 bg-primary">
+    <section id="audience" data-theme="dark" className="relative px-4 py-10 md:py-20 bg-primary">
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none"><div className="absolute inset-0 bg-[linear-gradient(to_right,#efc94b15_1px,transparent_1px),linear-gradient(to_bottom,#efc94b15_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]" /><div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-secondary/15 blur-[120px]" /><div className="absolute top-[60%] -right-[10%] w-[40%] h-[40%] rounded-full bg-blue-400/10 blur-[100px]" /></div><div className="relative z-10 mx-auto w-full max-w-[1440px]">
         <div className="mx-auto max-w-3xl text-center">
           <p className="inline-block px-3 py-1.5 rounded text-xs font-bold uppercase tracking-widest text-primary bg-secondary">

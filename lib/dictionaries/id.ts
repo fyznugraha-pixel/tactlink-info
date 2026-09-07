@@ -11,9 +11,9 @@ export type IconType = ComponentType<any>; //
 
 export const brand = {
   name: "TactLink",
-  tagline: "Direktori Pintar untuk Networking Masa Kini",
-  headline: "Koneksi cerdas,\nnetworking lebih cepat,\n100% bebas kertas.",
-  description: "TactLink hadir untuk bantu para profesional, komunitas, asosiasi, dan event organizer membangun koneksi yang bermakna. Mulai dari profil digital, direktori pintar, sampai fitur networking yang super praktis.",
+  tagline: "Smart Directory untuk Networking Modern",
+  headline: "Koneksi cerdas,\nnetworking lebih cepat,\nBebas kertas.",
+  description: "TactLink mempermudah profesional, komunitas, asosiasi, dan penyelenggara event untuk membangun relasi yang bermakna lewat digital profile, smart directory, dan fitur networking yang praktis.",
   logo: "/links/logo/logotactlink.png",
 };
 
@@ -124,8 +124,8 @@ export const audiences = [
 ];
 
 export const benefits = [
-  { title: "100% Ramah Lingkungan (Paperless)", icon: ShieldCheck },
-  { title: "Dirancang buat Komunitas Global", icon: Globe2 },
+  { title: "Ramah Lingkungan (Paperless)", icon: ShieldCheck },
+  { title: "Dibuat untuk komunitas global", icon: Globe2 },
   { title: "Tukar Kontak Hitungan Detik", icon: Zap },
   { title: "Desain Nyaman di HP (Mobile-First)", icon: Smartphone },
   { title: "Tampil Lebih Profesional", icon: ShieldCheck },
@@ -158,9 +158,9 @@ export const ui = {
     { title: "Profil", desc: "Identitas digital" },
     { title: "Kontak", desc: "Simpan cerdas" },
   ],
-  trustBadge: "GERAKAN GLOBAL",
-  trustTitle: "Didesain buat networking modern yang 100% bebas kertas.",
-  trustDesc: "Mulai dari komunitas profesional sampai event internasional, TactLink siap bantu organisasimu ubah daftar kontak biasa jadi jaringan digital yang lebih hidup.",
+  trustBadge: "DIGUNAKAN SECARA GLOBAL",
+  trustTitle: "Didesain buat networking modern yang bebas kertas.",
+  trustDesc: "Dari komunitas profesional hingga event lintas negara, TactLink membantu banyak organisasi mengubah daftar kontak yang kaku menjadi network digital yang selalu hidup.",
   ctaTitle: "Jadikan setiap pertemuan awal dari koneksi yang bermakna.",
   becomePartner: "Jadi Mitra Kami",
   emailTactlink: "Hubungi via Email",

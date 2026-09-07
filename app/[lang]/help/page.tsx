@@ -43,7 +43,7 @@ export default function HelpCenterPage() {
   const isSearching = searchQuery.trim().length > 0;
 
   return (
-    <main className="min-h-screen bg-slate-950 text-white overflow-hidden pb-20">
+    <main data-theme="dark" className="min-h-screen bg-slate-950 text-white overflow-hidden pb-20">
       <Navbar />
       
       <div className="pt-28 md:pt-36 px-4">

@@ -16,7 +16,7 @@ const languages: { code: Language; label: string }[] = [
   { code: "tl", label: "Filipino" },
 ];
 
-export default function LanguageSwitcher({ isScrolled = false }: { isScrolled?: boolean }) {
+export default function LanguageSwitcher({ isOverDark = false }: { isOverDark?: boolean }) {
   const { language } = useLanguage();
   const router = useRouter();
   const pathname = usePathname();
@@ -53,13 +53,13 @@ export default function LanguageSwitcher({ isScrolled = false }: { isScrolled?: 
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium backdrop-blur-md transition-all",
-          isScrolled
-            ? "border-slate-200 bg-slate-100/50 text-slate-700 hover:bg-slate-200 hover:text-primary"
-            : "border-white/20 bg-black/20 text-white/90 hover:bg-white/20 hover:text-white"
+          "flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium backdrop-blur-lg backdrop-saturate-150 transition-all shadow-sm",
+          isOverDark
+            ? "border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-secondary"
+            : "border-primary/20 bg-primary/5 text-primary hover:bg-primary/10"
         )}
       >
-        <Globe2 size={16} className={isScrolled ? "text-primary" : "text-yellow-400"} />
+        <Globe2 size={16} className={isOverDark ? "text-secondary" : "text-primary"} />
         <span className="hidden sm:inline-block">{currentLangLabel}</span>
         <span className="sm:hidden uppercase">{language}</span>
         <ChevronDown size={14} className={cn("transition-transform", isOpen && "rotate-180")} />
@@ -73,10 +73,10 @@ export default function LanguageSwitcher({ isScrolled = false }: { isScrolled?: 
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
             className={cn(
-              "absolute right-0 top-full mt-2 w-48 overflow-hidden rounded-2xl border p-1 shadow-xl backdrop-blur-xl",
-              isScrolled
-                ? "border-slate-200 bg-white/95"
-                : "border-slate-700 bg-slate-900/95"
+              "absolute right-0 top-full mt-2 w-48 overflow-hidden rounded-2xl border p-1 shadow-2xl backdrop-blur-xl backdrop-saturate-200",
+              isOverDark
+                ? "border-white/10 bg-[#161B2E]/90 text-white"
+                : "border-primary/10 bg-white/95 text-primary shadow-xl"
             )}
           >
             {languages.map((lang) => (
@@ -86,8 +86,8 @@ export default function LanguageSwitcher({ isScrolled = false }: { isScrolled?: 
                 className={cn(
                   "flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm transition-colors",
                   language === lang.code
-                    ? (isScrolled ? "bg-slate-100 font-bold text-primary" : "bg-yellow-400/10 font-bold text-yellow-400")
-                    : (isScrolled ? "text-slate-600 font-medium hover:bg-slate-50 hover:text-primary" : "text-slate-300 font-medium hover:bg-slate-800 hover:text-white")
+                    ? (isOverDark ? "bg-yellow-400/15 font-bold text-yellow-400" : "bg-primary/10 font-bold text-primary")
+                    : (isOverDark ? "text-slate-300 font-medium hover:bg-white/10 hover:text-white" : "text-primary/80 font-medium hover:bg-primary/5 hover:text-primary")
                 )}
               >
                 {lang.label}

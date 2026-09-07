@@ -12,7 +12,7 @@ export type IconType = ComponentType<any>; //
 export const brand = {
   name: "TactLink",
   tagline: "Smart Directory para sa Modernong Networking",
-  headline: "Kumonekta nang mas matalino. Mag-network nang mas mabilis. Walang papel.",
+  headline: "Kumonekta nang mas matalino,\nmag-network nang mabilis,\nWalang papel.",
   description: "Tinutulungan ng TactLink ang mga propesyonal, komunidad, asosasyon, at mga tagapag-organisa ng event na bumuo ng makabuluhang koneksyon sa pamamagitan ng mga digital na profile, smart directories, at walang putol na networking tools.",
   logo: "/links/logo/logotactlink.png",
 };

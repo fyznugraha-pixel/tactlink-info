@@ -73,22 +73,19 @@ export function GooglePlayIcon({ size = 23, className = "" }: BrandIconProps) {
     >
       <path
         d="M5.2 3.8C4.85 4.1 4.65 4.55 4.65 5.1V18.9C4.65 19.45 4.85 19.9 5.2 20.2L13.25 12L5.2 3.8Z"
-        fill="currentColor"
+        fill="#00D3FF"
       />
       <path
         d="M14.45 13.25L16.55 15.35L7.35 20.75C6.85 21.05 6.35 21.08 5.95 20.9L14.45 13.25Z"
-        fill="currentColor"
-        opacity="0.72"
+        fill="#FF3A44"
       />
       <path
         d="M14.45 10.75L5.95 3.1C6.35 2.92 6.85 2.95 7.35 3.25L16.55 8.65L14.45 10.75Z"
-        fill="currentColor"
-        opacity="0.72"
+        fill="#00F076"
       />
       <path
         d="M17.45 9.18L19.15 10.18C20.25 10.82 20.25 13.18 19.15 13.82L17.45 14.82L14.75 12L17.45 9.18Z"
-        fill="currentColor"
-        opacity="0.92"
+        fill="#FFC400"
       />
     </svg>
   );

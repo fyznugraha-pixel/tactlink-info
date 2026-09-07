@@ -12,12 +12,20 @@ const fadeUp = {
   show: { opacity: 1, y: 0 },
 };
 
-const backgroundImages = [
+const desktopBackgroundImages = [
   "/links/hero/1.png",
   "/links/hero/2.png",
   "/links/hero/3.png",
   "/links/hero/4.png",
   "/links/hero/5.png",
+];
+
+const mobileBackgroundImages = [
+  "/links/hero-mobile/1.png",
+  "/links/hero-mobile/2.png",
+  "/links/hero-mobile/3.png",
+  "/links/hero-mobile/4.png",
+  "/links/hero-mobile/5.png",
 ];
 
 export default function HeroSection() {
@@ -29,14 +37,25 @@ export default function HeroSection() {
   const [activeBenefitIndex, setActiveBenefitIndex] = useState(0);
 
   useEffect(() => {
+    const images = isDesktop ? desktopBackgroundImages : mobileBackgroundImages;
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
     }, 4000); // Change image every 4 seconds
     return () => clearInterval(interval);
-  }, []);
+  }, [isDesktop]);
+
+  useEffect(() => {
+    if (isDesktop) return;
+
+    const timer = setInterval(() => {
+      setActiveBenefitIndex((prev) => (prev + 1) % Math.min(benefits.length, 4));
+    }, 1500); // Auto rotate every 1.5 seconds on mobile
+
+    return () => clearInterval(timer);
+  }, [isDesktop, activeBenefitIndex, benefits.length]);
 
   return (
-    <section id="top" className="relative flex flex-col items-center justify-center min-h-[80svh] md:min-h-[100vh] overflow-hidden pt-32 md:pt-40 pb-12 md:pb-0">
+    <section id="top" data-theme="dark" className="relative flex flex-col items-center justify-center min-h-[80svh] md:min-h-[100vh] overflow-hidden pt-32 md:pt-40 pb-12 md:pb-0">
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0 bg-primary">
         <AnimatePresence mode="popLayout">
@@ -49,7 +68,7 @@ export default function HeroSection() {
             className="absolute inset-0"
           >
             <Image
-              src={backgroundImages[currentImageIndex]}
+              src={(isDesktop ? desktopBackgroundImages : mobileBackgroundImages)[currentImageIndex]}
               alt="TactLink networking"
               fill
               className="object-cover object-center"
@@ -73,13 +92,13 @@ export default function HeroSection() {
           className="flex flex-col items-center max-w-4xl"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 rounded bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 text-[10px] sm:text-xs md:text-sm font-medium text-white mb-6 md:mb-8 tracking-wider uppercase">
+          <div className="inline-flex items-center gap-2 rounded bg-white/10 backdrop-blur-lg backdrop-saturate-150 border border-white/20 px-4 py-2 text-[10px] sm:text-xs md:text-sm font-medium text-white mb-6 md:mb-8 tracking-wider uppercase">
             <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(239,201,75,0.8)]" />
             {brand.tagline}
           </div>
 
           {/* Headline (Syne font) */}
-          <h1 className="text-4xl leading-[1.2] sm:text-5xl md:text-6xl lg:text-[5rem] font-bold tracking-tight text-white md:leading-[1.05] mb-6 md:mb-8 font-headline whitespace-nowrap overflow-visible">
+          <h1 className="text-4xl leading-[1.2] sm:text-5xl md:text-6xl lg:text-[5rem] font-bold tracking-tight text-white md:leading-[1.05] mb-6 md:mb-8 font-headline">
             {brand.headline.split('\n').map((line, i, arr) => (<span key={i} className={i === arr.length - 1 ? "text-secondary italic block mt-1 md:mt-2" : "block"}>{line}</span>))}
           </h1>
 
@@ -100,7 +119,7 @@ export default function HeroSection() {
               href="https://www.tactlink.com/contact"
               target="_blank"
               rel="noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 px-8 py-3.5 md:px-10 md:py-4 text-sm md:text-base font-medium text-white transition-all hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded bg-white/10 backdrop-blur-lg backdrop-saturate-150 border border-white/20 hover:bg-white/20 px-8 py-3.5 md:px-10 md:py-4 text-sm md:text-base font-medium text-white transition-all hover:-translate-y-0.5"
             >
               {dict.primaryLinks[1].label}
             </a>
@@ -133,7 +152,7 @@ export default function HeroSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-center gap-4 p-4 rounded-xl transition-colors hover:bg-white/5 backdrop-blur-sm border border-transparent hover:border-white/10"
+                className="flex items-center gap-4 p-4 rounded-xl transition-colors hover:bg-white/5 backdrop-blur-lg backdrop-saturate-150 border border-transparent hover:border-white/10"
               >
                 <div className="flex-shrink-0 grid h-12 w-12 place-items-center rounded bg-white/10 text-secondary border border-white/10">
                   <Icon size={24} />
@@ -158,11 +177,11 @@ export default function HeroSection() {
                   onClick={() => setActiveBenefitIndex(index)}
                   className={`flex-1 grid place-items-center aspect-square rounded-xl transition-all duration-300 ${
                     isActive
-                      ? "bg-white/20 border-white/30 text-secondary shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                      ? "bg-white/20 border-white/30 text-secondary shadow-[0_0_15px_rgba(255,255,255,0.1)] scale-105"
                       : "bg-white/5 border-white/5 text-white/50 hover:bg-white/10 hover:text-white"
                   } border`}
                 >
-                  <Icon size={22} strokeWidth={isActive ? 2 : 1.5} className="transition-transform duration-300 group-hover:scale-110" />
+                  <Icon size={22} strokeWidth={isActive ? 2 : 1.5} className="transition-transform duration-300" />
                 </button>
               );
             })}
@@ -178,7 +197,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.15 }}
                 className="text-sm font-bold text-white font-headline"
               >
-                {benefits[activeBenefitIndex].title}
+                {benefits[activeBenefitIndex]?.title}
               </motion.p>
             </AnimatePresence>
           </div>
