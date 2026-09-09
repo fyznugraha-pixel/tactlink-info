@@ -37,7 +37,7 @@ export default function QuickLinks() {
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="flex-none w-[76vw] max-w-[340px] sm:w-[60vw] md:w-auto snap-start md:snap-none group relative flex flex-col justify-between overflow-hidden rounded-[2rem] bg-slate-50 p-6 md:p-10 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                className="flex-none w-[76vw] max-w-[340px] sm:w-[60vw] md:max-w-none md:w-auto snap-start md:snap-none group relative flex flex-col justify-between overflow-hidden rounded-[2rem] bg-slate-50 p-6 md:p-10 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
                 <div className="flex items-start justify-between">
                   <div className="grid h-14 w-14 place-items-center rounded-2xl bg-white shadow-sm text-black">

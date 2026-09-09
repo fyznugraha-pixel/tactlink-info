@@ -123,15 +123,26 @@ export default function Navbar() {
             : "border-transparent"
         }`}
       >
+        {/* Base Transparent Glass Layer */}
         <div className={`absolute inset-0 z-0 rounded-2xl transition-all duration-300 pointer-events-none ${
           isScrolled || isOpen
-            ? "bg-white/10 backdrop-blur-xl backdrop-saturate-200"
+            ? "bg-white/[0.08] backdrop-blur-md backdrop-saturate-200"
             : "bg-transparent backdrop-blur-none backdrop-saturate-100"
         }`} />
 
-        {isScrolled && (
-          <div className="pointer-events-none absolute inset-x-6 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent z-10" />
-        )}
+        {/* iOS 26 Style Glass Bevel & Mirror Edge */}
+        <div className={`absolute inset-0 z-0 rounded-2xl transition-all duration-500 pointer-events-none overflow-hidden ${
+          isScrolled || isOpen ? "opacity-100" : "opacity-0"
+        }`}>
+          {/* Very fine, continuous inner bounding line (iOS glass boundary) */}
+          <div className="absolute inset-0 rounded-2xl shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)]" />
+          
+          {/* Strong, smooth horizontal top highlight (The 'mirror' thickness) */}
+          <div className="absolute inset-0 rounded-2xl shadow-[inset_0_1.5px_0_rgba(255,255,255,0.6)]" />
+
+          {/* Soft inner glow to give the glass 3D volume */}
+          <div className="absolute inset-0 rounded-2xl shadow-[inset_0_4px_20px_-4px_rgba(255,255,255,0.1)]" />
+        </div>
         <div className="relative z-10 flex items-center justify-between px-4 py-3 md:px-6 md:py-3">
           <a
             href="#top"
