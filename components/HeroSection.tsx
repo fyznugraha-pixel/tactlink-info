@@ -92,9 +92,9 @@ export default function HeroSection() {
           className="flex flex-col items-center max-w-4xl"
         >
           {/* Badge */}
-          <div className="relative inline-flex items-center gap-2 rounded bg-white/10 backdrop-blur-lg backdrop-saturate-150 border border-white/20 px-4 py-2 text-[10px] sm:text-xs md:text-sm font-medium text-white mb-6 md:mb-8 tracking-wider uppercase overflow-hidden">
+          <div className="relative inline-flex items-center gap-2 rounded bg-white/10 backdrop-blur-md backdrop-saturate-150 border border-white/20 px-4 py-2 text-[10px] sm:text-xs md:text-sm font-medium text-white mb-6 md:mb-8 tracking-wider uppercase overflow-hidden">
             {/* Volumetric glow */}
-            <div className="absolute inset-0 rounded shadow-[inset_0_3px_6px_-2px_rgba(255,255,255,0.4)] pointer-events-none" />
+            <div className="absolute inset-0 rounded shadow-[inset_0_3px_6px_-2px_rgba(255,255,255,0.15)] pointer-events-none" />
             
             <span className="relative z-10 w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(239,201,75,0.8)]" />
             <span className="relative z-10">{brand.tagline}</span>
@@ -122,11 +122,11 @@ export default function HeroSection() {
               href="https://www.tactlink.com/contact"
               target="_blank"
               rel="noreferrer"
-              className="relative w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded bg-white/10 backdrop-blur-lg backdrop-saturate-150 border border-white/20 hover:bg-white/20 px-8 py-3.5 md:px-10 md:py-4 text-sm md:text-base font-medium text-white transition-all hover:-translate-y-0.5 overflow-hidden group"
+              className="relative w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded bg-white/10 backdrop-blur-md backdrop-saturate-150 border border-white/20 hover:bg-white/20 px-8 py-3.5 md:px-10 md:py-4 text-sm md:text-base font-medium text-white transition-all hover:-translate-y-0.5 overflow-hidden group"
             >
               {/* Volumetric glow */}
-              <div className="absolute inset-0 rounded shadow-[inset_0_3px_6px_-2px_rgba(255,255,255,0.4)] pointer-events-none" />
-              <div className="absolute inset-0 rounded shadow-[inset_0_8px_32px_-6px_rgba(255,255,255,0.1)] pointer-events-none" />
+              <div className="absolute inset-0 rounded shadow-[inset_0_3px_6px_-2px_rgba(255,255,255,0.15)] pointer-events-none" />
+              <div className="absolute inset-0 rounded shadow-[inset_0_8px_32px_-6px_rgba(255,255,255,0.05)] pointer-events-none" />
               
               <span className="relative z-10">{dict.primaryLinks[1].label}</span>
             </a>
@@ -159,10 +159,10 @@ export default function HeroSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative flex items-center gap-4 p-4 rounded-xl transition-colors hover:bg-white/5 backdrop-blur-lg backdrop-saturate-150 border border-transparent hover:border-white/10 overflow-hidden group"
+                className="relative flex items-center gap-4 p-4 rounded-xl transition-colors hover:bg-white/5 backdrop-blur-md backdrop-saturate-150 border border-transparent hover:border-white/10 overflow-hidden group"
               >
                 {/* Volumetric glow on hover */}
-                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[inset_0_3px_6px_-2px_rgba(255,255,255,0.4)] pointer-events-none" />
+                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[inset_0_3px_6px_-2px_rgba(255,255,255,0.15)] pointer-events-none" />
                 
                 <div className="relative z-10 flex-shrink-0 grid h-12 w-12 place-items-center rounded bg-white/10 text-secondary border border-white/10">
                   <Icon size={24} />
@@ -187,7 +187,7 @@ export default function HeroSection() {
                   onClick={() => setActiveBenefitIndex(index)}
                   className={`flex-1 grid place-items-center aspect-square rounded-xl transition-all duration-300 ${
                     isActive
-                      ? "bg-white/20 border-white/30 text-secondary shadow-[0_0_15px_rgba(255,255,255,0.1)] scale-105"
+                      ? "bg-white/20 border-white/30 text-secondary shadow-[0_0_15px_rgba(255,255,255,0.05)] scale-105"
                       : "bg-white/5 border-white/5 text-white/50 hover:bg-white/10 hover:text-white"
                   } border`}
                 >

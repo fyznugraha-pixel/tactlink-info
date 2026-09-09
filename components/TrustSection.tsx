@@ -96,7 +96,12 @@ export default function TrustSection() {
 
   const content = (
     <div data-theme="dark" className="relative overflow-hidden rounded-xl bg-primary px-5 py-7 shadow-md sm:p-8 md:p-16">
-      <div className="relative grid gap-6 md:grid-cols-[1fr_1fr] md:items-center md:gap-12">
+      {/* Background Texture */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_40%,transparent_100%)]" />
+      </div>
+
+      <div className="relative z-10 grid gap-6 md:grid-cols-[1fr_1fr] md:items-center md:gap-12">
         <div className="relative text-center md:text-left">
           <p className="inline-block px-3.5 py-1 rounded bg-white/10 text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-secondary">
             {dict.ui.trustBadge}
@@ -138,11 +143,11 @@ export default function TrustSection() {
                 }}
                 className="min-w-0"
               >
-                <div className="relative h-full rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 px-3 py-3.5 sm:p-5 md:p-6 text-center shadow-sm backdrop-blur-lg backdrop-saturate-150 overflow-hidden group">
+                <div className="relative h-full rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 px-3 py-3.5 sm:p-5 md:p-6 text-center shadow-sm backdrop-blur-md backdrop-saturate-150 overflow-hidden group">
                   {/* Volumetric glow and mirror edge (iOS 26 Style) */}
-                  <div className="absolute inset-0 rounded-xl sm:rounded-2xl shadow-[inset_0_0_8px_rgba(255,255,255,0.15)] pointer-events-none" />
-                  <div className="absolute inset-0 rounded-xl sm:rounded-2xl shadow-[inset_0_3px_6px_-2px_rgba(255,255,255,0.4)] pointer-events-none" />
-                  <div className="absolute inset-0 rounded-xl sm:rounded-2xl shadow-[inset_0_8px_32px_-6px_rgba(255,255,255,0.1)] pointer-events-none" />
+                  <div className="absolute inset-0 rounded-xl sm:rounded-2xl shadow-[inset_0_0_8px_rgba(255,255,255,0.08)] pointer-events-none" />
+                  <div className="absolute inset-0 rounded-xl sm:rounded-2xl shadow-[inset_0_3px_6px_-2px_rgba(255,255,255,0.15)] pointer-events-none" />
+                  <div className="absolute inset-0 rounded-xl sm:rounded-2xl shadow-[inset_0_8px_32px_-6px_rgba(255,255,255,0.05)] pointer-events-none" />
                   
                   <div className="relative z-10">{statContent}</div>
                 </div>

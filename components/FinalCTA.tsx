@@ -43,9 +43,13 @@ export default function FinalCTA() {
                     href={item.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="group inline-flex items-center justify-between gap-3 rounded-xl bg-white/10 border border-white/10 px-4 py-3 sm:px-6 sm:py-5 text-left transition-all hover:-translate-y-1 hover:bg-white/20"
+                    className="relative group inline-flex items-center justify-between gap-3 rounded-xl bg-white/10 border border-white/10 px-4 py-3 sm:px-6 sm:py-5 text-left transition-all hover:-translate-y-1 hover:bg-white/20 backdrop-blur-md backdrop-saturate-150 overflow-hidden"
                   >
-                    <span className="flex min-w-0 items-center gap-3 sm:gap-4">
+                    {/* Volumetric glow (iOS 26 Style) */}
+                    <div className="absolute inset-0 rounded-xl shadow-[inset_0_3px_6px_-2px_rgba(255,255,255,0.15)] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 rounded-xl shadow-[inset_0_8px_32px_-6px_rgba(255,255,255,0.05)] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    
+                    <span className="relative z-10 flex min-w-0 items-center gap-3 sm:gap-4">
                       <span className="grid h-10 w-10 sm:h-12 sm:w-12 shrink-0 place-items-center rounded-lg bg-white/10 border border-white/10 text-white transition duration-300 group-hover:bg-white/20">
                         <Icon size={isAppStore ? (isDesktop ? 22 : 19) : (isDesktop ? 24 : 21)} />
                       </span>
@@ -62,7 +66,7 @@ export default function FinalCTA() {
 
                     <ArrowUpRight
                       size={16}
-                      className="shrink-0 text-secondary sm:size-[18px]"
+                      className="relative z-10 shrink-0 text-secondary sm:size-[18px]"
                     />
                   </a>
                 );
@@ -82,10 +86,16 @@ export default function FinalCTA() {
                 href="https://www.tactlink.com/contact"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded bg-white/10 border border-white/20 px-6 py-3 sm:px-8 sm:py-4 text-xs sm:text-sm font-bold text-white transition-all hover:bg-white/20 hover:-translate-y-0.5"
+                className="relative group inline-flex items-center justify-center gap-2 rounded bg-white/10 border border-white/20 px-6 py-3 sm:px-8 sm:py-4 text-xs sm:text-sm font-bold text-white transition-all hover:bg-white/20 hover:-translate-y-0.5 backdrop-blur-md backdrop-saturate-150 overflow-hidden"
               >
-                {ui.becomePartner}
-                <ArrowUpRight size={16} className="sm:size-[18px]" />
+                {/* Volumetric glow */}
+                <div className="absolute inset-0 rounded shadow-[inset_0_3px_6px_-2px_rgba(255,255,255,0.15)] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 rounded shadow-[inset_0_8px_32px_-6px_rgba(255,255,255,0.05)] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                <span className="relative z-10 inline-flex items-center gap-2">
+                  {ui.becomePartner}
+                  <ArrowUpRight size={16} className="sm:size-[18px]" />
+                </span>
               </a>
             </div>
           </div>

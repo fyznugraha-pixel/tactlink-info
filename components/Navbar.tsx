@@ -130,7 +130,7 @@ export default function Navbar() {
           radius={16}
           edgeInset={18}
           distortionScale={isScrolled || isOpen ? 35 : 0}
-          baseBackground={isScrolled || isOpen ? "rgba(255, 255, 255, 0.08)" : "transparent"}
+          baseBackground={isScrolled || isOpen ? "rgba(255, 255, 255, 0.03)" : "transparent"}
           baseBackdropFilter={isScrolled || isOpen ? `blur(${isDesktop ? "6px" : "3px"}) saturate(200%)` : "none"}
         >
           {/* iOS 26 Style Glass Bevel & Mirror Edge */}
@@ -138,13 +138,13 @@ export default function Navbar() {
             isScrolled || isOpen ? "opacity-100" : "opacity-0"
           }`}>
             {/* Extremely soft, blurred inner boundary (no hard lines) */}
-            <div className="absolute inset-0 rounded-2xl shadow-[inset_0_0_8px_rgba(255,255,255,0.15)]" />
+            <div className="absolute inset-0 rounded-2xl shadow-[inset_0_0_8px_rgba(255,255,255,0.08)]" />
             
             {/* Smooth top volumetric highlight that fades naturally */}
-            <div className="absolute inset-0 rounded-2xl shadow-[inset_0_3px_6px_-2px_rgba(255,255,255,0.4)]" />
+            <div className="absolute inset-0 rounded-2xl shadow-[inset_0_3px_6px_-2px_rgba(255,255,255,0.15)]" />
 
             {/* Deep inner glow to give the glass 3D volume */}
-            <div className="absolute inset-0 rounded-2xl shadow-[inset_0_8px_32px_-6px_rgba(255,255,255,0.1)]" />
+            <div className="absolute inset-0 rounded-2xl shadow-[inset_0_8px_32px_-6px_rgba(255,255,255,0.05)]" />
           </div>
         </LiquidGlassEdge>
         <div className="relative z-10 flex items-center justify-between px-4 py-3 md:px-6 md:py-3">

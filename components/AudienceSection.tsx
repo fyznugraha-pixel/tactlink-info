@@ -61,8 +61,12 @@ export default function AudienceSection() {
                 }
                 className="flex-none w-[76vw] max-w-[320px] snap-start sm:w-[46%] md:w-auto min-w-0"
               >
-                <div className="group h-full rounded-2xl bg-white/5 border border-white/10 p-6 sm:p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white/10">
-                  {content}
+                <div className="relative group h-full rounded-2xl bg-white/5 border border-white/10 p-6 sm:p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 backdrop-blur-md backdrop-saturate-150 overflow-hidden">
+                  {/* Volumetric glow (iOS 26 Style) */}
+                  <div className="absolute inset-0 rounded-2xl shadow-[inset_0_3px_6px_-2px_rgba(255,255,255,0.15)] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 rounded-2xl shadow-[inset_0_8px_32px_-6px_rgba(255,255,255,0.05)] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  <div className="relative z-10">{content}</div>
                 </div>
               </motion.div>
             );
