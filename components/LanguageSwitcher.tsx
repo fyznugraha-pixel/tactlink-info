@@ -2,7 +2,7 @@
 
 import { useLanguage, Language } from "@/context/LanguageContext";
 import { usePathname, useRouter } from "next/navigation";
-import { ChevronDown, Globe2 } from "lucide-react";
+import { Check, ChevronDown, Globe2 } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -84,10 +84,10 @@ export default function LanguageSwitcher({ isOverDark = false }: { isOverDark?: 
                 key={lang.code}
                 onClick={() => switchLanguage(lang.code)}
                 className={cn(
-                  "flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm transition-colors",
-                  language === lang.code
-                    ? (isOverDark ? "bg-yellow-400/15 font-bold text-yellow-400" : "bg-primary/10 font-bold text-primary")
-                    : (isOverDark ? "text-slate-300 font-medium hover:bg-white/10 hover:text-white" : "text-primary/80 font-medium hover:bg-primary/5 hover:text-primary")
+                  "flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-200",
+                  lang.code === language
+                    ? isOverDark ? "bg-white/10 text-secondary" : "bg-primary/5 text-primary"
+                    : isOverDark ? "text-white/70 hover:bg-white/5 hover:text-white" : "text-primary/70 hover:bg-primary/5 hover:text-primary"
                 )}
               >
                 {lang.label}
