@@ -131,7 +131,7 @@ export default function Navbar() {
           edgeInset={18}
           distortionScale={isScrolled || isOpen ? 35 : 0}
           baseBackground={isScrolled || isOpen ? "rgba(255, 255, 255, 0.08)" : "transparent"}
-          baseBackdropFilter={isScrolled || isOpen ? "blur(6px) saturate(200%)" : "none"}
+          baseBackdropFilter={isScrolled || isOpen ? `blur(${isDesktop ? "6px" : "3px"}) saturate(200%)` : "none"}
         >
           {/* iOS 26 Style Glass Bevel & Mirror Edge */}
           <div className={`absolute inset-0 z-0 rounded-2xl transition-all duration-500 pointer-events-none overflow-hidden ${
