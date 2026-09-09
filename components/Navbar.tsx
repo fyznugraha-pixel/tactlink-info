@@ -11,6 +11,7 @@ import useIsDesktop from "@/hooks/useIsDesktop";
 import { useLanguage } from "@/context/LanguageContext";
 import LanguageSwitcher from "./LanguageSwitcher";
 import LocationSuggester from "./LocationSuggester";
+import LiquidGlassEdge from "./LiquidGlassEdge";
 
 export default function Navbar() {
   const { dict, language } = useLanguage();
@@ -117,32 +118,35 @@ export default function Navbar() {
   const navbarContent = (
     <div className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4 md:pt-6 pointer-events-auto">
       <nav
-        className={`relative w-full max-w-5xl rounded-2xl transition-all duration-300 border ${
+        className={`relative w-full max-w-5xl rounded-2xl transition-all duration-300 ${
           isScrolled || isOpen
-            ? "border-white/20 shadow-lg"
-            : "border-transparent"
+            ? "ring-1 ring-inset ring-white/20 shadow-lg"
+            : ""
         }`}
       >
-        {/* Base Transparent Glass Layer */}
-        <div className={`absolute inset-0 z-0 rounded-2xl transition-all duration-300 pointer-events-none ${
-          isScrolled || isOpen
-            ? "bg-white/[0.08] backdrop-blur-md backdrop-saturate-200"
-            : "bg-transparent backdrop-blur-none backdrop-saturate-100"
-        }`} />
+        {/* Base Transparent Glass Layer with SVG Edge Distortion */}
+        <LiquidGlassEdge
+          className="absolute inset-0 z-0 transition-all duration-300"
+          radius={16}
+          edgeInset={18}
+          distortionScale={isScrolled || isOpen ? 35 : 0}
+          baseBackground={isScrolled || isOpen ? "rgba(255, 255, 255, 0.08)" : "transparent"}
+          baseBackdropFilter={isScrolled || isOpen ? "blur(6px) saturate(200%)" : "none"}
+        >
+          {/* iOS 26 Style Glass Bevel & Mirror Edge */}
+          <div className={`absolute inset-0 z-0 rounded-2xl transition-all duration-500 pointer-events-none overflow-hidden ${
+            isScrolled || isOpen ? "opacity-100" : "opacity-0"
+          }`}>
+            {/* Extremely soft, blurred inner boundary (no hard lines) */}
+            <div className="absolute inset-0 rounded-2xl shadow-[inset_0_0_8px_rgba(255,255,255,0.15)]" />
+            
+            {/* Smooth top volumetric highlight that fades naturally */}
+            <div className="absolute inset-0 rounded-2xl shadow-[inset_0_3px_6px_-2px_rgba(255,255,255,0.4)]" />
 
-        {/* iOS 26 Style Glass Bevel & Mirror Edge */}
-        <div className={`absolute inset-0 z-0 rounded-2xl transition-all duration-500 pointer-events-none overflow-hidden ${
-          isScrolled || isOpen ? "opacity-100" : "opacity-0"
-        }`}>
-          {/* Very fine, continuous inner bounding line (iOS glass boundary) */}
-          <div className="absolute inset-0 rounded-2xl shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)]" />
-          
-          {/* Strong, smooth horizontal top highlight (The 'mirror' thickness) */}
-          <div className="absolute inset-0 rounded-2xl shadow-[inset_0_1.5px_0_rgba(255,255,255,0.6)]" />
-
-          {/* Soft inner glow to give the glass 3D volume */}
-          <div className="absolute inset-0 rounded-2xl shadow-[inset_0_4px_20px_-4px_rgba(255,255,255,0.1)]" />
-        </div>
+            {/* Deep inner glow to give the glass 3D volume */}
+            <div className="absolute inset-0 rounded-2xl shadow-[inset_0_8px_32px_-6px_rgba(255,255,255,0.1)]" />
+          </div>
+        </LiquidGlassEdge>
         <div className="relative z-10 flex items-center justify-between px-4 py-3 md:px-6 md:py-3">
           <a
             href="#top"
