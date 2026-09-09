@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useId, useState } from 'react';
+import useIsDesktop from '@/hooks/useIsDesktop';
 
 interface LiquidGlassEdgeProps {
   children?: React.ReactNode;
@@ -70,6 +71,7 @@ export default function LiquidGlassEdge({
   const containerRef = useRef<HTMLDivElement>(null);
   const [mapUrl, setMapUrl] = useState<string>('');
   const [dimensions, setDimensions] = useState({ w: 0, h: 0 });
+  const isDesktop = useIsDesktop();
   
   const id = useId().replace(/:/g, "");
   const filterId = `edge-distortion-${id}`;
@@ -123,8 +125,8 @@ export default function LiquidGlassEdge({
         style={{
           borderRadius: radius,
           background: baseBackground,
-          backdropFilter: mapUrl && baseBackdropFilter !== "none" ? `${baseBackdropFilter} url(#${filterId})` : baseBackdropFilter,
-          WebkitBackdropFilter: mapUrl && baseBackdropFilter !== "none" ? `${baseBackdropFilter} url(#${filterId})` : baseBackdropFilter,
+          backdropFilter: mapUrl && baseBackdropFilter !== "none" && isDesktop ? `${baseBackdropFilter} url(#${filterId})` : baseBackdropFilter,
+          WebkitBackdropFilter: mapUrl && baseBackdropFilter !== "none" && isDesktop ? `${baseBackdropFilter} url(#${filterId})` : baseBackdropFilter,
         }}
       />
       
